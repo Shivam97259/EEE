@@ -1,302 +1,302 @@
 [
   {
-    "id": 541,
-    "question": "Why are electrical power systems divided into generation, transmission, distribution, and utilization stages?",
-    "answer": "Each stage operates at voltage and power levels suited to its purpose. This hierarchical structure enables efficient bulk transfer, safe distribution, and practical utilization."
+    "id": 1,
+    "question": "Why is electrical power transmitted at high voltage?",
+    "answer": "For the same power, higher voltage means lower current. Since copper loss is I^2R, reducing current drastically reduces transmission losses and conductor size."
   },
   {
-    "id": 542,
-    "question": "Why is a transmission voltage much higher than a distribution voltage?",
-    "answer": "For the same power, higher voltage means lower current. Lower current reduces I^2R losses and conductor size, making long-distance transmission economical."
+    "id": 2,
+    "question": "Why is AC preferred over DC for conventional power transmission?",
+    "answer": "AC voltage can be easily stepped up/down using transformers. This enables high-voltage, low-current transmission and efficient distribution."
   },
   {
-    "id": 543,
-    "question": "Why are transmission lines operated at high voltage instead of high current?",
-    "answer": "Increasing current directly increases conductor heating because loss is I^2R. Increasing voltage reduces current for the same power and therefore greatly reduces losses."
+    "id": 3,
+    "question": "What is the physical meaning of RMS voltage?",
+    "answer": "RMS is the equivalent DC voltage that produces the same heating effect in a resistor. For a sinusoid, V_RMS = V_m/sqrt(2)."
   },
   {
-    "id": 544,
-    "question": "What is the purpose of a transmission network?",
-    "answer": "It transfers large amounts of electrical power from generating stations to major load centers. High voltage is used to minimize transmission losses."
+    "id": 4,
+    "question": "Why does a transformer require AC?",
+    "answer": "Transformer action requires changing magnetic flux. AC continuously changes flux, whereas steady DC produces nearly constant flux after the transient."
   },
   {
-    "id": 545,
-    "question": "Why is a grid interconnected instead of operating each generating station independently?",
-    "answer": "Interconnection improves reliability, allows power sharing, and enables reserve capacity to be shared. A healthy grid can also withstand individual generator or line outages."
+    "id": 5,
+    "question": "Why does a transformer not work properly on DC?",
+    "answer": "DC produces nearly constant flux, causing the core to saturate and the primary current to become dangerously high because there is no back EMF after the transient."
   },
   {
-    "id": 546,
-    "question": "What is the difference between base-load and peak-load generation?",
-    "answer": "Base-load plants operate for long periods to supply relatively constant demand. Peak-load plants respond quickly and operate mainly when demand becomes high."
+    "id": 6,
+    "question": "What is power factor and why is it important?",
+    "answer": "Power factor is P/S = cos(phi). Low PF increases current for the same real power, causing higher I^2R losses and voltage drop."
   },
   {
-    "id": 547,
-    "question": "Why are load curves important in power-system planning?",
-    "answer": "A load curve shows how demand varies with time. It helps determine generation capacity, operating schedules, utilization, and reserve requirements."
+    "id": 7,
+    "question": "Why are inductors called energy-storage elements?",
+    "answer": "An inductor stores energy in its magnetic field: W = (1/2)LI^2. It opposes sudden changes in current."
   },
   {
-    "id": 548,
-    "question": "What is load factor and why is it important?",
-    "answer": "Load factor = average load / maximum demand. A higher value indicates better utilization of installed generation and distribution capacity."
+    "id": 8,
+    "question": "Why does an inductor oppose sudden current change?",
+    "answer": "Because V = L(di/dt). A rapid current change requires a large voltage, so the inductor naturally resists instantaneous current variation."
   },
   {
-    "id": 549,
-    "question": "Why is a high load factor desirable for a power system?",
-    "answer": "Higher load factor means equipment is utilized more consistently. This improves asset utilization and generally reduces the cost per unit of energy generated."
+    "id": 9,
+    "question": "Why does a capacitor oppose sudden voltage change?",
+    "answer": "Because I = C(dv/dt). Instantaneously changing capacitor voltage would require infinite current theoretically."
   },
   {
-    "id": 550,
-    "question": "What is demand factor?",
-    "answer": "Demand factor = maximum demand / connected load. It indicates how much of the total connected equipment is actually demanded simultaneously."
+    "id": 10,
+    "question": "What happens to an ideal capacitor at DC steady state?",
+    "answer": "It behaves as an open circuit because dv/dt = 0, therefore i = C(dv/dt) = 0."
   },
   {
-    "id": 551,
-    "question": "Why is connected load normally greater than maximum demand?",
-    "answer": "All connected equipment rarely operates at full rating simultaneously. Diversity of usage makes the actual maximum demand lower than total connected capacity."
+    "id": 11,
+    "question": "What happens to an ideal inductor at DC steady state?",
+    "answer": "It behaves as a short circuit because steady-state current is constant and di/dt = 0."
   },
   {
-    "id": 552,
-    "question": "What is diversity factor and why is it usually greater than one?",
-    "answer": "Diversity factor = sum of individual maximum demands / system maximum demand. Individual loads peak at different times, so their combined peak is normally lower."
+    "id": 12,
+    "question": "Why is Kirchhoff's Current Law based on conservation of charge?",
+    "answer": "Charge cannot accumulate indefinitely at an ideal node. Therefore, total current entering a node must equal total current leaving it."
   },
   {
-    "id": 553,
-    "question": "Why is diversity beneficial in distribution systems?",
-    "answer": "Different consumers rarely reach maximum demand simultaneously. This allows common infrastructure to serve a larger connected load without being sized for every load at full rating."
+    "id": 13,
+    "question": "Why is Kirchhoff's Voltage Law based on conservation of energy?",
+    "answer": "Around a closed loop, the algebraic sum of voltage rises and drops must be zero because a charge must return with the same energy."
   },
   {
-    "id": 554,
-    "question": "What is utilization factor?",
-    "answer": "Utilization factor = maximum demand / rated capacity of equipment. It indicates how effectively installed equipment capacity is being used."
+    "id": 14,
+    "question": "What is the practical meaning of Thevenin's theorem?",
+    "answer": "Any linear two-terminal network can be replaced by one voltage source V_th in series with R_th. It greatly simplifies load analysis."
   },
   {
-    "id": 555,
-    "question": "Why is a three-phase system preferred for bulk power transmission?",
-    "answer": "It transfers large power with good conductor utilization and produces nearly constant instantaneous power for balanced loads. This makes it economical and efficient."
+    "id": 15,
+    "question": "How do you find R_th?",
+    "answer": "Deactivate independent sources: voltage sources become shorts and current sources become opens. Then calculate resistance seen from the load terminals."
   },
   {
-    "id": 556,
-    "question": "Why is the neutral conductor unnecessary for a perfectly balanced three-phase load?",
-    "answer": "The three phase currents are equal and 120 degrees apart, so their phasor sum is zero. Therefore no neutral current flows under ideal balance."
+    "id": 16,
+    "question": "Why can't dependent sources simply be turned off while finding R_th?",
+    "answer": "Their values depend on circuit variables, so they remain active. A test voltage/current source is generally used to determine the equivalent resistance."
   },
   {
-    "id": 557,
-    "question": "What is the purpose of a substation?",
-    "answer": "A substation transforms voltage levels, switches circuits, measures system quantities, and provides protection. It acts as a controlled interface between different parts of the grid."
+    "id": 17,
+    "question": "What is Norton's equivalent circuit?",
+    "answer": "A linear two-terminal network can be represented by a current source I_N parallel with R_N. It is mathematically equivalent to Thevenin's model."
   },
   {
-    "id": 558,
-    "question": "Why are circuit breakers installed in substations?",
-    "answer": "They interrupt fault or abnormal currents and isolate defective sections. This prevents damage from propagating through the power system."
+    "id": 18,
+    "question": "What is the relation between Thevenin and Norton equivalents?",
+    "answer": "V_th = I_N R_th and R_th = R_N. They represent the same external terminal behavior."
   },
   {
-    "id": 559,
-    "question": "What is the purpose of an isolator?",
-    "answer": "An isolator provides visible electrical isolation after current has been interrupted by a circuit breaker. It is normally operated under no-load conditions."
+    "id": 19,
+    "question": "What is maximum power transfer condition in a resistive DC circuit?",
+    "answer": "Maximum load power occurs when R_L = R_th. At this point, load receives maximum power but efficiency is only 50%."
   },
   {
-    "id": 560,
-    "question": "Why should an isolator generally not be used to interrupt load current?",
-    "answer": "It is designed primarily for isolation, not arc interruption. Opening it under significant current can produce a dangerous arc and equipment damage."
+    "id": 20,
+    "question": "Why isn't maximum power transfer the same as maximum efficiency?",
+    "answer": "At R_L = R_th, equal power is dissipated internally and in the load. Maximum efficiency requires minimizing internal resistance relative to load."
   },
   {
-    "id": 561,
-    "question": "What is the purpose of a busbar in a substation?",
-    "answer": "A busbar provides a common electrical connection point for incoming and outgoing circuits. It enables flexible power collection, distribution, and switching."
+    "id": 21,
+    "question": "What is impedance?",
+    "answer": "Impedance is the total opposition to AC current: Z = R + jX. It includes both resistive and reactive effects."
   },
   {
-    "id": 562,
-    "question": "Why are busbars designed to withstand high short-circuit currents?",
-    "answer": "Fault currents can be many times normal current and produce severe thermal and electrodynamic forces. Busbars therefore require adequate current and mechanical withstand capability."
+    "id": 22,
+    "question": "Why does resistance consume real power while ideal reactance does not?",
+    "answer": "Resistance converts electrical energy into heat. Ideal inductors and capacitors only exchange energy with the source and return it during another part of the cycle."
   },
   {
-    "id": 563,
-    "question": "What is per-unit representation in power systems?",
-    "answer": "It expresses electrical quantities as normalized values relative to selected base quantities. This simplifies calculations across transformers and different voltage levels."
+    "id": 23,
+    "question": "Why does an inductor have positive reactance?",
+    "answer": "X_L = omega L, and current lags voltage by 90 degrees. Increasing frequency therefore increases inductive opposition."
   },
   {
-    "id": 564,
-    "question": "Why is the per-unit system widely used in power-system analysis?",
-    "answer": "Transformer ratios largely disappear from normalized calculations, and typical equipment impedances fall into convenient numerical ranges. It also reduces unit-conversion errors."
+    "id": 24,
+    "question": "Why does capacitor reactance decrease with frequency?",
+    "answer": "X_C = 1/(omega C). So higher frequency produces lower impedance, allowing AC current to pass more easily."
   },
   {
-    "id": 565,
-    "question": "What happens to per-unit impedance when the voltage base is changed?",
-    "answer": "For the same actual impedance, per-unit impedance changes according to the selected voltage and power bases. Consistent base conversion is therefore essential."
+    "id": 25,
+    "question": "What is resonance in an RLC circuit?",
+    "answer": "Resonance occurs when inductive and capacitive reactances cancel: X_L = X_C. The net reactive component becomes zero."
   },
   {
-    "id": 566,
-    "question": "What is a single-line diagram?",
-    "answer": "It is a simplified representation of a three-phase power system using one line and standard symbols. It shows generators, transformers, lines, buses, loads, and breakers."
+    "id": 26,
+    "question": "Why is power factor unity at series resonance?",
+    "answer": "At resonance, X_L - X_C = 0, so impedance becomes purely resistive. Therefore voltage and current are in phase."
   },
   {
-    "id": 567,
-    "question": "Why are single-line diagrams used instead of drawing all three phases?",
-    "answer": "Balanced three-phase systems are electrically symmetrical, so one representative phase is sufficient for many analyses. This greatly simplifies system visualization."
+    "id": 27,
+    "question": "What is the significance of the quality factor Q?",
+    "answer": "Q indicates how selective/sharp a resonant circuit is. Higher Q generally means narrower bandwidth and stronger resonance."
   },
   {
-    "id": 568,
-    "question": "What is a power-system fault?",
-    "answer": "A fault is an abnormal electrical connection or insulation failure that creates an unintended current path. It can cause very large currents and severe voltage disturbances."
+    "id": 28,
+    "question": "What is bandwidth of a resonant circuit?",
+    "answer": "Bandwidth is the difference between upper and lower half-power frequencies: BW = f_2 - f_1. For a series RLC, Q = f_0/BW."
   },
   {
-    "id": 569,
-    "question": "Why must faults be cleared quickly?",
-    "answer": "Fault current produces thermal and mechanical stress and can destabilize generators. Fast isolation limits equipment damage and prevents wider system disturbances."
+    "id": 29,
+    "question": "Why is a circuit's time constant important?",
+    "answer": "It determines how quickly energy storage elements respond to changes. For RC, tau = RC; for RL, tau = L/R."
   },
   {
-    "id": 570,
-    "question": "What is a symmetrical fault?",
-    "answer": "A symmetrical fault affects all three phases equally, such as a three-phase short circuit. It produces balanced fault currents and is analyzed using positive-sequence quantities."
+    "id": 30,
+    "question": "What happens to an RC charging capacitor after one time constant?",
+    "answer": "The capacitor reaches approximately 63.2% of its final voltage. This is a standard first-order transient characteristic."
   },
   {
-    "id": 571,
-    "question": "Why is a three-phase fault considered the most severe fault in many systems?",
-    "answer": "It generally produces the highest short-circuit current because all three phases participate simultaneously. Equipment must be rated to withstand its thermal and mechanical effects."
+    "id": 31,
+    "question": "What happens after approximately five time constants?",
+    "answer": "The response reaches about 99.3% of its final value, so it is generally treated as practically settled."
   },
   {
-    "id": 572,
-    "question": "What are unsymmetrical faults?",
-    "answer": "They disturb the three phases unequally, such as line-to-ground, line-to-line, and double-line-to-ground faults. Their analysis uses symmetrical components."
+    "id": 32,
+    "question": "Why can't capacitor voltage change instantaneously?",
+    "answer": "That would require theoretically infinite current according to i = C(dv/dt). Physical circuits have finite current, so voltage changes continuously."
   },
   {
-    "id": 573,
-    "question": "Why is a line-to-ground fault particularly common?",
-    "answer": "Phase conductors can accidentally contact grounded structures or earth through insulation failure. This makes ground faults statistically common in practical networks."
+    "id": 33,
+    "question": "Why can't inductor current change instantaneously?",
+    "answer": "An instantaneous current change requires theoretically infinite voltage according to v = L(di/dt). Practical circuits cannot provide this."
   },
   {
-    "id": 574,
-    "question": "What is the purpose of symmetrical components?",
-    "answer": "They decompose an unbalanced three-phase system into positive-, negative-, and zero-sequence components. Each sequence network can then be analyzed separately."
+    "id": 34,
+    "question": "What is superposition theorem?",
+    "answer": "In a linear circuit containing multiple independent sources, the total response equals the sum of responses produced by each source acting individually."
   },
   {
-    "id": 575,
-    "question": "What does the positive-sequence component represent?",
-    "answer": "It consists of three equal phasors separated by 120 degrees with normal phase sequence. It represents the balanced component that produces normal rotating magnetic fields."
+    "id": 35,
+    "question": "Why does superposition not directly apply to power?",
+    "answer": "Power depends nonlinearly on voltage/current, such as P = V^2/R. Therefore individual powers cannot simply be algebraically added."
   },
   {
-    "id": 576,
-    "question": "What does the negative-sequence component represent?",
-    "answer": "It consists of balanced phasors with phase sequence opposite to the normal sequence. In rotating machines it produces a field rotating opposite to the rotor."
+    "id": 36,
+    "question": "What is mesh analysis based on?",
+    "answer": "It applies KVL to independent loops and uses mesh currents as unknowns. It is especially efficient for planar circuits."
   },
   {
-    "id": 577,
-    "question": "Why is negative-sequence current dangerous for generators and motors?",
-    "answer": "It creates a reverse-rotating magnetic field relative to the rotor, inducing currents at approximately twice system frequency in the rotor. This causes severe rotor heating."
+    "id": 37,
+    "question": "What is nodal analysis based on?",
+    "answer": "It applies KCL at circuit nodes and uses node voltages as unknowns. It is often efficient when the circuit has fewer essential nodes than meshes."
   },
   {
-    "id": 578,
-    "question": "What does the zero-sequence component represent?",
-    "answer": "The three phase components are equal in magnitude and phase. It requires a return path through neutral, ground, or a suitable transformer connection."
+    "id": 38,
+    "question": "What is a supernode?",
+    "answer": "A supernode is formed when a voltage source exists between two non-reference nodes. KCL is applied around the combined boundary plus an additional voltage constraint."
   },
   {
-    "id": 579,
-    "question": "Why does transformer connection affect zero-sequence current?",
-    "answer": "Zero-sequence current requires a closed path. Delta windings can provide internal circulating paths, while certain grounded or ungrounded star connections determine whether current can pass externally."
+    "id": 39,
+    "question": "What is a supermesh?",
+    "answer": "A supermesh occurs when a current source lies between two adjacent meshes. KVL is written around the outer boundary and an additional current constraint is used."
   },
   {
-    "id": 580,
-    "question": "What is fault current limited by in a power system?",
-    "answer": "It is primarily limited by the equivalent impedance between the source and fault location. Lower system impedance produces higher short-circuit current."
+    "id": 40,
+    "question": "Why is the ideal voltage source's internal resistance zero?",
+    "answer": "It must maintain its specified voltage regardless of load current. Zero internal resistance gives theoretically no internal voltage drop."
   },
   {
-    "id": 581,
-    "question": "Why are current transformers used for protection and measurement?",
-    "answer": "CTs convert large primary currents into smaller standardized secondary currents. This allows meters and relays to operate safely while remaining electrically isolated from the high-current circuit."
+    "id": 41,
+    "question": "Why is an ideal current source's internal resistance infinite?",
+    "answer": "It must maintain constant current regardless of terminal voltage. Infinite resistance prevents current from bypassing through the source's internal path."
   },
   {
-    "id": 582,
-    "question": "Why must a CT secondary not be open-circuited during operation?",
-    "answer": "An open secondary removes the opposing secondary MMF, allowing core flux and induced secondary voltage to rise dangerously. This can damage insulation and endanger personnel."
+    "id": 42,
+    "question": "What is source transformation?",
+    "answer": "A voltage source V in series with R can be transformed into current source I = V/R in parallel with the same R, without changing terminal behavior."
   },
   {
-    "id": 583,
-    "question": "Why are potential transformers or voltage transformers used?",
-    "answer": "They step down high system voltage to safe, standardized values for metering and protection. They also provide electrical isolation from the high-voltage circuit."
+    "id": 43,
+    "question": "What is the physical meaning of circuit impedance at high frequency?",
+    "answer": "Reactive elements dominate because their impedance depends on frequency. Capacitors increasingly behave like low impedance paths, while inductors increasingly oppose current."
   },
   {
-    "id": 584,
-    "question": "What is a protection relay?",
-    "answer": "A relay detects abnormal electrical conditions such as overcurrent, earth fault, or differential current. It commands the circuit breaker to isolate the affected section."
+    "id": 44,
+    "question": "Why are parasitic capacitances important in high-speed circuits?",
+    "answer": "They introduce unintended current paths and increase charging/discharging time. At high frequency, even tiny capacitances can significantly affect circuit behavior."
   },
   {
-    "id": 585,
-    "question": "Why should power-system protection be selective?",
-    "answer": "Only the smallest necessary section should be disconnected during a fault. Selectivity maintains maximum service continuity in healthy parts of the network."
+    "id": 45,
+    "question": "Why does grounding matter in electrical systems?",
+    "answer": "Ground provides a defined reference and, in safety systems, a low-impedance fault-current path. Proper grounding helps prevent dangerous touch voltages and equipment damage."
   },
   {
-    "id": 586,
-    "question": "Why is relay operating time important?",
-    "answer": "Faster fault clearance reduces equipment damage, voltage depression, and stability problems. However, protection must still coordinate correctly with downstream devices."
+    "id": 46,
+    "question": "Why does current decrease when transmission voltage increases for the same power?",
+    "answer": "Because P = VI, so for constant power: I = P/V. Higher voltage directly means lower current."
   },
   {
-    "id": 587,
-    "question": "What is the basic purpose of overcurrent protection?",
-    "answer": "It detects current exceeding a predefined level and isolates the circuit after the required operating delay. It protects against overloads and short circuits depending on its settings."
+    "id": 47,
+    "question": "Why does low power factor increase transmission losses?",
+    "answer": "For fixed real power, I = P/(V cos(phi)). Lower PF increases current, and losses increase as I^2R."
   },
   {
-    "id": 588,
-    "question": "Why is differential protection highly selective?",
-    "answer": "It compares currents entering and leaving the protected zone. A significant difference indicates an internal fault, while external faults ideally produce nearly balanced currents."
+    "id": 48,
+    "question": "Why does a capacitor pass AC but block DC at steady state?",
+    "answer": "Its reactance is X_C = 1/(2 pi f C). At DC, f = 0, so ideal X_C approaches infinity; increasing frequency lowers its impedance."
   },
   {
-    "id": 589,
-    "question": "Why is transformer differential protection affected by magnetizing inrush?",
-    "answer": "Inrush current appears mainly on one side and can create a differential current even without an internal fault. Harmonic restraint is therefore commonly used to prevent false tripping."
+    "id": 49,
+    "question": "Why does an inductor oppose AC more strongly at higher frequency?",
+    "answer": "Its reactance is X_L = 2 pi f L. Therefore increasing frequency directly increases opposition to current."
   },
   {
-    "id": 590,
-    "question": "Why is earth-fault protection necessary even when phase overcurrent protection exists?",
-    "answer": "Ground faults can produce currents that are lower than phase-fault currents but still dangerous. Dedicated earth-fault elements provide greater sensitivity to these conditions."
+    "id": 50,
+    "question": "Why is RMS used for AC power calculations?",
+    "answer": "RMS converts an AC waveform into its equivalent DC heating value. Thus P = V_RMS I_RMS cos(phi) gives real power for sinusoidal systems."
   },
   {
-    "id": 591,
-    "question": "Why is power-system frequency an important indicator of generation-load balance?",
-    "answer": "If generation is lower than demand, generator speed and system frequency tend to fall. If generation exceeds demand, frequency tends to rise."
+    "id": 51,
+    "question": "Why does a transformer need changing flux rather than merely magnetic flux?",
+    "answer": "Faraday's law requires e = -N(dPhi/dt). Constant flux produces zero induced EMF."
   },
   {
-    "id": 592,
-    "question": "Why does a sudden increase in load initially reduce grid frequency?",
-    "answer": "Electrical demand immediately exceeds mechanical input from generators. Stored rotational kinetic energy supplies the deficit, causing generator speed and frequency to decrease."
+    "id": 52,
+    "question": "Why does a capacitor store electrical energy?",
+    "answer": "Separating charge creates an electric field between its plates. Stored energy is W = (1/2)CV^2."
   },
   {
-    "id": 593,
-    "question": "How does a governor help maintain grid frequency?",
-    "answer": "The governor senses speed or frequency changes and adjusts prime-mover input. Increasing mechanical input during under-frequency conditions helps restore the generation-load balance."
+    "id": 53,
+    "question": "Why does an inductor store magnetic energy?",
+    "answer": "Current creates a magnetic field around the winding. Stored energy is W = (1/2)LI^2."
   },
   {
-    "id": 594,
-    "question": "Why is excitation primarily associated with voltage and reactive-power control?",
-    "answer": "Changing field excitation changes the internal generated EMF of synchronous machines. This strongly affects reactive-power exchange and terminal voltage rather than directly controlling real power."
+    "id": 54,
+    "question": "Why does a resistor have no energy-storage capability ideally?",
+    "answer": "It has no state variable like capacitor voltage or inductor current. Electrical energy entering it is immediately dissipated as heat."
   },
   {
-    "id": 595,
-    "question": "Why does increasing prime-mover input mainly change real power in a synchronized generator?",
-    "answer": "With grid frequency fixed, additional mechanical torque increases the rotor power angle. The generator therefore exports more real power while remaining synchronized."
+    "id": 55,
+    "question": "Why is KCL valid at every ideal circuit node?",
+    "answer": "Because charge conservation prevents net accumulation of charge at a node under normal lumped-circuit assumptions."
   },
   {
-    "id": 596,
-    "question": "Why must a circuit breaker have an adequate interrupting rating?",
-    "answer": "During a fault, the breaker must safely interrupt the maximum prospective current without excessive arcing or mechanical failure. Its rating must exceed the expected fault duty."
+    "id": 56,
+    "question": "Why is KVL valid around a closed lumped circuit?",
+    "answer": "Because the net energy gained and lost by a charge completing the closed path must be zero."
   },
   {
-    "id": 597,
-    "question": "Why is arc extinction important when opening a high-voltage circuit breaker?",
-    "answer": "The arc can continue conducting after contacts separate. The breaker must rapidly restore dielectric strength so the arc does not re-establish across the contacts."
+    "id": 57,
+    "question": "Why is maximum power transferred when R_L = R_th?",
+    "answer": "Increasing R_L reduces current, while decreasing it causes excessive internal dissipation. Differentiating load power gives the optimum at R_L = R_th."
   },
   {
-    "id": 598,
-    "question": "Why are circuit breakers coordinated with protection relays?",
-    "answer": "The relay detects the fault and issues the trip command, while the breaker physically interrupts the current. Proper coordination ensures fast and selective isolation."
+    "id": 58,
+    "question": "Why does series resonance produce minimum impedance?",
+    "answer": "At resonance X_L = X_C, so the reactive terms cancel. The remaining impedance is only R."
   },
   {
-    "id": 599,
-    "question": "Why is system grounding important for fault protection?",
-    "answer": "Grounding establishes a controlled reference and provides a path for earth-fault current. It enables protective devices to detect faults and helps limit dangerous touch voltages."
+    "id": 59,
+    "question": "Why does parallel resonance behave differently from series resonance?",
+    "answer": "In parallel resonance, reactive branch currents largely cancel each other at the input. Consequently, source current becomes minimum while impedance becomes maximum."
   },
   {
-    "id": 600,
-    "question": "Why is protection coordination essential in a multi-level power network?",
-    "answer": "Protection settings must operate from the fault location outward, allowing the nearest device to clear the fault first. This minimizes unnecessary outages and preserves system stability."
+    "id": 60,
+    "question": "Why are linearity and superposition important in circuit analysis?",
+    "answer": "Linearity allows individual source effects to be calculated independently and then summed. This dramatically simplifies complex multi-source networks."
   }
 ]
