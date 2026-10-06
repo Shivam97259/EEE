@@ -1,0 +1,2703 @@
+[
+  {
+    "id": 1,
+    "question": "Why is electrical power transmitted at high voltage?",
+    "answer": "For the same power, higher voltage means lower current. Since copper loss is I^2R, reducing current drastically reduces transmission losses and conductor size."
+  },
+  {
+    "id": 2,
+    "question": "Why is AC preferred over DC for conventional power transmission?",
+    "answer": "AC voltage can be easily stepped up/down using transformers. This enables high-voltage, low-current transmission and efficient distribution."
+  },
+  {
+    "id": 3,
+    "question": "What is the physical meaning of RMS voltage?",
+    "answer": "RMS is the equivalent DC voltage that produces the same heating effect in a resistor. For a sinusoid, V_RMS = V_m/sqrt(2)."
+  },
+  {
+    "id": 4,
+    "question": "Why does a transformer require AC?",
+    "answer": "Transformer action requires changing magnetic flux. AC continuously changes flux, whereas steady DC produces nearly constant flux after the transient."
+  },
+  {
+    "id": 5,
+    "question": "Why does a transformer not work properly on DC?",
+    "answer": "DC produces nearly constant flux, causing the core to saturate and the primary current to become dangerously high because there is no back EMF after the transient."
+  },
+  {
+    "id": 6,
+    "question": "What is power factor and why is it important?",
+    "answer": "Power factor is P/S = cos(phi). Low PF increases current for the same real power, causing higher I^2R losses and voltage drop."
+  },
+  {
+    "id": 7,
+    "question": "Why are inductors called energy-storage elements?",
+    "answer": "An inductor stores energy in its magnetic field: W = (1/2)LI^2. It opposes sudden changes in current."
+  },
+  {
+    "id": 8,
+    "question": "Why does an inductor oppose sudden current change?",
+    "answer": "Because V = L(di/dt). A rapid current change requires a large voltage, so the inductor naturally resists instantaneous current variation."
+  },
+  {
+    "id": 9,
+    "question": "Why does a capacitor oppose sudden voltage change?",
+    "answer": "Because I = C(dv/dt). Instantaneously changing capacitor voltage would require infinite current theoretically."
+  },
+  {
+    "id": 10,
+    "question": "What happens to an ideal capacitor at DC steady state?",
+    "answer": "It behaves as an open circuit because dv/dt = 0, therefore i = C(dv/dt) = 0."
+  },
+  {
+    "id": 11,
+    "question": "What happens to an ideal inductor at DC steady state?",
+    "answer": "It behaves as a short circuit because steady-state current is constant and di/dt = 0."
+  },
+  {
+    "id": 12,
+    "question": "Why is Kirchhoff's Current Law based on conservation of charge?",
+    "answer": "Charge cannot accumulate indefinitely at an ideal node. Therefore, total current entering a node must equal total current leaving it."
+  },
+  {
+    "id": 13,
+    "question": "Why is Kirchhoff's Voltage Law based on conservation of energy?",
+    "answer": "Around a closed loop, the algebraic sum of voltage rises and drops must be zero because a charge must return with the same energy."
+  },
+  {
+    "id": 14,
+    "question": "What is the practical meaning of Thevenin's theorem?",
+    "answer": "Any linear two-terminal network can be replaced by one voltage source V_th in series with R_th. It greatly simplifies load analysis."
+  },
+  {
+    "id": 15,
+    "question": "How do you find R_th?",
+    "answer": "Deactivate independent sources: voltage sources become shorts and current sources become opens. Then calculate resistance seen from the load terminals."
+  },
+  {
+    "id": 16,
+    "question": "Why can't dependent sources simply be turned off while finding R_th?",
+    "answer": "Their values depend on circuit variables, so they remain active. A test voltage/current source is generally used to determine the equivalent resistance."
+  },
+  {
+    "id": 17,
+    "question": "What is Norton's equivalent circuit?",
+    "answer": "A linear two-terminal network can be represented by a current source I_N parallel with R_N. It is mathematically equivalent to Thevenin's model."
+  },
+  {
+    "id": 18,
+    "question": "What is the relation between Thevenin and Norton equivalents?",
+    "answer": "V_th = I_N R_th and R_th = R_N. They represent the same external terminal behavior."
+  },
+  {
+    "id": 19,
+    "question": "What is maximum power transfer condition in a resistive DC circuit?",
+    "answer": "Maximum load power occurs when R_L = R_th. At this point, load receives maximum power but efficiency is only 50%."
+  },
+  {
+    "id": 20,
+    "question": "Why isn't maximum power transfer the same as maximum efficiency?",
+    "answer": "At R_L = R_th, equal power is dissipated internally and in the load. Maximum efficiency requires minimizing internal resistance relative to load."
+  },
+  {
+    "id": 21,
+    "question": "What is impedance?",
+    "answer": "Impedance is the total opposition to AC current: Z = R + jX. It includes both resistive and reactive effects."
+  },
+  {
+    "id": 22,
+    "question": "Why does resistance consume real power while ideal reactance does not?",
+    "answer": "Resistance converts electrical energy into heat. Ideal inductors and capacitors only exchange energy with the source and return it during another part of the cycle."
+  },
+  {
+    "id": 23,
+    "question": "Why does an inductor have positive reactance?",
+    "answer": "X_L = omega L, and current lags voltage by 90 degrees. Increasing frequency therefore increases inductive opposition."
+  },
+  {
+    "id": 24,
+    "question": "Why does capacitor reactance decrease with frequency?",
+    "answer": "X_C = 1/(omega C). So higher frequency produces lower impedance, allowing AC current to pass more easily."
+  },
+  {
+    "id": 25,
+    "question": "What is resonance in an RLC circuit?",
+    "answer": "Resonance occurs when inductive and capacitive reactances cancel: X_L = X_C. The net reactive component becomes zero."
+  },
+  {
+    "id": 26,
+    "question": "Why is power factor unity at series resonance?",
+    "answer": "At resonance, X_L - X_C = 0, so impedance becomes purely resistive. Therefore voltage and current are in phase."
+  },
+  {
+    "id": 27,
+    "question": "What is the significance of the quality factor Q?",
+    "answer": "Q indicates how selective/sharp a resonant circuit is. Higher Q generally means narrower bandwidth and stronger resonance."
+  },
+  {
+    "id": 28,
+    "question": "What is bandwidth of a resonant circuit?",
+    "answer": "Bandwidth is the difference between upper and lower half-power frequencies: BW = f_2 - f_1. For a series RLC, Q = f_0/BW."
+  },
+  {
+    "id": 29,
+    "question": "Why is a circuit's time constant important?",
+    "answer": "It determines how quickly energy storage elements respond to changes. For RC, tau = RC; for RL, tau = L/R."
+  },
+  {
+    "id": 30,
+    "question": "What happens to an RC charging capacitor after one time constant?",
+    "answer": "The capacitor reaches approximately 63.2% of its final voltage. This is a standard first-order transient characteristic."
+  },
+  {
+    "id": 31,
+    "question": "What happens after approximately five time constants?",
+    "answer": "The response reaches about 99.3% of its final value, so it is generally treated as practically settled."
+  },
+  {
+    "id": 32,
+    "question": "Why can't capacitor voltage change instantaneously?",
+    "answer": "That would require theoretically infinite current according to i = C(dv/dt). Physical circuits have finite current, so voltage changes continuously."
+  },
+  {
+    "id": 33,
+    "question": "Why can't inductor current change instantaneously?",
+    "answer": "An instantaneous current change requires theoretically infinite voltage according to v = L(di/dt). Practical circuits cannot provide this."
+  },
+  {
+    "id": 34,
+    "question": "What is superposition theorem?",
+    "answer": "In a linear circuit containing multiple independent sources, the total response equals the sum of responses produced by each source acting individually."
+  },
+  {
+    "id": 35,
+    "question": "Why does superposition not directly apply to power?",
+    "answer": "Power depends nonlinearly on voltage/current, such as P = V^2/R. Therefore individual powers cannot simply be algebraically added."
+  },
+  {
+    "id": 36,
+    "question": "What is mesh analysis based on?",
+    "answer": "It applies KVL to independent loops and uses mesh currents as unknowns. It is especially efficient for planar circuits."
+  },
+  {
+    "id": 37,
+    "question": "What is nodal analysis based on?",
+    "answer": "It applies KCL at circuit nodes and uses node voltages as unknowns. It is often efficient when the circuit has fewer essential nodes than meshes."
+  },
+  {
+    "id": 38,
+    "question": "What is a supernode?",
+    "answer": "A supernode is formed when a voltage source exists between two non-reference nodes. KCL is applied around the combined boundary plus an additional voltage constraint."
+  },
+  {
+    "id": 39,
+    "question": "What is a supermesh?",
+    "answer": "A supermesh occurs when a current source lies between two adjacent meshes. KVL is written around the outer boundary and an additional current constraint is used."
+  },
+  {
+    "id": 40,
+    "question": "Why is the ideal voltage source's internal resistance zero?",
+    "answer": "It must maintain its specified voltage regardless of load current. Zero internal resistance gives theoretically no internal voltage drop."
+  },
+  {
+    "id": 41,
+    "question": "Why is an ideal current source's internal resistance infinite?",
+    "answer": "It must maintain constant current regardless of terminal voltage. Infinite resistance prevents current from bypassing through the source's internal path."
+  },
+  {
+    "id": 42,
+    "question": "What is source transformation?",
+    "answer": "A voltage source V in series with R can be transformed into current source I = V/R in parallel with the same R, without changing terminal behavior."
+  },
+  {
+    "id": 43,
+    "question": "What is the physical meaning of circuit impedance at high frequency?",
+    "answer": "Reactive elements dominate because their impedance depends on frequency. Capacitors increasingly behave like low impedance paths, while inductors increasingly oppose current."
+  },
+  {
+    "id": 44,
+    "question": "Why are parasitic capacitances important in high-speed circuits?",
+    "answer": "They introduce unintended current paths and increase charging/discharging time. At high frequency, even tiny capacitances can significantly affect circuit behavior."
+  },
+  {
+    "id": 45,
+    "question": "Why does grounding matter in electrical systems?",
+    "answer": "Ground provides a defined reference and, in safety systems, a low-impedance fault-current path. Proper grounding helps prevent dangerous touch voltages and equipment damage."
+  },
+  {
+    "id": 46,
+    "question": "Why does current decrease when transmission voltage increases for the same power?",
+    "answer": "Because P = VI, so for constant power: I = P/V. Higher voltage directly means lower current."
+  },
+  {
+    "id": 47,
+    "question": "Why does low power factor increase transmission losses?",
+    "answer": "For fixed real power, I = P/(V cos(phi)). Lower PF increases current, and losses increase as I^2R."
+  },
+  {
+    "id": 48,
+    "question": "Why does a capacitor pass AC but block DC at steady state?",
+    "answer": "Its reactance is X_C = 1/(2 pi f C). At DC, f = 0, so ideal X_C approaches infinity; increasing frequency lowers its impedance."
+  },
+  {
+    "id": 49,
+    "question": "Why does an inductor oppose AC more strongly at higher frequency?",
+    "answer": "Its reactance is X_L = 2 pi f L. Therefore increasing frequency directly increases opposition to current."
+  },
+  {
+    "id": 50,
+    "question": "Why is RMS used for AC power calculations?",
+    "answer": "RMS converts an AC waveform into its equivalent DC heating value. Thus P = V_RMS I_RMS cos(phi) gives real power for sinusoidal systems."
+  },
+  {
+    "id": 51,
+    "question": "Why does a transformer need changing flux rather than merely magnetic flux?",
+    "answer": "Faraday's law requires e = -N(dPhi/dt). Constant flux produces zero induced EMF."
+  },
+  {
+    "id": 52,
+    "question": "Why does a capacitor store electrical energy?",
+    "answer": "Separating charge creates an electric field between its plates. Stored energy is W = (1/2)CV^2."
+  },
+  {
+    "id": 53,
+    "question": "Why does an inductor store magnetic energy?",
+    "answer": "Current creates a magnetic field around the winding. Stored energy is W = (1/2)LI^2."
+  },
+  {
+    "id": 54,
+    "question": "Why does a resistor have no energy-storage capability ideally?",
+    "answer": "It has no state variable like capacitor voltage or inductor current. Electrical energy entering it is immediately dissipated as heat."
+  },
+  {
+    "id": 55,
+    "question": "Why is KCL valid at every ideal circuit node?",
+    "answer": "Because charge conservation prevents net accumulation of charge at a node under normal lumped-circuit assumptions."
+  },
+  {
+    "id": 56,
+    "question": "Why is KVL valid around a closed lumped circuit?",
+    "answer": "Because the net energy gained and lost by a charge completing the closed path must be zero."
+  },
+  {
+    "id": 57,
+    "question": "Why is maximum power transferred when R_L = R_th?",
+    "answer": "Increasing R_L reduces current, while decreasing it causes excessive internal dissipation. Differentiating load power gives the optimum at R_L = R_th."
+  },
+  {
+    "id": 58,
+    "question": "Why does series resonance produce minimum impedance?",
+    "answer": "At resonance X_L = X_C, so the reactive terms cancel. The remaining impedance is only R."
+  },
+  {
+    "id": 59,
+    "question": "Why does parallel resonance behave differently from series resonance?",
+    "answer": "In parallel resonance, reactive branch currents largely cancel each other at the input. Consequently, source current becomes minimum while impedance becomes maximum."
+  },
+  {
+    "id": 60,
+    "question": "Why are linearity and superposition important in circuit analysis?",
+    "answer": "Linearity allows individual source effects to be calculated independently and then summed. This dramatically simplifies complex multi-source networks."
+  },
+  {
+    "id": 61,
+    "question": "Why do we represent sinusoidal AC quantities using phasors?",
+    "answer": "A sinusoid's magnitude and phase can be represented as a complex number, converting differential equations into simple algebraic operations."
+  },
+  {
+    "id": 62,
+    "question": "What information does a phasor contain?",
+    "answer": "It contains the magnitude and phase of a sinusoidal quantity at a particular frequency. The common time-dependent e^(jωt) term is omitted."
+  },
+  {
+    "id": 63,
+    "question": "Why can't phasors directly represent arbitrary waveforms?",
+    "answer": "Phasor analysis assumes sinusoidal steady-state operation at a single frequency. Non-sinusoidal signals require Fourier/harmonic analysis."
+  },
+  {
+    "id": 64,
+    "question": "Why does current lag voltage in an inductor?",
+    "answer": "For an inductor, v = L(di/dt). Current must change to create voltage, producing a 90° lag of current behind voltage."
+  },
+  {
+    "id": 65,
+    "question": "Why does current lead voltage in a capacitor?",
+    "answer": "From i = C(dv/dt), current responds to the rate of voltage change, resulting in current leading voltage by 90°."
+  },
+  {
+    "id": 66,
+    "question": "What is the physical meaning of reactive power?",
+    "answer": "Reactive power represents energy that oscillates between the source and inductive/capacitive fields rather than being permanently consumed."
+  },
+  {
+    "id": 67,
+    "question": "Why is reactive power measured in VAR instead of watts?",
+    "answer": "It does not represent net energy consumption. VAR distinguishes energy-storage exchange from real power consumed in resistance."
+  },
+  {
+    "id": 68,
+    "question": "What is apparent power?",
+    "answer": "S = V_RMS I_RMS. It represents the total electrical loading seen by equipment and is measured in VA."
+  },
+  {
+    "id": 69,
+    "question": "What is the power triangle?",
+    "answer": "It relates real power P, reactive power Q, and apparent power S: S² = P² + Q²."
+  },
+  {
+    "id": 70,
+    "question": "Why is power factor equal to P/S?",
+    "answer": "Only the in-phase component of current produces real power. Therefore PF = P/S = cos(φ)."
+  },
+  {
+    "id": 71,
+    "question": "Why do inductive loads consume lagging reactive power?",
+    "answer": "Inductors require magnetic-field energy and cause current to lag voltage. This corresponds to positive reactive power in the conventional sign convention."
+  },
+  {
+    "id": 72,
+    "question": "Why do capacitors supply leading reactive power?",
+    "answer": "A capacitor stores and releases electric-field energy while current leads voltage, producing negative reactive power under the usual convention."
+  },
+  {
+    "id": 73,
+    "question": "Why are capacitors used for power-factor correction?",
+    "answer": "They supply leading reactive current that offsets the lagging current of inductive loads, reducing the source current required for the same real power."
+  },
+  {
+    "id": 74,
+    "question": "What happens to line current after power-factor correction?",
+    "answer": "For the same real power and voltage, improved PF reduces current: I = P/(V cos(φ)). Therefore conductor and I²R losses decrease."
+  },
+  {
+    "id": 75,
+    "question": "Why doesn't a capacitor change the real power consumed by an ideal inductive load?",
+    "answer": "The capacitor mainly supplies reactive power. The real power requirement of the load remains essentially unchanged."
+  },
+  {
+    "id": 76,
+    "question": "Why is three-phase power preferred in industrial systems?",
+    "answer": "Three-phase systems provide nearly constant instantaneous power and require less conductor material for the same transmitted power compared with equivalent single-phase systems."
+  },
+  {
+    "id": 77,
+    "question": "Why are three phase voltages separated by 120°?",
+    "answer": "A balanced three-phase system distributes three equal-magnitude sinusoids uniformly around 360°, giving 120° separation."
+  },
+  {
+    "id": 78,
+    "question": "What is the main advantage of a balanced three-phase system?",
+    "answer": "The sum of the three instantaneous phase currents is zero, allowing efficient power transmission and eliminating neutral current under ideal balance."
+  },
+  {
+    "id": 79,
+    "question": "What is the relation between line and phase voltage in a star connection?",
+    "answer": "For a balanced star system: V_L = √3 V_ph. Line voltage is 30° shifted relative to the corresponding phase voltage."
+  },
+  {
+    "id": 80,
+    "question": "What is the relation between line and phase current in star connection?",
+    "answer": "I_L = I_ph because each line directly carries the current of its corresponding phase."
+  },
+  {
+    "id": 81,
+    "question": "What is the relation between line and phase voltage in delta connection?",
+    "answer": "V_L = V_ph because each phase winding is directly connected across two line conductors."
+  },
+  {
+    "id": 82,
+    "question": "What is the relation between line and phase current in delta connection?",
+    "answer": "For a balanced delta: I_L = √3 I_ph. The line current is the phasor difference of two phase currents."
+  },
+  {
+    "id": 83,
+    "question": "What is the three-phase real-power equation?",
+    "answer": "P = √3 V_L I_L cos(φ). It directly gives total real power for a balanced three-phase load."
+  },
+  {
+    "id": 84,
+    "question": "Why is a neutral current zero in a perfectly balanced three-phase system?",
+    "answer": "The three equal currents are 120° apart, so their vector sum is zero."
+  },
+  {
+    "id": 85,
+    "question": "What happens to neutral current when the three-phase load becomes unbalanced?",
+    "answer": "The phase currents no longer cancel, so their vector sum flows through the neutral conductor."
+  },
+  {
+    "id": 86,
+    "question": "Why is phase sequence important in three-phase systems?",
+    "answer": "Changing phase sequence reverses the rotating magnetic-field direction of three-phase motors, potentially reversing motor rotation."
+  },
+  {
+    "id": 87,
+    "question": "How can phase sequence be changed?",
+    "answer": "Interchange any two phases. This changes the order of phase voltages and reverses the rotating magnetic field."
+  },
+  {
+    "id": 88,
+    "question": "What is magnetomotive force (MMF)?",
+    "answer": "MMF is the driving force that establishes magnetic flux: F = NI. It is analogous to EMF in an electrical circuit."
+  },
+  {
+    "id": 89,
+    "question": "What is magnetic reluctance?",
+    "answer": "Reluctance opposes magnetic flux: ℛ = l/(μA). Higher reluctance means less flux for the same MMF."
+  },
+  {
+    "id": 90,
+    "question": "What is the magnetic equivalent of Ohm's law?",
+    "answer": "Φ = NI/ℛ. This is analogous to I = V/R in an electrical circuit."
+  },
+  {
+    "id": 91,
+    "question": "Why does an air gap increase magnetic reluctance significantly?",
+    "answer": "Air has much lower permeability than ferromagnetic material. Therefore even a small air gap can dominate the total magnetic reluctance."
+  },
+  {
+    "id": 92,
+    "question": "Why are air gaps deliberately introduced in some magnetic circuits?",
+    "answer": "They can control inductance, prevent excessive saturation, and store significant magnetic energy, especially in inductors and electric machines."
+  },
+  {
+    "id": 93,
+    "question": "What is magnetic flux density?",
+    "answer": "B = Φ/A. It indicates how much magnetic flux passes through a unit area and is measured in tesla."
+  },
+  {
+    "id": 94,
+    "question": "What is magnetic field intensity H?",
+    "answer": "H = NI/l. It represents the magnetizing force applied to the magnetic material and is measured in A/m."
+  },
+  {
+    "id": 95,
+    "question": "What is the relation between B and H?",
+    "answer": "For a linear magnetic material: B = μH, where μ is permeability."
+  },
+  {
+    "id": 96,
+    "question": "Why does a ferromagnetic core eventually saturate?",
+    "answer": "Magnetic domains become increasingly aligned as H increases. Beyond a point, most domains are aligned, so further H produces only a small increase in B."
+  },
+  {
+    "id": 97,
+    "question": "Why is saturation undesirable in transformers?",
+    "answer": "Saturation drastically reduces effective inductance and causes very high magnetizing current, increasing heating and waveform distortion."
+  },
+  {
+    "id": 98,
+    "question": "What is magnetic hysteresis?",
+    "answer": "It is the lag of magnetic flux density B behind magnetizing force H during cyclic magnetization, causing energy loss in the core."
+  },
+  {
+    "id": 99,
+    "question": "Why are transformer cores laminated?",
+    "answer": "Lamination electrically isolates thin sheets, increasing resistance to circulating eddy currents and reducing core losses."
+  },
+  {
+    "id": 100,
+    "question": "What are eddy-current losses?",
+    "answer": "Changing magnetic flux induces circulating currents inside conductive cores. These currents dissipate energy as I²R heating."
+  },
+  {
+    "id": 101,
+    "question": "How can eddy-current loss be reduced?",
+    "answer": "Use thin insulated laminations or high-resistivity magnetic materials such as ferrites at high frequencies."
+  },
+  {
+    "id": 102,
+    "question": "What is hysteresis loss mainly dependent on?",
+    "answer": "It depends on the material's hysteresis characteristics, operating frequency, and maximum flux density. Better magnetic materials have narrower hysteresis loops."
+  },
+  {
+    "id": 103,
+    "question": "Why are ferrites used at high frequencies?",
+    "answer": "Ferrites have high electrical resistivity, strongly suppressing eddy currents while maintaining useful magnetic permeability."
+  },
+  {
+    "id": 104,
+    "question": "What is leakage flux?",
+    "answer": "Leakage flux is magnetic flux produced by a winding that does not link all relevant windings. It contributes to leakage inductance and voltage drop."
+  },
+  {
+    "id": 105,
+    "question": "Why is magnetic coupling important between transformer windings?",
+    "answer": "Strong coupling ensures that most flux produced by one winding links the other, enabling efficient transfer of electrical energy through the magnetic field."
+  },
+  {
+    "id": 106,
+    "question": "Why is electrical transmission performed at high voltage?",
+    "answer": "For constant power, increasing voltage decreases current. Since transmission loss is I²R, high voltage significantly reduces losses."
+  },
+  {
+    "id": 107,
+    "question": "Why does an ideal capacitor block DC at steady state?",
+    "answer": "At steady DC, dv/dt = 0, so i = C(dv/dt) = 0. Thus the capacitor behaves as an open circuit."
+  },
+  {
+    "id": 108,
+    "question": "Why does an ideal inductor behave like a short circuit at DC steady state?",
+    "answer": "For constant current, di/dt = 0, so v = L(di/dt) = 0. Hence its ideal steady-state voltage drop is zero."
+  },
+  {
+    "id": 109,
+    "question": "Why can't capacitor voltage change instantaneously?",
+    "answer": "An instantaneous voltage change requires theoretically infinite current because i = C(dv/dt)."
+  },
+  {
+    "id": 110,
+    "question": "Why can't inductor current change instantaneously?",
+    "answer": "An instantaneous current change requires theoretically infinite voltage because v = L(di/dt)."
+  },
+  {
+    "id": 111,
+    "question": "Why is superposition applicable only to linear circuits?",
+    "answer": "Linearity requires proportionality and additivity. Nonlinear elements such as saturated magnetic cores violate these conditions."
+  },
+  {
+    "id": 112,
+    "question": "Why can't superposition be directly applied to power?",
+    "answer": "Power depends quadratically on voltage/current, e.g. P = I²R, so power is not a linear response variable."
+  },
+  {
+    "id": 113,
+    "question": "What happens at series resonance?",
+    "answer": "X_L = X_C, so reactive components cancel and impedance becomes minimum. Consequently, current reaches its maximum value."
+  },
+  {
+    "id": 114,
+    "question": "What happens at parallel resonance?",
+    "answer": "The reactive branch currents cancel at the input, making input impedance maximum and source current minimum."
+  },
+  {
+    "id": 115,
+    "question": "Why is power factor unity at resonance?",
+    "answer": "The net reactive impedance is zero, leaving a purely resistive circuit. Therefore voltage and current are in phase."
+  },
+  {
+    "id": 116,
+    "question": "Why does low power factor increase current?",
+    "answer": "For fixed real power: I = P/(V cos(φ)). Lower cos(φ) therefore requires higher current."
+  },
+  {
+    "id": 117,
+    "question": "Why is R_L = R_th the maximum-power condition?",
+    "answer": "The load receives maximum power when the load resistance matches the source's Thevenin resistance, balancing current and load voltage optimally."
+  },
+  {
+    "id": 118,
+    "question": "Why does an RC circuit reach about 63.2% after one time constant?",
+    "answer": "Its charging response is exponential: V_C = V_f(1 - e^(-t/RC)). At t = RC, 1 - e^(-1) ≈ 0.632."
+  },
+  {
+    "id": 119,
+    "question": "Why does a capacitor store energy but a resistor does not?",
+    "answer": "A capacitor stores energy in an electric field, W = (1/2)CV². An ideal resistor continuously converts electrical energy into heat."
+  },
+  {
+    "id": 120,
+    "question": "Why does an inductor store energy?",
+    "answer": "Current establishes a magnetic field around the winding, storing W = (1/2)LI². The energy can later be returned to the circuit."
+  },
+  {
+    "id": 121,
+    "question": "What is the basic operating principle of a transformer?",
+    "answer": "A transformer works on mutual electromagnetic induction: AC in the primary creates changing flux, which induces EMF in the secondary."
+  },
+  {
+    "id": 122,
+    "question": "Why does a transformer transfer power without electrical connection between windings?",
+    "answer": "Energy is transferred through the alternating magnetic field linking the windings. This provides electrical isolation while maintaining electromagnetic coupling."
+  },
+  {
+    "id": 123,
+    "question": "Why is transformer action impossible with steady DC?",
+    "answer": "Induced EMF requires changing flux: E = -N(dΦ/dt). Steady DC produces no sustained changing flux."
+  },
+  {
+    "id": 124,
+    "question": "What is the transformer EMF equation?",
+    "answer": "For sinusoidal flux: E = 4.44fNΦ_m. Thus induced EMF depends directly on frequency, turns, and maximum flux."
+  },
+  {
+    "id": 125,
+    "question": "Why does increasing transformer frequency reduce the required core flux for a given voltage?",
+    "answer": "From E = 4.44fNΦ_m, for fixed E, increasing f decreases Φ_m. This reduces the risk of core saturation."
+  },
+  {
+    "id": 126,
+    "question": "Why does a transformer core saturate if voltage is increased excessively?",
+    "answer": "Since Φ_m ∝ V/(fN), excessive voltage increases flux density beyond the core's usable region, causing saturation and high magnetizing current."
+  },
+  {
+    "id": 127,
+    "question": "Why is transformer rating specified in kVA instead of kW?",
+    "answer": "Transformer heating depends mainly on voltage and current, not load power factor. Therefore its thermal capacity is determined by VA/kVA."
+  },
+  {
+    "id": 128,
+    "question": "Why does transformer frequency matter even though it doesn't directly appear in the kVA rating?",
+    "answer": "Frequency affects core flux: Φ_m ∝ V/f. Lower frequency at the same voltage can cause excessive flux and saturation."
+  },
+  {
+    "id": 129,
+    "question": "What determines the transformation ratio?",
+    "answer": "For an ideal transformer: V_1/V_2 = N_1/N_2. Voltage ratio is therefore controlled primarily by turns ratio."
+  },
+  {
+    "id": 130,
+    "question": "What happens to current when transformer voltage is stepped up?",
+    "answer": "Ideally power is conserved: V_1I_1 ≈ V_2I_2. Therefore increasing voltage causes a corresponding decrease in current."
+  },
+  {
+    "id": 131,
+    "question": "Why is transformer steel laminated?",
+    "answer": "Laminations interrupt circulating eddy-current paths inside the core. This significantly reduces I²R core heating."
+  },
+  {
+    "id": 132,
+    "question": "Why are silicon steels commonly used in transformer cores?",
+    "answer": "They provide high permeability and relatively low hysteresis loss while having sufficiently high electrical resistivity to reduce eddy currents."
+  },
+  {
+    "id": 133,
+    "question": "What is the purpose of transformer insulation?",
+    "answer": "It electrically separates turns, windings, and core while withstanding operating voltage and temperature. Insulation failure can cause short circuits or breakdown."
+  },
+  {
+    "id": 134,
+    "question": "What is the function of transformer oil in an oil-filled transformer?",
+    "answer": "Oil provides electrical insulation and heat transfer. It carries heat from windings/core toward the tank and cooling system."
+  },
+  {
+    "id": 135,
+    "question": "Why is transformer cooling necessary?",
+    "answer": "Copper and core losses generate heat. Excessive temperature accelerates insulation ageing and reduces transformer life."
+  },
+  {
+    "id": 136,
+    "question": "What is magnetizing current?",
+    "answer": "It is the current required to establish magnetic flux in the transformer core. Even at no load, the primary draws this small current."
+  },
+  {
+    "id": 137,
+    "question": "Why does a transformer draw current even when the secondary is open?",
+    "answer": "The primary still needs magnetizing current to establish core flux, along with a small component supplying core losses."
+  },
+  {
+    "id": 138,
+    "question": "Why is no-load current relatively small?",
+    "answer": "The primary winding develops a back EMF that nearly balances the applied voltage. Only a small current is required to establish flux and supply core losses."
+  },
+  {
+    "id": 139,
+    "question": "What are the major losses in a transformer?",
+    "answer": "They are primarily core losses—hysteresis and eddy-current—and copper losses I²R in the windings."
+  },
+  {
+    "id": 140,
+    "question": "Why are core losses considered approximately constant at constant voltage and frequency?",
+    "answer": "At constant V/f, maximum flux remains nearly constant. Therefore hysteresis and eddy-current losses remain approximately independent of load."
+  },
+  {
+    "id": 141,
+    "question": "Why do copper losses increase with load?",
+    "answer": "Copper loss is P_cu = I²R. Since winding current increases with load, copper loss rises quadratically with current."
+  },
+  {
+    "id": 142,
+    "question": "What is transformer efficiency?",
+    "answer": "η = (P_out/P_in) × 100. It measures how effectively the transformer converts input electrical power into output power."
+  },
+  {
+    "id": 143,
+    "question": "When does maximum transformer efficiency occur?",
+    "answer": "Maximum efficiency occurs approximately when P_cu = P_core because the changing copper loss balances the nearly constant core loss."
+  },
+  {
+    "id": 144,
+    "question": "Why can a transformer have high efficiency despite having no rotating parts?",
+    "answer": "There are no mechanical friction or windage losses. Modern transformers can therefore achieve very high efficiencies, with losses mainly electromagnetic."
+  },
+  {
+    "id": 145,
+    "question": "What is the purpose of the transformer equivalent circuit?",
+    "answer": "It represents practical effects such as winding resistance, leakage reactance, magnetizing current, and core losses using electrical components."
+  },
+  {
+    "id": 146,
+    "question": "What does transformer winding resistance represent?",
+    "answer": "It represents the real resistance of the copper conductors and causes copper loss: P_cu = I²R."
+  },
+  {
+    "id": 147,
+    "question": "What is leakage reactance?",
+    "answer": "It represents flux produced by a winding that does not link the other winding. This causes internal voltage drop and limits short-circuit current."
+  },
+  {
+    "id": 148,
+    "question": "Why is leakage reactance undesirable during normal operation?",
+    "answer": "It causes voltage drop and reduces voltage regulation. However, it is useful for limiting fault current in some transformer applications."
+  },
+  {
+    "id": 149,
+    "question": "What is voltage regulation of a transformer?",
+    "answer": "It measures the change in secondary terminal voltage from no-load to full-load: VR = [(V_NL - V_FL)/V_FL] × 100."
+  },
+  {
+    "id": 150,
+    "question": "Why is transformer voltage regulation affected by power factor?",
+    "answer": "Load current produces drops across resistance and leakage reactance. Their phasor combination depends on whether current is lagging or leading."
+  },
+  {
+    "id": 151,
+    "question": "Why can voltage regulation become negative for a leading-power-factor load?",
+    "answer": "The reactive voltage-drop component can oppose the resistive drop and may cause the loaded terminal voltage to exceed the no-load reference."
+  },
+  {
+    "id": 152,
+    "question": "What is the significance of transformer equivalent impedance during faults?",
+    "answer": "It limits fault current: I_fault ≈ V/Z. Lower impedance means higher prospective short-circuit current."
+  },
+  {
+    "id": 153,
+    "question": "Why is the open-circuit test performed?",
+    "answer": "It determines core loss and shunt parameters because the transformer operates near rated voltage with very small load current, making copper loss negligible."
+  },
+  {
+    "id": 154,
+    "question": "Why is the open-circuit test usually performed on the low-voltage side?",
+    "answer": "The rated voltage is easier and safer to apply at the LV winding, while the HV side remains open."
+  },
+  {
+    "id": 155,
+    "question": "Why is the short-circuit test performed?",
+    "answer": "It determines equivalent series impedance and full-load copper loss without requiring full rated voltage."
+  },
+  {
+    "id": 156,
+    "question": "Why is only a small voltage applied during the short-circuit test?",
+    "answer": "With the secondary shorted, a small voltage is sufficient to produce rated current because the transformer's equivalent impedance is low."
+  },
+  {
+    "id": 157,
+    "question": "Why is core loss negligible during the short-circuit test?",
+    "answer": "Applied voltage is only a small fraction of rated voltage, so core flux and therefore core loss are very small."
+  },
+  {
+    "id": 158,
+    "question": "How can transformer efficiency be calculated using OC and SC test results?",
+    "answer": "OC test provides core loss, while SC test provides full-load copper loss. These values allow efficiency to be calculated without physically loading the transformer."
+  },
+  {
+    "id": 159,
+    "question": "Why are step-up transformers used at generating stations?",
+    "answer": "They increase voltage before transmission, reducing current for a given power and therefore reducing transmission I²R losses."
+  },
+  {
+    "id": 160,
+    "question": "Why are step-down transformers used near consumers?",
+    "answer": "Transmission voltage is too high for direct utilization. Step-down transformers reduce it to suitable distribution and utilization levels."
+  },
+  {
+    "id": 161,
+    "question": "What is an autotransformer?",
+    "answer": "It uses a single continuous winding with a portion common to both input and output. It provides transformation with less copper but does not provide electrical isolation."
+  },
+  {
+    "id": 162,
+    "question": "Why is an autotransformer generally smaller than a two-winding transformer of the same rating?",
+    "answer": "Part of the winding transfers energy conductively while the remaining portion transfers it inductively. Therefore less copper and core material are required."
+  },
+  {
+    "id": 163,
+    "question": "What is the major disadvantage of an autotransformer?",
+    "answer": "There is no galvanic isolation between primary and secondary. A fault or overvoltage on one side can therefore be transferred directly to the other."
+  },
+  {
+    "id": 164,
+    "question": "Why are CTs and PTs used in power systems?",
+    "answer": "They scale large currents and voltages to safe measurable levels for meters and protective relays while providing electrical isolation."
+  },
+  {
+    "id": 165,
+    "question": "Why should a current transformer secondary never be left open-circuited while energized?",
+    "answer": "With no secondary current, the opposing MMF disappears and core flux can rise dangerously. This can produce very high secondary voltage and insulation hazards."
+  },
+  {
+    "id": 166,
+    "question": "Why does an air gap have high magnetic reluctance?",
+    "answer": "Reluctance is ℛ = l/(μA). Air has much lower permeability than iron, so even a small air gap can dominate magnetic reluctance."
+  },
+  {
+    "id": 167,
+    "question": "Why are transformer cores laminated?",
+    "answer": "Laminations break circulating current paths inside the conductive core, thereby reducing eddy-current losses and heating."
+  },
+  {
+    "id": 168,
+    "question": "What is the difference between B and H?",
+    "answer": "H represents the applied magnetizing field in A/m, while B represents resulting flux density in tesla. In a linear medium, B = μH."
+  },
+  {
+    "id": 169,
+    "question": "Why does magnetic saturation cause high current?",
+    "answer": "After saturation, a large increase in H produces only a small increase in B, effectively reducing incremental permeability and allowing magnetizing current to rise sharply."
+  },
+  {
+    "id": 170,
+    "question": "Why does low power factor increase line current?",
+    "answer": "For fixed real power: I = P/(√3 V_L cos(φ)). Lower PF therefore requires greater current."
+  },
+  {
+    "id": 171,
+    "question": "Why are capacitors used for PF correction?",
+    "answer": "They supply leading reactive current that offsets the lagging reactive current drawn by inductive loads, reducing source current."
+  },
+  {
+    "id": 172,
+    "question": "What happens to line current after PF correction?",
+    "answer": "Real power remains approximately unchanged, but reactive demand from the source decreases. Therefore total source current decreases."
+  },
+  {
+    "id": 173,
+    "question": "Why is three-phase power more efficient for bulk transmission?",
+    "answer": "Three-phase transmission delivers more power with less conductor material for a given voltage and current capability, making it economical for large power transfer."
+  },
+  {
+    "id": 174,
+    "question": "Why is neutral current zero for a balanced three-phase load?",
+    "answer": "The three equal phase currents are 120° apart and their phasor sum is zero."
+  },
+  {
+    "id": 175,
+    "question": "Why does phase sequence matter for motors?",
+    "answer": "The phase sequence determines the direction of the rotating magnetic field. Swapping two phases reverses motor rotation."
+  },
+  {
+    "id": 176,
+    "question": "Why does an inductor cause current to lag voltage?",
+    "answer": "Because v = L(di/dt); voltage must act first to establish/change current. Mathematically this creates a 90° current lag for an ideal inductor."
+  },
+  {
+    "id": 177,
+    "question": "Why does a capacitor cause current to lead voltage?",
+    "answer": "Since i = C(dv/dt), current is proportional to the rate of voltage change, producing a 90° current lead for an ideal capacitor."
+  },
+  {
+    "id": 178,
+    "question": "Why is apparent power measured in VA?",
+    "answer": "It represents the product of RMS voltage and current regardless of their phase relationship: S = VI. Hence VA rather than watts."
+  },
+  {
+    "id": 179,
+    "question": "Why can't superposition be directly used for power?",
+    "answer": "Power is nonlinear in voltage/current, such as P = I²R. Superposition applies to linear circuit responses, not directly to squared quantities."
+  },
+  {
+    "id": 180,
+    "question": "Why is maximum power transfer different from maximum efficiency?",
+    "answer": "Maximum power occurs when R_L = R_th, where internal and load power are equal. Maximum efficiency instead requires minimizing internal losses relative to load power."
+  },
+  {
+    "id": 181,
+    "question": "Why does a transformer require a core with high permeability?",
+    "answer": "High permeability provides a low-reluctance path for magnetic flux, so a small magnetizing current can establish the required flux."
+  },
+  {
+    "id": 182,
+    "question": "What is the purpose of transformer oil expansion space?",
+    "answer": "Oil expands with temperature. The conservator or expansion arrangement accommodates this volume change without excessive pressure inside the tank."
+  },
+  {
+    "id": 183,
+    "question": "What is a breather in an oil-filled transformer?",
+    "answer": "A breather prevents atmospheric moisture from entering the transformer as oil volume changes. Silica gel is commonly used to absorb moisture."
+  },
+  {
+    "id": 184,
+    "question": "Why is moisture dangerous inside a transformer?",
+    "answer": "Moisture reduces insulation strength and accelerates insulation ageing. It can eventually cause partial discharge, breakdown, or winding faults."
+  },
+  {
+    "id": 185,
+    "question": "What is the purpose of a Buchholz relay?",
+    "answer": "It detects internal faults in oil-immersed transformers by sensing gas accumulation or sudden oil movement between the main tank and conservator."
+  },
+  {
+    "id": 186,
+    "question": "Why does a Buchholz relay respond to internal faults?",
+    "answer": "Internal arcing or overheating decomposes transformer oil and generates gas. Severe faults can also create rapid oil movement toward the conservator."
+  },
+  {
+    "id": 187,
+    "question": "What is inrush current in a transformer?",
+    "answer": "It is the large transient magnetizing current drawn when a transformer is energized. It can be several times the normal magnetizing current."
+  },
+  {
+    "id": 188,
+    "question": "Why does transformer inrush current occur?",
+    "answer": "If switching occurs at an unfavorable point on the voltage waveform, residual flux and applied flux can combine, driving the core into saturation."
+  },
+  {
+    "id": 189,
+    "question": "Why is transformer inrush current rich in harmonics?",
+    "answer": "Core saturation makes the magnetizing current highly nonlinear and non-sinusoidal, producing significant harmonic components, especially the second harmonic."
+  },
+  {
+    "id": 190,
+    "question": "How does differential protection distinguish transformer inrush from an internal fault?",
+    "answer": "Transformer differential protection commonly uses harmonic restraint/blocking because inrush contains characteristic second-harmonic content unlike a typical internal fault."
+  },
+  {
+    "id": 191,
+    "question": "What is transformer vector group?",
+    "answer": "It specifies the winding connection and phase displacement between HV and LV voltages, such as delta-star with a defined clock-number phase shift."
+  },
+  {
+    "id": 192,
+    "question": "Why is vector group important when paralleling transformers?",
+    "answer": "Parallel transformers must have compatible phase displacement. Otherwise circulating currents can flow even without external load."
+  },
+  {
+    "id": 193,
+    "question": "What conditions are required for parallel operation of transformers?",
+    "answer": "Compatible voltage ratio, polarity, phase sequence, phase displacement/vector group, and suitable percentage impedance are required for proper load sharing."
+  },
+  {
+    "id": 194,
+    "question": "Why must transformer polarities match during parallel operation?",
+    "answer": "Incorrect polarity can create a voltage difference directly between connected terminals, producing extremely large circulating currents."
+  },
+  {
+    "id": 195,
+    "question": "What is all-day efficiency of a transformer?",
+    "answer": "It is the ratio of total energy delivered to total energy supplied over 24 hours. It is particularly important for distribution transformers with varying load."
+  },
+  {
+    "id": 196,
+    "question": "What is the operating principle of a DC generator?",
+    "answer": "Mechanical rotation of conductors in a magnetic field induces EMF according to Faraday's law. The commutator converts the internally alternating EMF into unidirectional output."
+  },
+  {
+    "id": 197,
+    "question": "What is the operating principle of a DC motor?",
+    "answer": "A current-carrying conductor in a magnetic field experiences force: F = BIl. The collective conductor forces produce electromagnetic torque."
+  },
+  {
+    "id": 198,
+    "question": "Why does a DC motor require a commutator?",
+    "answer": "The commutator reverses armature current at appropriate rotor positions so that electromagnetic torque remains in the same rotational direction."
+  },
+  {
+    "id": 199,
+    "question": "Why is the generated EMF in a DC generator internally alternating?",
+    "answer": "Each armature conductor experiences alternating flux direction as it rotates. The commutator mechanically rectifies this into DC at the terminals."
+  },
+  {
+    "id": 200,
+    "question": "What is the EMF equation of a DC generator?",
+    "answer": "E_g = (PΦZN)/(60A), where P is poles, Φ is flux per pole, Z is conductors, N is rpm, and A is parallel paths."
+  },
+  {
+    "id": 201,
+    "question": "Why does generated EMF increase with speed?",
+    "answer": "From E_g ∝ ΦN, increasing rotational speed increases the rate at which conductors cut magnetic flux, increasing induced EMF."
+  },
+  {
+    "id": 202,
+    "question": "Why does a DC motor develop back EMF?",
+    "answer": "As the armature rotates, its conductors cut magnetic flux and generate an EMF opposing the applied voltage according to Lenz's law."
+  },
+  {
+    "id": 203,
+    "question": "Why is back EMF important in a DC motor?",
+    "answer": "It automatically limits armature current during normal operation: I_a = (V - E_b)/R_a. Thus it provides inherent current regulation."
+  },
+  {
+    "id": 204,
+    "question": "Why is a DC motor current very high at starting?",
+    "answer": "At standstill, E_b = 0, so I_a = V/R_a. Since armature resistance is very small, the starting current can become dangerously large."
+  },
+  {
+    "id": 205,
+    "question": "Why is a starter required for a DC motor?",
+    "answer": "It initially inserts resistance into the armature circuit to limit starting current until sufficient back EMF develops."
+  },
+  {
+    "id": 206,
+    "question": "What is electromagnetic torque of a DC motor?",
+    "answer": "T = KΦI_a, so torque depends on flux and armature current."
+  },
+  {
+    "id": 207,
+    "question": "Why does a DC motor have high starting torque?",
+    "answer": "At starting, the motor can draw high armature current while flux is established. Since T ∝ ΦI_a, substantial torque is produced."
+  },
+  {
+    "id": 208,
+    "question": "What is the speed equation of a DC motor?",
+    "answer": "Approximately, N ∝ (V - I_aR_a)/Φ. Therefore speed can be controlled by armature voltage, armature resistance, or field flux."
+  },
+  {
+    "id": 209,
+    "question": "What is a separately excited DC motor?",
+    "answer": "Its field winding receives power from an independent source. Therefore field flux can be controlled independently of armature voltage/current."
+  },
+  {
+    "id": 210,
+    "question": "What is a shunt DC motor?",
+    "answer": "Its field winding is connected in parallel with the armature supply. Flux remains approximately constant, giving relatively stable speed."
+  },
+  {
+    "id": 211,
+    "question": "Why does a shunt motor have nearly constant speed?",
+    "answer": "Its field flux is approximately constant and armature voltage drop is relatively small: N ∝ (V - I_aR_a)/Φ. Hence speed changes only moderately with load."
+  },
+  {
+    "id": 212,
+    "question": "What is a series DC motor?",
+    "answer": "Its field winding is connected in series with the armature, so field current is approximately the same as armature current."
+  },
+  {
+    "id": 213,
+    "question": "Why does a DC series motor produce very high starting torque?",
+    "answer": "Before saturation, Φ ∝ I_a, so T ∝ ΦI_a ∝ I_a². This gives exceptionally high starting torque."
+  },
+  {
+    "id": 214,
+    "question": "Why should a DC series motor never be operated without mechanical load?",
+    "answer": "With little load, current and therefore flux can become very small. Since N ∝ 1/Φ, speed can rise to dangerously high values."
+  },
+  {
+    "id": 215,
+    "question": "What is a compound DC motor?",
+    "answer": "It contains both series and shunt field windings. It combines characteristics of shunt and series motors."
+  },
+  {
+    "id": 216,
+    "question": "What is cumulative compounding?",
+    "answer": "The series-field flux aids the shunt-field flux. This provides better torque characteristics while maintaining relatively good speed regulation."
+  },
+  {
+    "id": 217,
+    "question": "What is differential compounding?",
+    "answer": "The series-field flux opposes the shunt-field flux. Its characteristics can become unstable and it is therefore rarely used for normal motor applications."
+  },
+  {
+    "id": 218,
+    "question": "What is armature reaction?",
+    "answer": "Armature current produces its own magnetic field, which distorts and can weaken the main field flux. This affects generated EMF and commutation."
+  },
+  {
+    "id": 219,
+    "question": "Why does armature reaction cause flux distortion?",
+    "answer": "The armature MMF interacts with the main-field MMF, shifting the magnetic neutral axis and making the air-gap flux distribution non-uniform."
+  },
+  {
+    "id": 220,
+    "question": "What is the magnetic neutral axis (MNA)?",
+    "answer": "It is the axis where the net flux density is ideally zero and armature conductors experience no induced EMF. Proper brush positioning is related to this axis."
+  },
+  {
+    "id": 221,
+    "question": "Why is poor commutation undesirable?",
+    "answer": "Poor commutation causes sparking at the brushes, heating, electromagnetic interference, and accelerated commutator/brush wear."
+  },
+  {
+    "id": 222,
+    "question": "How do interpoles improve commutation?",
+    "answer": "Interpoles produce a local magnetic field that counteracts the reactance voltage during commutation, reducing sparking."
+  },
+  {
+    "id": 223,
+    "question": "What is the purpose of compensating windings?",
+    "answer": "They counteract armature reaction under the pole faces, reducing flux distortion and improving machine performance under heavy loads."
+  },
+  {
+    "id": 224,
+    "question": "What determines the direction of force in a DC motor?",
+    "answer": "The direction follows Fleming's left-hand rule and depends on both magnetic-field direction and armature-current direction."
+  },
+  {
+    "id": 225,
+    "question": "What determines the direction of generated EMF in a DC generator?",
+    "answer": "Fleming's right-hand rule determines the induced EMF direction from the magnetic field and conductor motion."
+  },
+  {
+    "id": 226,
+    "question": "Why is transformer rating specified in kVA rather than kW?",
+    "answer": "Transformer heating depends mainly on voltage and current, while power factor is determined by the load. Therefore thermal capacity is specified in VA/kVA."
+  },
+  {
+    "id": 227,
+    "question": "Why does transformer core loss remain approximately constant with load?",
+    "answer": "At constant supply voltage and frequency, core flux remains nearly constant. Hence hysteresis and eddy-current losses change little with load."
+  },
+  {
+    "id": 228,
+    "question": "Why does transformer copper loss increase quadratically with load current?",
+    "answer": "Because P_cu = I²R. Doubling winding current therefore produces approximately four times the copper loss."
+  },
+  {
+    "id": 229,
+    "question": "Why is maximum transformer efficiency obtained when copper loss equals core loss?",
+    "answer": "Core loss is approximately constant while copper loss varies with load squared. Differentiating efficiency shows the optimum occurs when the two losses are equal."
+  },
+  {
+    "id": 230,
+    "question": "Why is the OC test used to determine core loss?",
+    "answer": "The transformer operates at rated voltage but very small current, making copper loss negligible. Therefore measured input power is approximately the core loss."
+  },
+  {
+    "id": 231,
+    "question": "Why is the SC test performed at low voltage?",
+    "answer": "The transformer's equivalent impedance is small, so only a small applied voltage is needed to produce rated current when the secondary is shorted."
+  },
+  {
+    "id": 232,
+    "question": "Why is leakage reactance present in a practical transformer?",
+    "answer": "Not all flux produced by one winding links the other winding. This unlinked flux behaves electrically as leakage inductance."
+  },
+  {
+    "id": 233,
+    "question": "Why does a capacitor provide leading reactive power?",
+    "answer": "Capacitor current leads its voltage by 90°, so it supplies reactive current opposite to the lagging reactive current of inductive loads."
+  },
+  {
+    "id": 234,
+    "question": "Why does a balanced three-phase system have zero neutral current?",
+    "answer": "Three equal currents separated by 120° have a vector sum of zero, so no neutral current flows under ideal balance."
+  },
+  {
+    "id": 235,
+    "question": "Why does swapping two phases reverse a three-phase motor?",
+    "answer": "It reverses the phase sequence, which reverses the direction of the rotating magnetic field."
+  },
+  {
+    "id": 236,
+    "question": "Why is air-gap reluctance important in magnetic circuits?",
+    "answer": "Air has very low permeability compared with iron, so even a small gap can dominate total reluctance and strongly affect flux/current requirements."
+  },
+  {
+    "id": 237,
+    "question": "Why does a ferromagnetic core saturate?",
+    "answer": "Most magnetic domains become aligned at high field strength. Further increases in H then produce only small increases in B."
+  },
+  {
+    "id": 238,
+    "question": "Why does an ideal inductor store energy?",
+    "answer": "Its magnetic field stores W = (1/2)LI² and can return this energy to the circuit."
+  },
+  {
+    "id": 239,
+    "question": "Why does an ideal capacitor store energy?",
+    "answer": "Energy is stored in its electric field: W = (1/2)CV² and can be released back into the circuit."
+  },
+  {
+    "id": 240,
+    "question": "Why can't superposition directly calculate circuit power?",
+    "answer": "Superposition applies to linear voltage/current responses, while power contains squared terms such as I²R. Individual powers therefore cannot simply be added."
+  },
+  {
+    "id": 241,
+    "question": "Why is the back EMF of a DC motor called a self-regulating quantity?",
+    "answer": "As load increases, speed falls, reducing E_b. This increases I_a = (V - E_b)/R_a, which automatically increases torque to meet the new load."
+  },
+  {
+    "id": 242,
+    "question": "What happens to a DC motor when mechanical load suddenly increases?",
+    "answer": "Speed initially falls, reducing back EMF. Armature current then rises, increasing electromagnetic torque until a new equilibrium speed is reached."
+  },
+  {
+    "id": 243,
+    "question": "Why does a DC shunt motor have good speed regulation?",
+    "answer": "Its field flux remains approximately constant, while armature resistance drop is relatively small. Hence speed changes only slightly with load."
+  },
+  {
+    "id": 244,
+    "question": "What is speed regulation of a DC motor?",
+    "answer": "%SR = [(N_NL - N_FL)/N_FL] × 100. It measures the change in speed between no-load and full-load conditions."
+  },
+  {
+    "id": 245,
+    "question": "Why is field control an efficient method of DC motor speed control?",
+    "answer": "It changes flux without inserting significant series resistance, so power loss is low. Weakening the field increases speed above base speed."
+  },
+  {
+    "id": 246,
+    "question": "Why does field weakening increase DC motor speed?",
+    "answer": "Since N ∝ (V - I_aR_a)/Φ, reducing Φ requires speed to increase to maintain the required back EMF."
+  },
+  {
+    "id": 247,
+    "question": "What is the limitation of field weakening?",
+    "answer": "Excessive flux reduction can cause dangerous overspeed and poor commutation. Therefore a safe minimum field level must be maintained."
+  },
+  {
+    "id": 248,
+    "question": "Why is armature-voltage control used for speeds below base speed?",
+    "answer": "With approximately constant field flux, reducing armature voltage reduces back EMF and therefore speed. It provides efficient control without wasting large power in resistance."
+  },
+  {
+    "id": 249,
+    "question": "Why is armature-resistance speed control inefficient?",
+    "answer": "The inserted resistor causes I_a²R power loss and speed varies strongly with load. It is mainly useful for simple or short-duration control."
+  },
+  {
+    "id": 250,
+    "question": "What is the constant-torque region of a DC motor?",
+    "answer": "With constant flux, T ∝ I_a, so torque can be maintained while speed is controlled by armature voltage. This is generally the region below base speed."
+  },
+  {
+    "id": 251,
+    "question": "What is the constant-power region?",
+    "answer": "Above base speed, field weakening reduces flux while speed increases. Since approximately T ∝ 1/N, the product TN remains roughly constant."
+  },
+  {
+    "id": 252,
+    "question": "Why does a DC motor need a starter but not continuous external resistance?",
+    "answer": "At startup E_b = 0, causing high current. Once running, back EMF naturally limits current, so the starting resistance can be progressively removed."
+  },
+  {
+    "id": 253,
+    "question": "What is regenerative braking in a DC motor?",
+    "answer": "The motor operates as a generator and returns mechanical energy to the electrical supply. This requires the generated EMF to exceed the effective supply condition."
+  },
+  {
+    "id": 254,
+    "question": "When does regenerative braking occur?",
+    "answer": "It occurs when E_b > V under the appropriate operating conditions, causing current to reverse relative to motoring while electromagnetic torque opposes rotation."
+  },
+  {
+    "id": 255,
+    "question": "What is dynamic braking of a DC motor?",
+    "answer": "The armature is disconnected from the supply and connected to an external resistor. The rotating motor acts as a generator and dissipates kinetic energy as heat."
+  },
+  {
+    "id": 256,
+    "question": "What is plugging in a DC motor?",
+    "answer": "The supply polarity is reversed while the motor is rotating, producing torque opposite to rotation. A series resistance is required to limit the very high current."
+  },
+  {
+    "id": 257,
+    "question": "Why is braking torque opposite to motor rotation?",
+    "answer": "During braking, electromagnetic torque is deliberately made opposite to the direction of motion, converting mechanical energy into electrical energy or heat."
+  },
+  {
+    "id": 258,
+    "question": "Which DC braking method is most energy-efficient?",
+    "answer": "Regenerative braking is most energy-efficient because it can return the motor's mechanical energy to the electrical supply instead of dissipating it entirely as heat."
+  },
+  {
+    "id": 259,
+    "question": "What is residual magnetism in a DC generator?",
+    "answer": "It is the small amount of magnetism remaining in the poles after excitation is removed. It helps initiate voltage build-up in a self-excited generator."
+  },
+  {
+    "id": 260,
+    "question": "Why may a self-excited DC generator fail to build voltage?",
+    "answer": "Possible causes include loss of residual magnetism, incorrect field connection, insufficient speed, excessive field resistance, or wrong polarity."
+  },
+  {
+    "id": 261,
+    "question": "What is critical field resistance?",
+    "answer": "It is the maximum field-circuit resistance at a given speed for which a shunt generator can build up voltage. Above it, self-excitation cannot be sustained."
+  },
+  {
+    "id": 262,
+    "question": "What is critical speed of a DC shunt generator?",
+    "answer": "It is the minimum speed at a given field resistance at which voltage build-up occurs. Below this speed, the generated voltage cannot establish sufficient field current."
+  },
+  {
+    "id": 263,
+    "question": "Why does generator terminal voltage fall with increasing load?",
+    "answer": "Armature resistance drop, brush drop, armature reaction, and reduced generated EMF cause terminal voltage to decrease as load current rises."
+  },
+  {
+    "id": 264,
+    "question": "What is the condition for voltage build-up in a shunt generator?",
+    "answer": "Residual flux must exist, field connection must reinforce it, speed must exceed critical speed, and field resistance must remain below critical resistance."
+  },
+  {
+    "id": 265,
+    "question": "What is commutation in a DC machine?",
+    "answer": "It is the process of reversing current in an armature coil as it passes through the neutral zone, allowing continuous unidirectional torque/output."
+  },
+  {
+    "id": 266,
+    "question": "What are the major losses in a DC machine?",
+    "answer": "They include copper losses, core losses, mechanical losses such as friction/windage, and stray-load losses."
+  },
+  {
+    "id": 267,
+    "question": "What are constant losses in a DC motor?",
+    "answer": "Core, friction, windage, and approximately constant field losses are often treated as constant losses because they change little with load."
+  },
+  {
+    "id": 268,
+    "question": "What are variable losses?",
+    "answer": "Armature copper loss and load-dependent stray losses vary significantly with current. Armature copper loss follows I_a²R_a."
+  },
+  {
+    "id": 269,
+    "question": "Why does DC machine efficiency decrease at very light load?",
+    "answer": "Constant losses remain present even when output power becomes small. Therefore the fixed losses become a large fraction of the input power."
+  },
+  {
+    "id": 270,
+    "question": "What is electrical power developed in a DC motor armature?",
+    "answer": "P_dev = E_b I_a. It represents the electrical power converted into mechanical electromagnetic power."
+  },
+  {
+    "id": 271,
+    "question": "What is the mechanical power developed by a DC motor?",
+    "answer": "P_mech = Tω. Ideally, this equals E_b I_a, neglecting mechanical losses between electromagnetic conversion and shaft output."
+  },
+  {
+    "id": 272,
+    "question": "Why does a DC generator require mechanical input even at no-load?",
+    "answer": "Mechanical input must overcome rotational losses and supply core/field-related losses. Therefore zero electrical load does not mean zero input power."
+  },
+  {
+    "id": 273,
+    "question": "What is the operating principle of a three-phase induction motor?",
+    "answer": "Three-phase stator currents create a rotating magnetic field. This field cuts the rotor conductors, inducing rotor EMF and current that produce electromagnetic torque."
+  },
+  {
+    "id": 274,
+    "question": "Why is an induction motor called an asynchronous motor?",
+    "answer": "The rotor normally rotates below synchronous speed. Therefore rotor speed is not equal to the rotating magnetic field speed."
+  },
+  {
+    "id": 275,
+    "question": "What is synchronous speed?",
+    "answer": "N_s = 120f/P. It is the speed of the rotating magnetic field produced by the stator."
+  },
+  {
+    "id": 276,
+    "question": "Why can't an induction-motor rotor normally reach synchronous speed?",
+    "answer": "At N = N_s, relative speed between the rotor and rotating field becomes zero, so rotor EMF and current become zero, eliminating induction torque."
+  },
+  {
+    "id": 277,
+    "question": "What is slip?",
+    "answer": "Slip is the relative speed between synchronous field and rotor: s = (N_s - N_r)/N_s. It is necessary for rotor EMF and torque production."
+  },
+  {
+    "id": 278,
+    "question": "Why is slip zero at synchronous speed?",
+    "answer": "The rotor and rotating magnetic field have identical speeds, so there is no relative motion between them and therefore no induced rotor EMF."
+  },
+  {
+    "id": 279,
+    "question": "What is rotor frequency in an induction motor?",
+    "answer": "f_r = sf. At standstill s = 1, so rotor frequency equals supply frequency; during normal operation it is much lower."
+  },
+  {
+    "id": 280,
+    "question": "Why is rotor frequency low during normal operation?",
+    "answer": "Normal slip is small, meaning rotor speed is close to synchronous speed. Therefore f_r = sf becomes only a small fraction of stator frequency."
+  },
+  {
+    "id": 281,
+    "question": "What is the frequency of rotor current at starting?",
+    "answer": "At starting N_r = 0, so s = 1. Therefore f_r = f. The rotor current initially has the same frequency as the stator supply."
+  },
+  {
+    "id": 282,
+    "question": "Why does an induction motor draw high starting current?",
+    "answer": "At standstill, the motor behaves approximately like a transformer with a low effective rotor impedance referred to the stator. Consequently a large current can flow."
+  },
+  {
+    "id": 283,
+    "question": "Why is the induction motor called a transformer with a rotating secondary?",
+    "answer": "The stator acts like a transformer primary and the rotor like a secondary. The difference is that the rotor secondary rotates and its frequency depends on slip."
+  },
+  {
+    "id": 284,
+    "question": "What determines the direction of rotation of an induction motor?",
+    "answer": "The phase sequence determines the direction of the rotating magnetic field. Swapping any two supply phases reverses rotor rotation."
+  },
+  {
+    "id": 285,
+    "question": "Why does an induction motor automatically develop more torque when load increases?",
+    "answer": "Load causes rotor speed to fall, increasing slip. Higher slip increases rotor EMF/current and therefore electromagnetic torque until equilibrium is restored."
+  },
+  {
+    "id": 286,
+    "question": "Why is a DC motor starting current dangerously high?",
+    "answer": "At standstill, E_b = 0, so I_a = V/R_a. Since armature resistance is very small, the resulting current can be many times rated current."
+  },
+  {
+    "id": 287,
+    "question": "Why is back EMF essential for DC motor operation?",
+    "answer": "It opposes the supply and limits armature current during running. Without it, the low armature resistance would cause excessive current."
+  },
+  {
+    "id": 288,
+    "question": "Why does DC motor torque depend on flux and armature current?",
+    "answer": "The force on each conductor is proportional to BIl, so the total electromagnetic torque becomes T = KΦI_a."
+  },
+  {
+    "id": 289,
+    "question": "Why does a DC series motor have high starting torque?",
+    "answer": "Before magnetic saturation, Φ ∝ I_a. Therefore T ∝ ΦI_a ≈ I_a², producing very high starting torque."
+  },
+  {
+    "id": 290,
+    "question": "Why should a DC series motor not be operated at no load?",
+    "answer": "Low load causes low armature current and therefore weak field flux. Since N ∝ 1/Φ, speed can rise to a dangerous level."
+  },
+  {
+    "id": 291,
+    "question": "Why are interpoles used in DC machines?",
+    "answer": "They produce a commutating field that compensates for reactance voltage and helps reverse coil current properly, reducing brush sparking."
+  },
+  {
+    "id": 292,
+    "question": "Why does armature reaction affect generated EMF?",
+    "answer": "Armature MMF distorts and can weaken the main flux. Since E_g ∝ ΦN, changes in effective flux alter generated voltage."
+  },
+  {
+    "id": 293,
+    "question": "Why does transformer copper loss depend on load?",
+    "answer": "Winding loss is P_cu = I²R, and winding current increases with load. Therefore copper loss varies approximately with the square of load."
+  },
+  {
+    "id": 294,
+    "question": "Why does transformer core loss remain approximately constant?",
+    "answer": "At fixed voltage and frequency, core flux remains approximately constant. Therefore hysteresis and eddy-current losses change very little with load."
+  },
+  {
+    "id": 295,
+    "question": "Why is the transformer OC test performed at rated voltage?",
+    "answer": "Core loss depends strongly on flux, and rated voltage establishes rated flux. Thus the test accurately determines normal operating core loss."
+  },
+  {
+    "id": 296,
+    "question": "Why is the transformer SC test performed at low voltage?",
+    "answer": "The equivalent impedance is very small, so only a small applied voltage is needed to produce rated current while avoiding excessive current."
+  },
+  {
+    "id": 297,
+    "question": "Why does low power factor increase system current?",
+    "answer": "For fixed real power: I = P/(√3 V_L PF). Therefore reducing PF directly increases current and I²R losses."
+  },
+  {
+    "id": 298,
+    "question": "Why does a capacitor block DC but pass AC?",
+    "answer": "At DC steady state f = 0, so X_C approaches infinity. As frequency increases, X_C = 1/(2πfC) decreases."
+  },
+  {
+    "id": 299,
+    "question": "Why does an inductor oppose high-frequency AC more strongly?",
+    "answer": "Its reactance is X_L = 2πfL. Increasing frequency directly increases its opposition to current."
+  },
+  {
+    "id": 300,
+    "question": "Why does a three-phase motor reverse when two supply phases are interchanged?",
+    "answer": "Interchanging two phases reverses phase sequence. This reverses the rotating magnetic field and therefore the direction of motor torque."
+  },
+  {
+    "id": 301,
+    "question": "Why is the stator of an induction motor made with laminated steel?",
+    "answer": "The stator carries alternating flux, which induces eddy currents in the core. Laminations reduce these circulating currents and therefore reduce core loss."
+  },
+  {
+    "id": 302,
+    "question": "Why is the rotor core also laminated?",
+    "answer": "Rotor flux is alternating at slip frequency, so eddy currents can occur in the rotor core. Laminations reduce these losses and heating."
+  },
+  {
+    "id": 303,
+    "question": "What are the two main types of induction-motor rotors?",
+    "answer": "They are squirrel-cage and wound/slip-ring rotors. Their main difference is how rotor conductors are constructed and externally accessed."
+  },
+  {
+    "id": 304,
+    "question": "Why are squirrel-cage rotor bars skewed?",
+    "answer": "Skewing reduces magnetic locking/cogging, torque pulsations, and acoustic noise. It also prevents rotor teeth from continuously aligning with stator teeth."
+  },
+  {
+    "id": 305,
+    "question": "Why is a squirrel-cage motor mechanically robust?",
+    "answer": "Its rotor has no brushes, slip rings, or external electrical connections. This makes the construction simple, rugged, and low-maintenance."
+  },
+  {
+    "id": 306,
+    "question": "What is the purpose of slip rings in a wound-rotor induction motor?",
+    "answer": "They provide access to the rotor winding so external resistance can be inserted into the rotor circuit, improving starting torque and controlling starting current."
+  },
+  {
+    "id": 307,
+    "question": "Why is a wound-rotor motor used when high starting torque is required?",
+    "answer": "External rotor resistance increases rotor resistance, allowing maximum torque to occur at higher slip. This produces strong starting torque."
+  },
+  {
+    "id": 308,
+    "question": "Why are squirrel-cage motors more commonly used?",
+    "answer": "They are cheaper, simpler, more reliable, and require less maintenance because they have no brushes or slip rings."
+  },
+  {
+    "id": 309,
+    "question": "How is the rotating magnetic field produced in a three-phase induction motor?",
+    "answer": "Three stator currents displaced by 120° flow through spatially displaced windings. Their combined MMFs produce a magnetic field rotating at synchronous speed."
+  },
+  {
+    "id": 310,
+    "question": "Why does the rotating magnetic field have constant magnitude for a balanced supply?",
+    "answer": "The three sinusoidal phase MMFs combine vectorially so their time-varying components produce an approximately constant resultant rotating field."
+  },
+  {
+    "id": 311,
+    "question": "Why does a single-phase induction motor not self-start?",
+    "answer": "A single-phase supply produces a pulsating rather than naturally rotating magnetic field. At standstill, the forward and backward torque components cancel."
+  },
+  {
+    "id": 312,
+    "question": "How can a single-phase induction motor be made self-starting?",
+    "answer": "An auxiliary winding creates a phase-shifted current, producing an initial rotating magnetic field. This creates starting torque."
+  },
+  {
+    "id": 313,
+    "question": "What determines synchronous speed?",
+    "answer": "N_s = 120f/P. Therefore increasing frequency increases speed, while increasing pole number decreases synchronous speed."
+  },
+  {
+    "id": 314,
+    "question": "Why does increasing the number of poles reduce motor speed?",
+    "answer": "More poles distribute the magnetic cycle over more pole pairs, reducing the rotational speed required to complete the same electrical frequency."
+  },
+  {
+    "id": 315,
+    "question": "Why can an induction motor be represented using a transformer-like equivalent circuit?",
+    "answer": "The stator transfers energy magnetically to the rotor just like a transformer transfers energy to its secondary. The main difference is that rotor frequency depends on slip."
+  },
+  {
+    "id": 316,
+    "question": "What does rotor resistance R_2 represent?",
+    "answer": "It represents the physical resistance of the rotor conductors. The associated I_2²R_2 loss is the rotor copper loss."
+  },
+  {
+    "id": 317,
+    "question": "What does rotor leakage reactance represent?",
+    "answer": "It represents rotor leakage flux that does not effectively participate in torque-producing mutual coupling. Its value depends on rotor frequency."
+  },
+  {
+    "id": 318,
+    "question": "Why does rotor reactance depend on slip?",
+    "answer": "Rotor frequency is f_2 = sf, so X_2 = 2πf_2L_2 = sX_20, where X_20 is rotor standstill reactance."
+  },
+  {
+    "id": 319,
+    "question": "What happens to rotor reactance as the motor approaches synchronous speed?",
+    "answer": "Slip becomes very small, so rotor frequency and rotor reactance also become small. Rotor current therefore becomes increasingly resistive in character."
+  },
+  {
+    "id": 320,
+    "question": "What is the significance of the R_2/s term in the induction-motor equivalent circuit?",
+    "answer": "It represents the rotor resistance referred to the stator with the slip effect included. It can be separated into actual rotor loss and mechanical power conversion components."
+  },
+  {
+    "id": 321,
+    "question": "How is air-gap power related to rotor copper loss?",
+    "answer": "Rotor copper loss is P_cu2 = sP_g, where P_g is air-gap power. Therefore only the fraction 1 - s is converted electromagnetically into mechanical power."
+  },
+  {
+    "id": 322,
+    "question": "What fraction of air-gap power becomes mechanical power?",
+    "answer": "Ignoring mechanical losses, P_mech,dev = (1 - s)P_g. The remaining sP_g is rotor copper loss."
+  },
+  {
+    "id": 323,
+    "question": "Why does an induction motor produce torque only when slip exists?",
+    "answer": "Slip creates relative motion between the rotating field and rotor, inducing rotor EMF and current. Their interaction produces electromagnetic torque."
+  },
+  {
+    "id": 324,
+    "question": "What happens to torque at zero slip?",
+    "answer": "At s = 0, rotor EMF and rotor current become zero. Therefore electromagnetic torque becomes zero."
+  },
+  {
+    "id": 325,
+    "question": "What happens to rotor copper loss as slip increases?",
+    "answer": "Since P_cu2 = sP_g, a larger fraction of air-gap power is dissipated in the rotor resistance."
+  },
+  {
+    "id": 326,
+    "question": "What is the approximate torque equation of an induction motor?",
+    "answer": "For a simplified equivalent circuit, T ∝ sR_2/[R_2² + (sX_2)²]."
+  },
+  {
+    "id": 327,
+    "question": "What is the condition for maximum torque?",
+    "answer": "Approximately, s_max = R_2/X_2 for the simplified model. Thus increasing rotor resistance shifts maximum torque to higher slip."
+  },
+  {
+    "id": 328,
+    "question": "Why does increasing rotor resistance improve starting torque?",
+    "answer": "At starting s = 1. Increasing R_2 moves the motor closer to the maximum-torque condition, improving starting torque."
+  },
+  {
+    "id": 329,
+    "question": "Does increasing rotor resistance increase maximum torque?",
+    "answer": "Ideally, it mainly shifts the slip at which maximum torque occurs; the approximate maximum torque magnitude remains nearly unchanged."
+  },
+  {
+    "id": 330,
+    "question": "Why does induction-motor torque initially increase almost linearly with slip?",
+    "answer": "At low slip, sX_2 << R_2, so T ≈ s/R_2. Hence torque is approximately proportional to slip."
+  },
+  {
+    "id": 331,
+    "question": "Why does torque decrease at very high slip?",
+    "answer": "When sX_2 >> R_2, reactance dominates rotor impedance. Increasing slip then causes current to become increasingly reactive, reducing torque growth."
+  },
+  {
+    "id": 332,
+    "question": "Why is starting current high in an induction motor?",
+    "answer": "At standstill, slip is one and the rotor frequency is maximum. The motor presents a relatively low impedance to the supply, causing a large stator current."
+  },
+  {
+    "id": 333,
+    "question": "What is the purpose of a star-delta starter?",
+    "answer": "The motor starts in star, reducing phase voltage to 1/√3 of the line voltage. This reduces starting current and starting torque."
+  },
+  {
+    "id": 334,
+    "question": "Why does star-delta starting reduce starting torque?",
+    "answer": "Motor torque approximately varies as V². Since phase voltage is reduced to 1/√3, starting torque becomes approximately one-third of the corresponding delta-start value."
+  },
+  {
+    "id": 335,
+    "question": "What is an autotransformer starter?",
+    "answer": "It starts the induction motor at reduced voltage using an autotransformer and then connects the motor to full supply after acceleration."
+  },
+  {
+    "id": 336,
+    "question": "Why is a soft starter used for induction motors?",
+    "answer": "It gradually increases the applied voltage using power electronics, reducing starting current and mechanical/electrical stress."
+  },
+  {
+    "id": 337,
+    "question": "How is a VFD superior to simple voltage-based starting for speed control?",
+    "answer": "A VFD controls both voltage and frequency, allowing controlled starting and continuous speed regulation while maintaining an appropriate V/f relationship."
+  },
+  {
+    "id": 338,
+    "question": "Why is frequency control highly effective for induction-motor speed control?",
+    "answer": "Since N_s = 120f/P, changing frequency directly changes synchronous speed. The rotor then follows the changed field speed with small slip."
+  },
+  {
+    "id": 339,
+    "question": "Why is constant V/f control used below base speed?",
+    "answer": "Maintaining V/f approximately constant keeps air-gap flux approximately constant: Φ ∝ V/f. This preserves the motor's torque capability."
+  },
+  {
+    "id": 340,
+    "question": "What happens if frequency is increased without increasing voltage proportionally?",
+    "answer": "V/f decreases, weakening the air-gap flux. The motor's available torque capability therefore decreases."
+  },
+  {
+    "id": 341,
+    "question": "What happens if voltage is increased excessively at constant frequency?",
+    "answer": "Flux increases approximately with V/f, potentially driving the magnetic core toward saturation and causing excessive magnetizing current."
+  },
+  {
+    "id": 342,
+    "question": "What is the effect of rotor resistance control on motor speed?",
+    "answer": "Adding rotor resistance increases slip for a given torque, causing speed to decrease. It is applicable mainly to wound-rotor motors."
+  },
+  {
+    "id": 343,
+    "question": "Why is rotor-resistance speed control inefficient?",
+    "answer": "The additional resistance dissipates significant power as heat in the rotor circuit, especially at high slip."
+  },
+  {
+    "id": 344,
+    "question": "What happens to induction-motor speed when mechanical load increases?",
+    "answer": "Rotor speed falls slightly, increasing slip. This increases rotor current and electromagnetic torque until the motor reaches a new equilibrium."
+  },
+  {
+    "id": 345,
+    "question": "Why does an induction motor never normally operate exactly at synchronous speed?",
+    "answer": "At synchronous speed, slip becomes zero and no rotor EMF/current is induced. Without rotor current, electromagnetic torque disappears."
+  },
+  {
+    "id": 346,
+    "question": "Why does a DC motor require a starter?",
+    "answer": "At standstill, E_b = 0, so I_a = V/R_a. Because armature resistance is very small, direct starting would produce dangerously high current."
+  },
+  {
+    "id": 347,
+    "question": "Why does DC motor speed increase when field flux is weakened?",
+    "answer": "N ∝ (V - I_aR_a)/Φ. Reducing Φ therefore requires higher speed to generate the required back EMF."
+  },
+  {
+    "id": 348,
+    "question": "Why is field weakening mainly used above base speed?",
+    "answer": "Below base speed, maintaining rated flux gives maximum torque capability. Above base speed, flux reduction allows speed to increase while approximately maintaining constant power."
+  },
+  {
+    "id": 349,
+    "question": "Why does regenerative braking return energy to the supply?",
+    "answer": "The rotating machine operates as a generator and converts mechanical energy into electrical energy, which flows back into the source when the generated EMF exceeds the supply condition."
+  },
+  {
+    "id": 350,
+    "question": "Why is plugging highly dissipative?",
+    "answer": "Reversing the applied voltage creates a strong opposing torque and large current. The mechanical and electrical energy is largely dissipated as heat in the circuit resistance."
+  },
+  {
+    "id": 351,
+    "question": "Why can a shunt DC motor maintain nearly constant speed?",
+    "answer": "Its field winding is connected across the supply, keeping flux approximately constant. Hence load changes mainly produce relatively small armature voltage drops."
+  },
+  {
+    "id": 352,
+    "question": "Why does a DC series motor have high starting torque?",
+    "answer": "Before saturation, Φ ∝ I_a, so T ∝ I_a². High starting current therefore produces very high torque."
+  },
+  {
+    "id": 353,
+    "question": "Why should a DC series motor not run without load?",
+    "answer": "With very small load current, field flux becomes weak. Since speed varies approximately inversely with flux, the motor can overspeed dangerously."
+  },
+  {
+    "id": 354,
+    "question": "Why does transformer inrush occur?",
+    "answer": "Unfavorable switching combined with residual flux can push the core into saturation. The resulting low incremental inductance causes a very large transient magnetizing current."
+  },
+  {
+    "id": 355,
+    "question": "Why is a transformer rated in kVA?",
+    "answer": "Winding heating depends on current and insulation stress depends on voltage, while power factor belongs to the load. Hence transformer capacity is specified by apparent power."
+  },
+  {
+    "id": 356,
+    "question": "Why does transformer maximum efficiency occur when copper loss equals core loss?",
+    "answer": "Core loss is nearly constant while copper loss rises with load squared. Their equality corresponds to the load where the incremental copper-loss penalty is balanced optimally."
+  },
+  {
+    "id": 357,
+    "question": "Why does low power factor increase I²R loss?",
+    "answer": "For the same real power, lower PF requires higher current. Since conductor loss varies as I²R, the loss increases significantly."
+  },
+  {
+    "id": 358,
+    "question": "Why does a capacitor pass high-frequency AC more easily?",
+    "answer": "X_C = 1/(2πfC). As frequency increases, capacitive reactance decreases, allowing greater current for the same voltage."
+  },
+  {
+    "id": 359,
+    "question": "Why does an inductor oppose high-frequency current more strongly?",
+    "answer": "X_L = 2πfL. Its reactance increases directly with frequency."
+  },
+  {
+    "id": 360,
+    "question": "Why does a three-phase induction motor reverse direction when two phases are swapped?",
+    "answer": "Swapping two phases reverses the phase sequence, which reverses the rotating magnetic field and therefore the direction of electromagnetic torque."
+  },
+  {
+    "id": 361,
+    "question": "What are the major losses in an induction motor?",
+    "answer": "They include stator copper loss, stator core loss, rotor copper loss, mechanical losses, and stray-load losses."
+  },
+  {
+    "id": 362,
+    "question": "Why is rotor copper loss related directly to slip?",
+    "answer": "Rotor copper loss is Pcu2 = sPg. So higher slip means a larger fraction of air-gap power is dissipated in the rotor."
+  },
+  {
+    "id": 363,
+    "question": "What is the mechanical power developed in an induction motor?",
+    "answer": "Ignoring mechanical losses, Pm = (1 − s)Pg. The remaining fraction of air-gap power after rotor copper loss becomes mechanical power."
+  },
+  {
+    "id": 364,
+    "question": "Why does induction-motor efficiency decrease at high slip?",
+    "answer": "High slip causes a larger fraction of air-gap power to become rotor copper loss. Therefore less power is converted into useful mechanical output."
+  },
+  {
+    "id": 365,
+    "question": "What is the condition for maximum torque in an induction motor?",
+    "answer": "Approximately R₂ = sX₂, or smax = R₂/X₂ for the simplified equivalent circuit."
+  },
+  {
+    "id": 366,
+    "question": "Why does maximum torque occur at different slips for different rotor resistances?",
+    "answer": "Because smax ≈ R₂/X₂. Increasing rotor resistance shifts the maximum-torque point toward higher slip."
+  },
+  {
+    "id": 367,
+    "question": "What is the effect of supply voltage on induction-motor torque?",
+    "answer": "For a given operating condition, torque is approximately proportional to V². Therefore voltage reduction can cause a severe reduction in torque capability."
+  },
+  {
+    "id": 368,
+    "question": "Why is an induction motor sensitive to supply-voltage reduction?",
+    "answer": "A small voltage reduction causes a much larger torque reduction because T ∝ V². The motor may therefore draw more current and stall under heavy load."
+  },
+  {
+    "id": 369,
+    "question": "What happens when an induction motor is overloaded?",
+    "answer": "Rotor speed decreases, slip increases, and motor current rises to produce additional torque. Excessive overload causes overheating and possible stalling."
+  },
+  {
+    "id": 370,
+    "question": "What is the pull-out or breakdown torque?",
+    "answer": "It is the maximum torque an induction motor can develop under a given supply condition. Beyond this point, further load increase causes the motor to decelerate rapidly."
+  },
+  {
+    "id": 371,
+    "question": "Why does an induction motor stall?",
+    "answer": "If load torque exceeds the maximum electromagnetic torque, speed falls sharply and slip rises toward unity. Current becomes very high while useful torque can no longer sustain the load."
+  },
+  {
+    "id": 372,
+    "question": "What is crawling in an induction motor?",
+    "answer": "Crawling is abnormal operation at a low speed, commonly near a fraction such as 1/7 of synchronous speed, caused by harmonic rotating fields."
+  },
+  {
+    "id": 373,
+    "question": "What is cogging in an induction motor?",
+    "answer": "Cogging is the tendency of the rotor to magnetically lock with stator teeth, preventing starting. Rotor skewing and suitable slot combinations help reduce it."
+  },
+  {
+    "id": 374,
+    "question": "Why are rotor slots skewed in squirrel-cage motors?",
+    "answer": "Skewing reduces tooth locking, torque pulsations, noise, and harmonic effects while producing smoother torque."
+  },
+  {
+    "id": 375,
+    "question": "What is the no-load test of an induction motor used for?",
+    "answer": "It provides information about rotational losses, core loss, magnetizing current, and shunt-branch parameters under approximately normal operating voltage."
+  },
+  {
+    "id": 376,
+    "question": "What is the blocked-rotor test?",
+    "answer": "The rotor is prevented from rotating and reduced voltage is applied until rated current flows. It is analogous to the transformer short-circuit test."
+  },
+  {
+    "id": 377,
+    "question": "Why is reduced voltage used in the blocked-rotor test?",
+    "answer": "With the rotor stationary, slip is one and the motor impedance is low. Full voltage would produce dangerously high current."
+  },
+  {
+    "id": 378,
+    "question": "What parameters can be estimated from the blocked-rotor test?",
+    "answer": "It primarily provides the combined series resistance and leakage reactance of the motor equivalent circuit."
+  },
+  {
+    "id": 379,
+    "question": "Why is the no-load power factor of an induction motor low?",
+    "answer": "Most no-load current is magnetizing current required to establish the air-gap field. This reactive current is much larger than the small real-power component."
+  },
+  {
+    "id": 380,
+    "question": "Why does induction-motor power factor improve with load?",
+    "answer": "The active component of stator current increases significantly with load, while the magnetizing component changes relatively little. Therefore the phase angle decreases and PF improves."
+  },
+  {
+    "id": 381,
+    "question": "Why is a direct-on-line starter unsuitable for large induction motors?",
+    "answer": "It can draw several times rated current, causing voltage dips in the supply network and high mechanical/electrical stress."
+  },
+  {
+    "id": 382,
+    "question": "Why does a star-delta starter reduce starting current?",
+    "answer": "In star connection, each winding receives VL/√3 instead of VL. Since current approximately follows voltage, the line starting current is substantially reduced."
+  },
+  {
+    "id": 383,
+    "question": "What is the limitation of a star-delta starter?",
+    "answer": "Starting torque is also reduced to approximately one-third of direct-delta starting torque. Therefore it is unsuitable for heavy-load starting."
+  },
+  {
+    "id": 384,
+    "question": "Why is a soft starter different from a VFD?",
+    "answer": "A soft starter mainly controls voltage during starting/stopping, whereas a VFD controls both frequency and voltage, enabling continuous speed control."
+  },
+  {
+    "id": 385,
+    "question": "Why is a single-phase induction motor not self-starting?",
+    "answer": "A single-phase stator produces a pulsating magnetic field that can be resolved into equal forward and backward fields. At standstill their torques cancel."
+  },
+  {
+    "id": 386,
+    "question": "What is the double-revolving-field theory?",
+    "answer": "A pulsating field can be represented as two equal rotating fields moving in opposite directions. Their interaction explains the zero starting torque of a single-phase motor."
+  },
+  {
+    "id": 387,
+    "question": "How does a split-phase motor develop starting torque?",
+    "answer": "Its auxiliary winding has different impedance characteristics from the main winding, creating a phase difference between currents and therefore a rotating field component."
+  },
+  {
+    "id": 388,
+    "question": "Why is a capacitor-start motor capable of high starting torque?",
+    "answer": "The starting capacitor creates a large phase displacement between main and auxiliary currents, producing a stronger rotating field and high starting torque."
+  },
+  {
+    "id": 389,
+    "question": "What is a capacitor-run motor?",
+    "answer": "A capacitor remains permanently connected in series with the auxiliary winding. It provides smoother operation, improved PF, and relatively good efficiency."
+  },
+  {
+    "id": 390,
+    "question": "Why is the starting capacitor removed after acceleration in a capacitor-start motor?",
+    "answer": "The starting capacitor is designed for short-duration high starting torque, not continuous operation. A switch disconnects it after the motor reaches sufficient speed."
+  },
+  {
+    "id": 391,
+    "question": "What is a shaded-pole motor?",
+    "answer": "It uses a copper shading ring around part of each pole to delay flux development in that portion, producing a weak rotating field and starting torque."
+  },
+  {
+    "id": 392,
+    "question": "Why does a shaded-pole motor have low starting torque?",
+    "answer": "The phase shift produced by the shading coil is small, so the resulting rotating-field component is weak."
+  },
+  {
+    "id": 393,
+    "question": "Where are shaded-pole motors commonly used?",
+    "answer": "They are suitable for low-power applications such as small fans, toys, clocks, and simple appliances where low cost is more important than efficiency."
+  },
+  {
+    "id": 394,
+    "question": "What is a synchronous machine?",
+    "answer": "It is an AC machine whose rotor magnetic field rotates at exactly synchronous speed in steady operation: Ns = 120f/P."
+  },
+  {
+    "id": 395,
+    "question": "What is the fundamental difference between an induction motor and a synchronous motor?",
+    "answer": "A synchronous motor operates at exactly synchronous speed, while an induction motor requires slip and therefore operates slightly below synchronous speed."
+  },
+  {
+    "id": 396,
+    "question": "Why does a synchronous motor run at constant speed?",
+    "answer": "Its rotor magnetic field locks with the stator rotating magnetic field. Once synchronism is maintained, rotor speed equals Ns."
+  },
+  {
+    "id": 397,
+    "question": "Why is a synchronous motor not inherently self-starting?",
+    "answer": "At standstill, the stator field sweeps rapidly past the rotor poles, producing alternating torque whose average is approximately zero. An external starting method is therefore required."
+  },
+  {
+    "id": 398,
+    "question": "How can a synchronous motor be started?",
+    "answer": "Damper windings can provide induction-motor starting, after which DC field excitation pulls the rotor into synchronism."
+  },
+  {
+    "id": 399,
+    "question": "What is the function of the rotor field winding in a synchronous motor?",
+    "answer": "DC excitation establishes the rotor magnetic field. Interaction between this field and the stator rotating field produces electromagnetic torque."
+  },
+  {
+    "id": 400,
+    "question": "What is excitation in a synchronous machine?",
+    "answer": "Excitation is the DC field current supplied to the rotor. Changing excitation controls rotor magnetic strength and strongly affects reactive-power exchange."
+  },
+  {
+    "id": 401,
+    "question": "Why can a synchronous motor operate at leading power factor?",
+    "answer": "Over-excitation causes the motor to supply reactive power to the AC system. Therefore its stator current can lead the terminal voltage."
+  },
+  {
+    "id": 402,
+    "question": "What happens to synchronous-motor power factor when excitation is increased?",
+    "answer": "Starting from under-excitation, increasing excitation can move PF toward unity and then into the leading region when the motor becomes over-excited."
+  },
+  {
+    "id": 403,
+    "question": "What is a synchronous condenser?",
+    "answer": "It is an over-excited synchronous machine operated without significant mechanical load to generate or absorb reactive power for voltage and PF control."
+  },
+  {
+    "id": 404,
+    "question": "Why is a synchronous condenser useful in power systems?",
+    "answer": "Its excitation can be controlled to regulate reactive power and system voltage. Unlike fixed capacitors, its VAR output is continuously controllable."
+  },
+  {
+    "id": 405,
+    "question": "What is hunting in a synchronous machine?",
+    "answer": "Hunting is oscillation of the rotor around its steady synchronous position after a sudden load or excitation disturbance. Excessive hunting can cause loss of synchronism."
+  },
+  {
+    "id": 406,
+    "question": "Why can an induction motor never normally reach synchronous speed?",
+    "answer": "At Nr = Ns, slip becomes zero, so rotor EMF and rotor current become zero. With no rotor current, electromagnetic torque disappears."
+  },
+  {
+    "id": 407,
+    "question": "Why does induction-motor torque increase when load increases?",
+    "answer": "The rotor slows slightly, increasing slip. Higher slip increases rotor EMF/current and therefore electromagnetic torque until a new equilibrium is reached."
+  },
+  {
+    "id": 408,
+    "question": "Why is constant V/f control used in induction motors?",
+    "answer": "Because approximately Φ ∝ V/f. Keeping V/f constant maintains nearly constant air-gap flux and therefore good torque capability."
+  },
+  {
+    "id": 409,
+    "question": "Why does increasing rotor resistance improve starting torque?",
+    "answer": "At starting, s = 1. Increasing R₂ can bring the motor closer to its maximum-torque condition R₂ ≈ sX₂."
+  },
+  {
+    "id": 410,
+    "question": "Why doesn't increasing rotor resistance significantly increase maximum torque?",
+    "answer": "It mainly shifts the slip at which maximum torque occurs. The approximate maximum torque magnitude remains nearly unchanged."
+  },
+  {
+    "id": 411,
+    "question": "Why does rotor copper loss increase with slip?",
+    "answer": "Pcu2 = sPg. Therefore a larger slip means a larger fraction of air-gap power is dissipated as rotor copper loss."
+  },
+  {
+    "id": 412,
+    "question": "Why does a VFD provide better speed control than a star-delta starter?",
+    "answer": "Star-delta only reduces starting voltage, while a VFD changes frequency and voltage. Frequency control directly changes synchronous speed."
+  },
+  {
+    "id": 413,
+    "question": "Why does transformer frequency affect core saturation?",
+    "answer": "For approximately constant voltage, Φ ∝ V/f. Reducing frequency therefore increases flux and can drive the core into saturation."
+  },
+  {
+    "id": 414,
+    "question": "Why does a transformer draw magnetizing current at no load?",
+    "answer": "The primary must establish alternating core flux even when the secondary supplies no external load. A small current also supplies core losses."
+  },
+  {
+    "id": 415,
+    "question": "Why are CT secondary terminals dangerous when open-circuited?",
+    "answer": "An open secondary eliminates the opposing secondary MMF, allowing core flux to rise sharply and potentially producing dangerously high secondary voltage."
+  },
+  {
+    "id": 416,
+    "question": "Why does low PF increase conductor heating?",
+    "answer": "For fixed real power, lower PF requires higher current. Since conductor loss is I²R, heating increases strongly."
+  },
+  {
+    "id": 417,
+    "question": "Why does a capacitor supply leading reactive power?",
+    "answer": "Capacitor current leads voltage by 90°, so its reactive-current component opposes the lagging reactive current of inductive loads."
+  },
+  {
+    "id": 418,
+    "question": "Why is a DC series motor unsuitable for no-load operation?",
+    "answer": "Low current produces weak field flux, and speed varies approximately inversely with flux. The motor can therefore accelerate to a dangerous speed."
+  },
+  {
+    "id": 419,
+    "question": "Why does weakening the DC motor field increase speed?",
+    "answer": "With N ∝ (V − IaRa)/Φ, reducing field flux requires speed to rise to generate sufficient back EMF."
+  },
+  {
+    "id": 420,
+    "question": "Why is regenerative braking more efficient than dynamic braking?",
+    "answer": "Regenerative braking converts mechanical energy back into electrical energy and returns it to the source. Dynamic braking converts that energy into heat in a resistor."
+  },
+  {
+    "id": 421,
+    "question": "What is the operating principle of a synchronous generator?",
+    "answer": "Mechanical energy rotates a magnetic field relative to stator conductors, inducing AC EMF according to Faraday's law. The generated frequency is locked to rotor speed."
+  },
+  {
+    "id": 422,
+    "question": "Why is the armature usually placed on the stator in an alternator?",
+    "answer": "High-voltage output is easier to insulate and bring out from a stationary stator. Only the low-power DC excitation needs to cross the rotating interface."
+  },
+  {
+    "id": 423,
+    "question": "What is the relationship between rotor speed and generated frequency?",
+    "answer": "f = PN/120. Therefore higher rotor speed or more poles produces a higher electrical frequency."
+  },
+  {
+    "id": 424,
+    "question": "Why does an alternator rotor rotate at synchronous speed?",
+    "answer": "The rotor magnetic field physically rotates at the speed required to produce the desired electrical frequency. Its speed is directly related to frequency and pole count."
+  },
+  {
+    "id": 425,
+    "question": "What are the two main rotor constructions of synchronous machines?",
+    "answer": "Salient-pole and cylindrical/non-salient rotors. Salient rotors suit low-speed machines, while cylindrical rotors suit high-speed turbo-alternators."
+  },
+  {
+    "id": 426,
+    "question": "Why are salient-pole rotors used for hydroelectric generators?",
+    "answer": "Hydro turbines operate at relatively low speeds, so many poles are required. Salient construction accommodates many poles with a large rotor diameter."
+  },
+  {
+    "id": 427,
+    "question": "Why are cylindrical rotors used in turbo-alternators?",
+    "answer": "Steam turbines operate at high speed, so the rotor must withstand large centrifugal forces. A smooth cylindrical forged rotor provides excellent mechanical strength."
+  },
+  {
+    "id": 428,
+    "question": "Why do turbo-alternators generally have fewer poles?",
+    "answer": "High-speed operation allows the required frequency to be achieved with few poles: N = 120f/P. For 50 Hz, a 2-pole machine operates at 3000 rpm."
+  },
+  {
+    "id": 429,
+    "question": "What is the basic EMF equation of an alternator?",
+    "answer": "Eph = 4.44KcKd fΦT, where Kc is the pitch/chording factor and Kd is the distribution factor."
+  },
+  {
+    "id": 430,
+    "question": "Why is the generated EMF sinusoidal in an ideal alternator?",
+    "answer": "The rotor magnetic field produces a spatially distributed flux waveform, and the stator conductors experience periodically varying flux linkage as the rotor rotates."
+  },
+  {
+    "id": 431,
+    "question": "What is pitch factor?",
+    "answer": "Pitch factor Kc accounts for the reduction in EMF when coils are short-pitched instead of full-pitched. It is generally less than or equal to 1."
+  },
+  {
+    "id": 432,
+    "question": "Why are alternator coils often short-pitched?",
+    "answer": "Short-pitching reduces certain harmonic components and can reduce end-winding copper. The small fundamental EMF reduction is often an acceptable tradeoff."
+  },
+  {
+    "id": 433,
+    "question": "What is distribution factor?",
+    "answer": "It accounts for the reduction in generated EMF because a phase winding is distributed across several slots instead of concentrated in one slot."
+  },
+  {
+    "id": 434,
+    "question": "Why is distributed winding preferred over concentrated winding?",
+    "answer": "It produces a more sinusoidal MMF/EMF waveform and reduces undesirable harmonics. It also improves utilization of the stator circumference."
+  },
+  {
+    "id": 435,
+    "question": "What is the difference between electrical angle and mechanical angle?",
+    "answer": "Electrical angle depends on the number of poles: θe = (P/2)θm. One mechanical revolution corresponds to P/2 electrical cycles."
+  },
+  {
+    "id": 436,
+    "question": "What is armature reaction in an alternator?",
+    "answer": "Armature current produces its own MMF, which interacts with the rotor field MMF. Depending on load power factor, it can distort, weaken, or strengthen the main flux."
+  },
+  {
+    "id": 437,
+    "question": "How does armature reaction behave for a unity-PF load?",
+    "answer": "For an idealized machine, armature reaction is predominantly cross-magnetizing. It mainly distorts the resultant air-gap field."
+  },
+  {
+    "id": 438,
+    "question": "How does a lagging-PF load affect the alternator field?",
+    "answer": "A lagging current produces a predominantly demagnetizing armature reaction. It tends to weaken the main field and reduce generated voltage."
+  },
+  {
+    "id": 439,
+    "question": "How does a leading-PF load affect the alternator field?",
+    "answer": "A leading current produces a predominantly magnetizing armature reaction. It tends to strengthen the main field and raise generated voltage."
+  },
+  {
+    "id": 440,
+    "question": "Why does load power factor affect alternator terminal voltage?",
+    "answer": "Armature reaction and internal impedance voltage drops depend on current phase angle. Therefore the same current magnitude can produce different terminal voltages at different PFs."
+  },
+  {
+    "id": 441,
+    "question": "What is voltage regulation of an alternator?",
+    "answer": "VR = [(E0 − V)/V] × 100. It measures the change from no-load generated EMF to rated-load terminal voltage at specified speed and excitation."
+  },
+  {
+    "id": 442,
+    "question": "Why is alternator regulation generally positive for lagging loads?",
+    "answer": "Lagging current produces demagnetizing armature reaction and internal reactive voltage drop. Therefore terminal voltage falls as load is applied."
+  },
+  {
+    "id": 443,
+    "question": "Why can alternator regulation become negative for leading loads?",
+    "answer": "Leading current can produce magnetizing armature reaction, causing the terminal voltage to rise under load relative to the no-load reference."
+  },
+  {
+    "id": 444,
+    "question": "What is synchronous impedance?",
+    "answer": "It combines effective armature resistance and synchronous reactance: Zs = Ra + jXs. It represents the internal opposition used in simplified alternator analysis."
+  },
+  {
+    "id": 445,
+    "question": "What is synchronous reactance?",
+    "answer": "It represents the combined effect of leakage reactance and armature-reaction reactance in the simplified synchronous-impedance model."
+  },
+  {
+    "id": 446,
+    "question": "Why is synchronous reactance important?",
+    "answer": "It determines internal voltage drop and strongly affects voltage regulation and short-circuit current calculations."
+  },
+  {
+    "id": 447,
+    "question": "What is the synchronous impedance method of voltage regulation?",
+    "answer": "It estimates internal generated EMF from terminal voltage and the voltage drop across synchronous impedance: E⃗ = V⃗ + I⃗(Ra + jXs)."
+  },
+  {
+    "id": 448,
+    "question": "Why is the synchronous impedance method considered conservative?",
+    "answer": "It generally gives a regulation estimate higher than more accurate methods because synchronous impedance lumps armature reaction into reactance."
+  },
+  {
+    "id": 449,
+    "question": "What is the open-circuit characteristic (OCC) of an alternator?",
+    "answer": "It is the relationship between generated terminal voltage and field current at rated speed with the armature open-circuited."
+  },
+  {
+    "id": 450,
+    "question": "What does the OCC reveal about magnetic saturation?",
+    "answer": "Initially voltage increases almost linearly with field current. At higher excitation, the curve bends due to magnetic saturation."
+  },
+  {
+    "id": 451,
+    "question": "What is the short-circuit characteristic (SCC)?",
+    "answer": "It shows short-circuit armature current versus field current at constant rated speed."
+  },
+  {
+    "id": 452,
+    "question": "Why is the SCC approximately linear?",
+    "answer": "Under short-circuit conditions, terminal voltage is nearly zero and the machine operates at relatively low flux. The magnetic circuit therefore remains largely unsaturated."
+  },
+  {
+    "id": 453,
+    "question": "Why are OCC and SCC used together?",
+    "answer": "They provide information about excitation, synchronous impedance, and voltage regulation without requiring full-load operation of the alternator."
+  },
+  {
+    "id": 454,
+    "question": "What is the zero-power-factor test?",
+    "answer": "It determines the voltage behavior of an alternator under a specified zero-PF load and helps estimate voltage regulation more accurately."
+  },
+  {
+    "id": 455,
+    "question": "Why must alternators be synchronized before connecting them in parallel?",
+    "answer": "Their voltage magnitude, frequency, phase sequence, and instantaneous phase angle must be compatible. Otherwise severe circulating currents and mechanical transients can occur."
+  },
+  {
+    "id": 456,
+    "question": "What are the four basic synchronization conditions?",
+    "answer": "Equal voltage magnitude, equal frequency, identical phase sequence, and zero phase-angle difference at the instant of closing."
+  },
+  {
+    "id": 457,
+    "question": "Why must phase sequence match before synchronization?",
+    "answer": "If phase sequence differs, corresponding phase voltages continuously move out of phase. Closing the breaker would create severe circulating currents."
+  },
+  {
+    "id": 458,
+    "question": "What happens if an alternator is connected with a phase-angle mismatch?",
+    "answer": "A sudden electrical torque and current surge occurs as the machine attempts to synchronize. This can produce severe mechanical and electrical stress."
+  },
+  {
+    "id": 459,
+    "question": "What is the purpose of synchronizing lamps?",
+    "answer": "They indicate the phase relationship between incoming and busbar voltages. Their brightness pattern helps determine when the breaker should be closed."
+  },
+  {
+    "id": 460,
+    "question": "What is a synchroscope?",
+    "answer": "It indicates the phase-angle difference and relative frequency between an incoming alternator and the bus. The operator closes the breaker near the correct synchronization position."
+  },
+  {
+    "id": 461,
+    "question": "What happens to an alternator after it is synchronized to an infinite bus?",
+    "answer": "Its speed/frequency is effectively fixed by the grid. Changing mechanical input primarily changes real-power output, while excitation mainly affects reactive-power exchange."
+  },
+  {
+    "id": 462,
+    "question": "How does increasing prime-mover input affect a synchronized generator?",
+    "answer": "It increases the mechanical torque and therefore the generator's real-power output. The rotor angle relative to the grid increases."
+  },
+  {
+    "id": 463,
+    "question": "How does increasing excitation affect a synchronized generator?",
+    "answer": "It changes the generator's reactive-power exchange and terminal voltage tendency. An over-excited generator generally supplies reactive power to the system."
+  },
+  {
+    "id": 464,
+    "question": "What is the power-angle relationship of a cylindrical-rotor synchronous machine?",
+    "answer": "Approximately P = (3VE/Xs) sin δ, where δ is the torque/power angle."
+  },
+  {
+    "id": 465,
+    "question": "Why is the power-angle equation important for stability?",
+    "answer": "It shows that electrical power transfer depends on rotor angle. If mechanical input pushes the rotor angle beyond the stable operating region, synchronism can be lost."
+  },
+  {
+    "id": 466,
+    "question": "Why does an induction motor require slip to produce torque?",
+    "answer": "Slip creates relative motion between the rotating field and rotor, inducing rotor EMF/current. Without rotor current, electromagnetic torque disappears."
+  },
+  {
+    "id": 467,
+    "question": "Why does rotor copper loss equal sPg?",
+    "answer": "Rotor EMF and current operate at slip frequency, and the equivalent circuit shows that the fraction s of air-gap power is dissipated in rotor resistance."
+  },
+  {
+    "id": 468,
+    "question": "Why is Pm = (1 − s)Pg?",
+    "answer": "Of the air-gap power Pg, sPg becomes rotor copper loss. The remaining (1 − s)Pg is converted into mechanical power."
+  },
+  {
+    "id": 469,
+    "question": "Why does increasing rotor resistance improve induction-motor starting torque?",
+    "answer": "At starting s = 1. Increasing R₂ can bring the rotor closer to the maximum-torque condition R₂ ≈ X₂."
+  },
+  {
+    "id": 470,
+    "question": "Why does an induction motor's power factor improve with load?",
+    "answer": "The active current component increases significantly as load increases, while magnetizing current changes relatively little. Hence the phase angle decreases."
+  },
+  {
+    "id": 471,
+    "question": "Why is a single-phase induction motor not self-starting?",
+    "answer": "Its pulsating field can be represented by equal forward and backward rotating fields. At standstill their torques cancel."
+  },
+  {
+    "id": 472,
+    "question": "Why does a capacitor-start motor have high starting torque?",
+    "answer": "The capacitor creates a large phase difference between main and auxiliary currents, producing a strong rotating-field component."
+  },
+  {
+    "id": 473,
+    "question": "Why is a synchronous motor not self-starting?",
+    "answer": "At standstill, the rotating stator field produces alternating torque on the stationary rotor, whose average value is approximately zero."
+  },
+  {
+    "id": 474,
+    "question": "Why does a synchronous motor maintain constant speed?",
+    "answer": "Its rotor magnetic field locks with the stator rotating field. Once synchronized, rotor speed equals Ns = 120f/P."
+  },
+  {
+    "id": 475,
+    "question": "Why can an over-excited synchronous motor operate at leading PF?",
+    "answer": "Increasing rotor excitation makes the motor supply reactive power to the AC system. Consequently its stator current can lead terminal voltage."
+  },
+  {
+    "id": 476,
+    "question": "Why is a synchronous condenser used in power systems?",
+    "answer": "An over-excited synchronous machine can continuously generate or absorb controllable reactive power, helping voltage regulation and power-factor improvement."
+  },
+  {
+    "id": 477,
+    "question": "Why does transformer inrush current occur?",
+    "answer": "Switching at an unfavorable waveform point can combine applied and residual flux, pushing the core into saturation and causing very high magnetizing current."
+  },
+  {
+    "id": 478,
+    "question": "Why is transformer rating given in kVA?",
+    "answer": "Transformer heating is governed primarily by voltage and current, while power factor belongs to the load. Therefore its thermal capacity is specified by apparent power."
+  },
+  {
+    "id": 479,
+    "question": "Why does a DC series motor have very high starting torque?",
+    "answer": "Before saturation, Φ ∝ Ia, so T ∝ ΦIa ≈ Ia². High starting current therefore produces very high torque."
+  },
+  {
+    "id": 480,
+    "question": "Why is regenerative braking more efficient than dynamic braking?",
+    "answer": "Regenerative braking returns mechanical energy to the electrical source. Dynamic braking dissipates that energy as heat in a braking resistor."
+  },
+  {
+    "id": 481,
+    "question": "Why does a synchronous motor require DC excitation on its rotor?",
+    "answer": "DC excitation creates a constant rotor magnetic field. This field locks with the rotating stator field and produces continuous electromagnetic torque."
+  },
+  {
+    "id": 482,
+    "question": "What happens when a synchronous motor is under-excited?",
+    "answer": "Rotor excitation is insufficient, so the motor draws lagging reactive current from the supply. Its power factor becomes lagging."
+  },
+  {
+    "id": 483,
+    "question": "What happens when a synchronous motor is over-excited?",
+    "answer": "The rotor field becomes stronger and the motor supplies reactive power to the system. Its stator current therefore becomes leading."
+  },
+  {
+    "id": 484,
+    "question": "What happens at normal excitation?",
+    "answer": "At the appropriate excitation level, reactive-power demand is approximately zero and the motor operates near unity power factor."
+  },
+  {
+    "id": 485,
+    "question": "Why does synchronous-motor speed remain constant when load changes?",
+    "answer": "The rotor remains magnetically locked to the stator field, so its speed remains Ns = 120f/P as long as synchronism is maintained."
+  },
+  {
+    "id": 486,
+    "question": "How does a synchronous motor respond to increasing mechanical load?",
+    "answer": "Rotor angle δ increases relative to the rotating field, allowing greater electromagnetic power/torque to be developed while speed remains constant."
+  },
+  {
+    "id": 487,
+    "question": "Why doesn't speed decrease when load increases normally?",
+    "answer": "Instead of producing significant slip like an induction motor, the synchronous rotor changes its torque angle. Speed remains locked to synchronous speed."
+  },
+  {
+    "id": 488,
+    "question": "What happens if load exceeds the maximum synchronizing capability?",
+    "answer": "The rotor angle becomes too large and synchronism is lost. The motor then behaves abnormally and may draw excessive current."
+  },
+  {
+    "id": 489,
+    "question": "What is a V-curve of a synchronous motor?",
+    "answer": "It shows armature current versus field current at constant mechanical load. Current decreases to a minimum at unity PF and rises on either side."
+  },
+  {
+    "id": 490,
+    "question": "Why is the V-curve called a V-curve?",
+    "answer": "As excitation increases from under-excitation, armature current first decreases, reaches a minimum, then increases again under over-excitation, forming a V-shaped characteristic."
+  },
+  {
+    "id": 491,
+    "question": "What is an inverted V-curve?",
+    "answer": "It represents power factor versus field current. PF rises toward unity and then changes into the leading region as excitation increases further."
+  },
+  {
+    "id": 492,
+    "question": "Why is armature current minimum near unity power factor?",
+    "answer": "At unity PF, the reactive component of stator current is minimized. Therefore the motor needs the least total current for a given real power."
+  },
+  {
+    "id": 493,
+    "question": "Why does armature current increase during over-excitation?",
+    "answer": "Excess excitation causes the motor to supply reactive power. The resulting leading reactive current adds vectorially to the active current."
+  },
+  {
+    "id": 494,
+    "question": "Why does armature current increase during under-excitation?",
+    "answer": "The motor must draw reactive power from the supply. This adds a lagging current component to the active current."
+  },
+  {
+    "id": 495,
+    "question": "How can a synchronous motor improve plant power factor?",
+    "answer": "Operate it slightly over-excited so it supplies leading reactive power, compensating the lagging VAR demand of induction motors and other inductive loads."
+  },
+  {
+    "id": 496,
+    "question": "Why is a synchronous motor sometimes called a synchronous condenser when unloaded?",
+    "answer": "With negligible mechanical load, it can be over-excited primarily to exchange reactive power with the grid rather than perform useful mechanical work."
+  },
+  {
+    "id": 497,
+    "question": "What is the torque angle δ of a synchronous motor?",
+    "answer": "It is the angular displacement between the rotor magnetic field and the stator rotating field. Increasing load generally increases this angle."
+  },
+  {
+    "id": 498,
+    "question": "What is the approximate power-angle equation for a cylindrical synchronous machine?",
+    "answer": "P = (3VE/Xs) sin δ. It shows that electrical power transfer depends strongly on the torque angle."
+  },
+  {
+    "id": 499,
+    "question": "What is the maximum theoretical power transfer angle?",
+    "answer": "For the simplified cylindrical-rotor equation, maximum power occurs near δ = 90°, because sin δ is maximum there."
+  },
+  {
+    "id": 500,
+    "question": "Why is operation near 90° generally undesirable?",
+    "answer": "Although theoretical power transfer is maximum there, synchronizing torque margin becomes very small. Disturbances can therefore cause loss of synchronism."
+  },
+  {
+    "id": 501,
+    "question": "What is synchronizing torque?",
+    "answer": "It is the restoring torque developed when the rotor is displaced from its equilibrium position. It tends to bring the rotor back toward its stable operating angle."
+  },
+  {
+    "id": 502,
+    "question": "Why is synchronizing torque important?",
+    "answer": "It determines how strongly a synchronous machine resists small disturbances. Higher synchronizing torque generally means better small-disturbance stability."
+  },
+  {
+    "id": 503,
+    "question": "What is the effect of increasing mechanical load on rotor angle?",
+    "answer": "The rotor falls further behind the rotating field in generator operation, or develops the corresponding torque-angle displacement in motor operation, enabling greater electromagnetic torque."
+  },
+  {
+    "id": 504,
+    "question": "What is steady-state stability of a synchronous machine?",
+    "answer": "It is the ability to remain synchronized following small, gradual changes in operating conditions without losing synchronism."
+  },
+  {
+    "id": 505,
+    "question": "What is transient stability?",
+    "answer": "It is the ability of the machine to remain synchronized following a large sudden disturbance such as a fault, major load change, or switching event."
+  },
+  {
+    "id": 506,
+    "question": "Why does a salient-pole machine have different direct and quadrature axes?",
+    "answer": "Its air gap is physically non-uniform because of the projecting poles. Magnetic reluctance therefore differs along the rotor's d- and q-axes."
+  },
+  {
+    "id": 507,
+    "question": "What is direct-axis reactance Xd?",
+    "answer": "It is the synchronous reactance associated with the rotor direct axis. Due to lower reluctance along the pole axis, it is generally larger than Xq."
+  },
+  {
+    "id": 508,
+    "question": "What is quadrature-axis reactance Xq?",
+    "answer": "It represents the reactance along the quadrature axis, where the air gap is larger and magnetic reluctance is higher."
+  },
+  {
+    "id": 509,
+    "question": "Why is Xd > Xq in a salient-pole machine?",
+    "answer": "The direct axis has a smaller effective air gap and therefore lower magnetic reluctance. This allows stronger magnetic coupling and a larger reactance."
+  },
+  {
+    "id": 510,
+    "question": "What is reluctance torque in a synchronous motor?",
+    "answer": "It is torque produced because the rotor tends to align its minimum-reluctance axis with the stator rotating magnetic field."
+  },
+  {
+    "id": 511,
+    "question": "Why can a salient-pole synchronous motor develop reluctance torque?",
+    "answer": "Its unequal air-gap geometry creates different magnetic reluctances along different rotor axes. The rotor naturally tends toward the minimum-reluctance alignment."
+  },
+  {
+    "id": 512,
+    "question": "What is the significance of reluctance torque?",
+    "answer": "It contributes to total electromagnetic torque and allows salient-pole synchronous machines to develop torque even from rotor saliency."
+  },
+  {
+    "id": 513,
+    "question": "What is the two-reaction theory?",
+    "answer": "It resolves armature reaction into direct-axis and quadrature-axis components. This provides a more accurate analysis of salient-pole synchronous machines."
+  },
+  {
+    "id": 514,
+    "question": "Why is the two-reaction model unnecessary for an ideal cylindrical rotor?",
+    "answer": "A cylindrical rotor has nearly uniform air-gap reluctance, so Xd and Xq are approximately equal. The separate-axis treatment therefore provides little additional benefit."
+  },
+  {
+    "id": 515,
+    "question": "Why are damper windings installed in synchronous machines?",
+    "answer": "They provide induction-motor starting torque and help damp rotor oscillations during disturbances, reducing hunting."
+  },
+  {
+    "id": 516,
+    "question": "How do damper windings reduce hunting?",
+    "answer": "Rotor oscillation induces currents in the damper bars. Their electromagnetic reaction produces a torque opposing the oscillatory motion."
+  },
+  {
+    "id": 517,
+    "question": "Why are synchronous motors useful for constant-speed industrial drives?",
+    "answer": "Their speed is exactly determined by supply frequency and pole number. This makes them suitable where precise constant speed is required."
+  },
+  {
+    "id": 518,
+    "question": "Why are synchronous motors often used for large mechanical loads?",
+    "answer": "They can provide constant-speed operation and controlled reactive power, improving both mechanical performance and plant electrical characteristics."
+  },
+  {
+    "id": 519,
+    "question": "What is the effect of excitation on synchronous-motor current?",
+    "answer": "Increasing excitation from under-excitation initially reduces current, reaches minimum near unity PF, and then increases current in the leading region."
+  },
+  {
+    "id": 520,
+    "question": "What happens to real power when excitation is changed at constant mechanical load?",
+    "answer": "Approximately the same real mechanical power must still be supplied, while excitation mainly changes the reactive-power exchange and stator current angle."
+  },
+  {
+    "id": 521,
+    "question": "What happens to reactive power when mechanical load changes at constant excitation?",
+    "answer": "The reactive component can also change because the operating point and internal phasor relationships shift. However, excitation is the primary control of reactive-power behavior."
+  },
+  {
+    "id": 522,
+    "question": "Why is excitation control important in interconnected power systems?",
+    "answer": "Generator excitation controls reactive-power output and terminal voltage. Proper excitation therefore supports voltage regulation and system stability."
+  },
+  {
+    "id": 523,
+    "question": "What happens if a synchronous generator is under-excited?",
+    "answer": "It generally absorbs reactive power from the grid and operates at a lagging power factor. Excessive under-excitation can threaten stability and heating limits."
+  },
+  {
+    "id": 524,
+    "question": "What happens if a synchronous generator is over-excited?",
+    "answer": "It supplies reactive power to the grid and generally operates at a leading current relative to terminal voltage, supporting system voltage."
+  },
+  {
+    "id": 525,
+    "question": "Why is excitation-system response important during disturbances?",
+    "answer": "Fast excitation can rapidly modify generator internal EMF and reactive output, helping maintain terminal voltage and improve transient stability."
+  },
+  {
+    "id": 526,
+    "question": "Why does an alternator normally have its armature on the stator?",
+    "answer": "The stationary stator makes high-voltage insulation, cooling, and output connections easier. Only the relatively small DC excitation is supplied to the rotating rotor."
+  },
+  {
+    "id": 527,
+    "question": "Why are salient-pole rotors used in hydro generators?",
+    "answer": "Hydro turbines operate at relatively low speed and require many poles. Salient construction accommodates many poles economically."
+  },
+  {
+    "id": 528,
+    "question": "Why are cylindrical rotors used in turbo-alternators?",
+    "answer": "Steam turbines operate at very high speed, requiring mechanically strong rotors. A smooth forged cylindrical rotor withstands high centrifugal stress."
+  },
+  {
+    "id": 529,
+    "question": "Why does alternator frequency depend on speed and pole count?",
+    "answer": "Each rotor pole pair produces one electrical cycle per mechanical revolution: f = PN/120."
+  },
+  {
+    "id": 530,
+    "question": "Why does short-pitching reduce harmonics?",
+    "answer": "Coil sides are electrically displaced from full-pitch positions, causing selected harmonic EMFs to partially cancel. The fundamental EMF reduction is relatively small."
+  },
+  {
+    "id": 531,
+    "question": "Why does lagging load tend to reduce alternator terminal voltage?",
+    "answer": "Lagging armature current produces a demagnetizing reaction and reactive internal voltage drop. Both tend to reduce terminal voltage."
+  },
+  {
+    "id": 532,
+    "question": "Why can alternator regulation become negative with leading loads?",
+    "answer": "Leading current can produce magnetizing armature reaction and a voltage rise across reactive components, allowing loaded terminal voltage to exceed the no-load reference."
+  },
+  {
+    "id": 533,
+    "question": "Why is the alternator SCC approximately linear?",
+    "answer": "During short-circuit operation, terminal voltage is nearly zero and the machine flux remains relatively low. The magnetic circuit therefore operates mostly below saturation."
+  },
+  {
+    "id": 534,
+    "question": "Why must alternators have the same phase sequence before paralleling?",
+    "answer": "Different phase sequences cause the phase-angle relationship to continually rotate rather than remain aligned, producing severe circulating currents if connected."
+  },
+  {
+    "id": 535,
+    "question": "What happens when prime-mover input to a synchronized generator increases?",
+    "answer": "The generator supplies more real power to the grid and its rotor angle increases. Frequency remains essentially fixed by the grid."
+  },
+  {
+    "id": 536,
+    "question": "What happens when generator excitation increases?",
+    "answer": "Reactive-power output generally increases and terminal voltage tends to rise if the machine is not connected to a stiff infinite bus."
+  },
+  {
+    "id": 537,
+    "question": "Why does an induction motor need slip?",
+    "answer": "Relative motion between the rotating field and rotor is necessary to induce rotor EMF/current. Without it, electromagnetic torque becomes zero."
+  },
+  {
+    "id": 538,
+    "question": "Why does induction-motor rotor copper loss equal sPg?",
+    "answer": "The slip-dependent equivalent circuit shows that the fraction s of air-gap power is dissipated in rotor resistance, while 1 − s becomes mechanical power."
+  },
+  {
+    "id": 539,
+    "question": "Why does a synchronous motor maintain constant speed under normal load changes?",
+    "answer": "Instead of changing speed significantly, its rotor angle changes to develop the required electromagnetic torque while remaining locked to the rotating field."
+  },
+  {
+    "id": 540,
+    "question": "Why does a synchronous motor lose synchronism under excessive load?",
+    "answer": "The required torque angle becomes too large and the available restoring/synchronizing torque is insufficient. The rotor can then fall out of step with the stator field."
+  }
+
+]
