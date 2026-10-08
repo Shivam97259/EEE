@@ -3288,5 +3288,305 @@
     "id": 658,
     "question": "Why is constant V/f control used for induction motors?",
     "answer": "Air-gap flux is approximately proportional to V/f. Keeping this ratio nearly constant maintains flux and preserves torque capability below base speed."
+  },
+  {
+    "id": 659,
+    "question": "Why is feedback used in a control system?",
+    "answer": "Feedback compares actual output with the desired reference and uses the error to correct the system. It improves accuracy and disturbance rejection."
+  },
+  {
+    "id": 660,
+    "question": "Why is negative feedback generally preferred in control systems?",
+    "answer": "Negative feedback reduces error and makes system behavior less sensitive to parameter variations. It can also improve bandwidth and disturbance rejection."
+  },
+  {
+    "id": 661,
+    "question": "What is the difference between open-loop and closed-loop control?",
+    "answer": "An open-loop system does not use output feedback, while a closed-loop system compares output with a reference. Closed-loop control can automatically correct deviations."
+  },
+  {
+    "id": 662,
+    "question": "Why is an open-loop system generally less accurate?",
+    "answer": "It cannot detect output errors caused by disturbances or parameter changes. The controller therefore cannot automatically compensate for deviations."
+  },
+  {
+    "id": 663,
+    "question": "What is the transfer function of a control system?",
+    "answer": "For zero initial conditions, transfer function = output Laplace transform / input Laplace transform. It mathematically describes the input-output dynamics of an LTI system."
+  },
+  {
+    "id": 664,
+    "question": "Why are poles important in a control system?",
+    "answer": "Poles determine natural modes and strongly influence stability, speed, and transient response. Their locations in the s-plane reveal whether responses decay or grow."
+  },
+  {
+    "id": 665,
+    "question": "Why are zeros important in a control system?",
+    "answer": "Zeros shape how different dynamic modes appear in the output response. They can affect transient behavior, overshoot, and frequency response."
+  },
+  {
+    "id": 666,
+    "question": "What is system stability?",
+    "answer": "A stable system produces a bounded output for every bounded input under the required stability definition. For a continuous-time LTI system, closed-loop poles must lie in the left half of the s-plane."
+  },
+  {
+    "id": 667,
+    "question": "Why does a right-half-plane pole make a continuous-time system unstable?",
+    "answer": "A pole with positive real part produces a term containing e^(+at), which grows with time. The natural response therefore does not decay."
+  },
+  {
+    "id": 668,
+    "question": "Why does a pole on the imaginary axis require special attention?",
+    "answer": "It produces sustained oscillations rather than decay. Stability then depends on pole multiplicity and the exact stability criterion being used."
+  },
+  {
+    "id": 669,
+    "question": "What is damping ratio?",
+    "answer": "Damping ratio indicates how strongly oscillatory modes are damped relative to critical damping. It strongly affects overshoot, settling time, and transient oscillation."
+  },
+  {
+    "id": 670,
+    "question": "Why does increasing damping ratio generally reduce overshoot?",
+    "answer": "Higher damping dissipates oscillatory energy more strongly. The transient therefore oscillates less and produces a smaller peak beyond the final value."
+  },
+  {
+    "id": 671,
+    "question": "What is natural frequency?",
+    "answer": "Natural frequency represents the characteristic oscillation rate of a second-order system before damping effects are considered. It determines the basic speed of the dynamic response."
+  },
+  {
+    "id": 672,
+    "question": "Why is a second-order system important in control engineering?",
+    "answer": "Many practical systems can be approximated by dominant second-order dynamics. Its parameters directly relate to overshoot, settling time, damping, and oscillation."
+  },
+  {
+    "id": 673,
+    "question": "What causes overshoot in a control-system step response?",
+    "answer": "Insufficient damping allows stored system energy to carry the response beyond its final value. Oscillatory poles commonly produce this behavior."
+  },
+  {
+    "id": 674,
+    "question": "Why does increasing closed-loop bandwidth generally make a system respond faster?",
+    "answer": "Higher bandwidth allows the system to respond effectively to higher-frequency components of the input. This generally reduces response time, subject to stability and noise limitations."
+  },
+  {
+    "id": 675,
+    "question": "What is steady-state error?",
+    "answer": "It is the difference between desired and actual output after transient effects have decayed. It indicates the final accuracy of the control system."
+  },
+  {
+    "id": 676,
+    "question": "Why does integral control reduce steady-state error?",
+    "answer": "The integrator accumulates persistent error over time and increases control action until the error is driven toward zero. This improves low-frequency tracking accuracy."
+  },
+  {
+    "id": 677,
+    "question": "Why can excessive integral action cause oscillation?",
+    "answer": "The integrator accumulates error and can continue driving the actuator even after the system begins correcting. Excessive integral gain reduces damping and can cause overshoot or instability."
+  },
+  {
+    "id": 678,
+    "question": "What is proportional control?",
+    "answer": "The controller output is proportional to instantaneous error: u(t) = Kpe(t). Increasing Kp generally reduces error but may increase overshoot and instability."
+  },
+  {
+    "id": 679,
+    "question": "What is derivative control?",
+    "answer": "Derivative action responds to the rate of change of error: u(t) = Kdde(t)/dt. It provides anticipatory damping but is sensitive to measurement noise."
+  },
+  {
+    "id": 680,
+    "question": "Why is PID control widely used in industry?",
+    "answer": "P provides immediate correction, I removes persistent error, and D improves damping and transient response. Their combination handles many industrial processes effectively."
+  },
+  {
+    "id": 681,
+    "question": "Why is derivative action usually avoided on raw noisy measurements?",
+    "answer": "Differentiation amplifies high-frequency noise because rapid measurement variations create large derivative signals. Filtering is therefore commonly applied before derivative action."
+  },
+  {
+    "id": 682,
+    "question": "What is integral windup?",
+    "answer": "When an actuator saturates, the integral term can continue accumulating error even though additional control effort cannot be applied. This causes large overshoot when the actuator leaves saturation."
+  },
+  {
+    "id": 683,
+    "question": "How is integral windup prevented?",
+    "answer": "Anti-windup methods stop or back-calculate integral accumulation when the actuator saturates. This allows faster recovery once the control output returns within limits."
+  },
+  {
+    "id": 684,
+    "question": "What is root locus?",
+    "answer": "Root locus shows how closed-loop pole locations move as a system gain varies. It provides a graphical way to study stability and transient performance."
+  },
+  {
+    "id": 685,
+    "question": "Why is root locus useful during controller design?",
+    "answer": "It shows how changing gain affects damping, speed, and stability. Designers can select gain values that place dominant poles in desirable regions."
+  },
+  {
+    "id": 686,
+    "question": "What is the Routh-Hurwitz criterion used for?",
+    "answer": "It determines the number of right-half-plane roots of a characteristic equation without explicitly solving for all poles. It is widely used for algebraic stability analysis."
+  },
+  {
+    "id": 687,
+    "question": "Why is the Routh table useful for high-order systems?",
+    "answer": "It avoids calculating complicated polynomial roots directly. The signs of the first column reveal the number of right-half-plane poles."
+  },
+  {
+    "id": 688,
+    "question": "What does a sign change in the first column of a Routh table indicate?",
+    "answer": "Each sign change corresponds to one right-half-plane root. Therefore the number of sign changes indicates the number of unstable poles."
+  },
+  {
+    "id": 689,
+    "question": "What is a Bode plot?",
+    "answer": "It represents magnitude and phase of a transfer function versus logarithmic frequency. It is widely used for frequency-response and stability analysis."
+  },
+  {
+    "id": 690,
+    "question": "Why is logarithmic frequency used in Bode plots?",
+    "answer": "A logarithmic scale compresses a very wide frequency range into a manageable plot. It also makes multiplication of frequency decades and asymptotic slopes convenient."
+  },
+  {
+    "id": 691,
+    "question": "What is gain margin?",
+    "answer": "Gain margin indicates how much loop gain can increase before reaching the critical stability condition. A positive adequate margin indicates robustness against gain variations."
+  },
+  {
+    "id": 692,
+    "question": "What is phase margin?",
+    "answer": "Phase margin is the additional phase lag required at the gain-crossover frequency to reach the critical -180-degree condition. Higher practical margin generally means better robustness."
+  },
+  {
+    "id": 693,
+    "question": "Why is phase margin important in practical controller design?",
+    "answer": "It indicates how close the system is to oscillatory instability. Adequate phase margin generally provides better tolerance to modeling errors and parameter variations."
+  },
+  {
+    "id": 694,
+    "question": "What is resonance in a control-system frequency response?",
+    "answer": "Resonance occurs when the system exhibits a pronounced peak in magnitude at a particular frequency. It is commonly associated with lightly damped dynamic modes."
+  },
+  {
+    "id": 695,
+    "question": "Why can excessive controller gain reduce stability?",
+    "answer": "Higher loop gain changes closed-loop pole locations and can increase oscillatory behavior. Beyond a critical range, poles may cross into the right half-plane."
+  },
+  {
+    "id": 696,
+    "question": "What is a lead compensator used for?",
+    "answer": "Lead compensation adds positive phase over a selected frequency range and can improve phase margin and transient response. It is commonly used to increase effective bandwidth."
+  },
+  {
+    "id": 697,
+    "question": "What is a lag compensator used for?",
+    "answer": "Lag compensation improves low-frequency gain and therefore steady-state accuracy while having limited effect on higher-frequency dynamics. It can improve steady-state performance with modest bandwidth penalty."
+  },
+  {
+    "id": 698,
+    "question": "Why is lead-lag compensation used?",
+    "answer": "Lead action can improve transient response and stability margin, while lag action improves steady-state accuracy. Combining them allows both objectives to be addressed."
+  },
+  {
+    "id": 699,
+    "question": "What is a state-space model?",
+    "answer": "It represents system dynamics using first-order state equations and output equations. It is especially useful for multi-input, multi-output and higher-order systems."
+  },
+  {
+    "id": 700,
+    "question": "Why are state variables important in control systems?",
+    "answer": "They represent the minimum set of internal variables needed to determine future system behavior from current conditions and inputs. Examples include position and velocity."
+  },
+  {
+    "id": 701,
+    "question": "What is controllability?",
+    "answer": "A system is controllable if suitable inputs can drive its state from an initial condition to a desired state in finite time. It determines whether internal modes can be influenced by actuators."
+  },
+  {
+    "id": 702,
+    "question": "What is observability?",
+    "answer": "A system is observable if its internal states can be uniquely determined from available inputs and outputs. It determines whether hidden states can be reconstructed from measurements."
+  },
+  {
+    "id": 703,
+    "question": "Why are controllability and observability important in embedded control systems?",
+    "answer": "They determine whether actuators can influence required states and whether sensors provide enough information for state estimation. Both are essential for reliable feedback control."
+  },
+  {
+    "id": 704,
+    "question": "Why does negative feedback generally reduce sensitivity to parameter variations?",
+    "answer": "Closed-loop sensitivity is reduced approximately by the factor 1/(1+loop gain). High loop gain therefore makes output less dependent on plant-parameter changes."
+  },
+  {
+    "id": 705,
+    "question": "Why does integral control improve tracking of a constant reference?",
+    "answer": "A persistent error produces continuously increasing integral action. The controller keeps correcting until the steady-state error is reduced toward zero."
+  },
+  {
+    "id": 706,
+    "question": "Why does derivative control improve damping?",
+    "answer": "Derivative action responds to the rate of error change and produces a control component opposing rapid motion. This can reduce overshoot and oscillation."
+  },
+  {
+    "id": 707,
+    "question": "Why is a DC-DC converter's inductor current continuous in CCM?",
+    "answer": "The inductor stores and releases energy without allowing its current to fall to zero during the switching cycle. This produces continuous current flow through the load path."
+  },
+  {
+    "id": 708,
+    "question": "Why does a boost converter require a diode or synchronous switch path?",
+    "answer": "The stored inductor energy must transfer to the output during the appropriate switching interval. The controlled path prevents reverse energy flow and enables voltage boosting."
+  },
+  {
+    "id": 709,
+    "question": "Why does PWM duty cycle control average converter output?",
+    "answer": "Changing duty cycle changes the fraction of each switching period during which energy is transferred. The inductor and capacitor then average this switched energy into a controlled DC output."
+  },
+  {
+    "id": 710,
+    "question": "Why is dead time necessary in an inverter but undesirable when excessive?",
+    "answer": "Dead time prevents shoot-through between complementary switches. Excessive dead time distorts the effective output voltage and increases waveform distortion."
+  },
+  {
+    "id": 711,
+    "question": "Why does transformer inrush current not necessarily indicate an internal fault?",
+    "answer": "Energization can drive the core into saturation because of switching angle and residual flux. The resulting high magnetizing current occurs without an internal winding fault."
+  },
+  {
+    "id": 712,
+    "question": "Why is negative-sequence protection important for generators?",
+    "answer": "Negative-sequence currents produce reverse-rotating fields and severe rotor heating. A dedicated protection element prevents prolonged operation under unbalanced conditions."
+  },
+  {
+    "id": 713,
+    "question": "Why does a synchronous motor remain at constant speed when mechanical load increases?",
+    "answer": "The rotor remains locked to the stator rotating field while its torque angle increases. It loses synchronism only when the required torque exceeds the available synchronizing capability."
+  },
+  {
+    "id": 714,
+    "question": "Why does an induction motor draw high current during starting?",
+    "answer": "At standstill, slip is one and the rotor presents maximum-frequency induced conditions. The motor's effective impedance is low enough to permit a large starting current."
+  },
+  {
+    "id": 715,
+    "question": "Why is constant V/f control effective below base speed?",
+    "answer": "Since air-gap flux is approximately proportional to V/f, maintaining the ratio keeps flux nearly constant. This preserves approximately constant torque capability."
+  },
+  {
+    "id": 716,
+    "question": "Why is a CT secondary dangerous when open-circuited?",
+    "answer": "The secondary current normally balances the primary MMF. Opening the secondary removes this balance, causing high flux and potentially dangerous secondary voltage."
+  },
+  {
+    "id": 717,
+    "question": "Why is differential protection more selective than ordinary overcurrent protection?",
+    "answer": "Differential protection responds to current imbalance within a defined zone rather than simply current magnitude. It can therefore distinguish internal faults from many external high-current faults."
+  },
+  {
+    "id": 718,
+    "question": "Why does increasing prime-mover torque increase real power output of a synchronized generator?",
+    "answer": "The additional mechanical input increases the rotor power angle relative to the grid. The generator consequently transfers more active power while remaining locked to grid frequency."
   }
 ]
