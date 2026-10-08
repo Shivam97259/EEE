@@ -2998,5 +2998,295 @@
     "id": 600,
     "question": "Why is protection coordination essential in a multi-level power network?",
     "answer": "Protection settings must operate from the fault location outward, allowing the nearest device to clear the fault first. This minimizes unnecessary outages and preserves system stability."
+  },
+  {
+    "id": 601,
+    "question": "Why is a thyristor different from a MOSFET in its turn-off behavior?",
+    "answer": "A thyristor latches ON after triggering and normally requires current to fall below its holding level for turn-off. A MOSFET can be turned OFF directly by removing its gate drive."
+  },
+  {
+    "id": 602,
+    "question": "How does a thyristor turn ON?",
+    "answer": "When forward biased, a suitable gate pulse initiates regenerative action inside the device. It then latches into conduction if the anode current exceeds the latching requirement."
+  },
+  {
+    "id": 603,
+    "question": "Why can a thyristor gate normally not turn the device OFF?",
+    "answer": "The gate controls triggering but does not directly interrupt the internal regenerative conduction path. Current must be forced below the holding current or otherwise commutated."
+  },
+  {
+    "id": 604,
+    "question": "What is latching current in a thyristor?",
+    "answer": "It is the minimum anode current required immediately after triggering to keep the thyristor ON when the gate pulse is removed. It is normally greater than holding current."
+  },
+  {
+    "id": 605,
+    "question": "What is holding current in a thyristor?",
+    "answer": "It is the minimum anode current required to maintain conduction after the thyristor has already latched ON. Below this current, the device turns OFF."
+  },
+  {
+    "id": 606,
+    "question": "Why is dv/dt protection required for a thyristor?",
+    "answer": "A rapid voltage rise across the device can cause capacitive displacement current and unintentionally trigger it. Snubbers and controlled voltage transitions reduce false triggering."
+  },
+  {
+    "id": 607,
+    "question": "Why is di/dt limited during thyristor turn-on?",
+    "answer": "Current initially spreads through only part of the device area. Excessive di/dt can create localized current density and heating, causing device damage."
+  },
+  {
+    "id": 608,
+    "question": "What is natural commutation in a thyristor converter?",
+    "answer": "The AC supply naturally forces thyristor current to zero at an appropriate current reversal point. The device then recovers its blocking capability."
+  },
+  {
+    "id": 609,
+    "question": "What is forced commutation?",
+    "answer": "External circuit components force the thyristor current below its holding value and provide the required reverse-bias interval. It is commonly required in DC-fed thyristor circuits."
+  },
+  {
+    "id": 610,
+    "question": "Why are IGBTs widely used in medium- and high-power switching converters?",
+    "answer": "They combine voltage-controlled MOS-gate drive with bipolar conduction, giving high input impedance and relatively low conduction loss at higher voltage and current ratings."
+  },
+  {
+    "id": 611,
+    "question": "Why is an IGBT generally slower than a MOSFET?",
+    "answer": "An IGBT uses minority-carrier conduction in its drift region. Stored charge must be removed during turn-off, producing a tail current."
+  },
+  {
+    "id": 612,
+    "question": "Why are MOSFETs preferred for very high-frequency switching?",
+    "answer": "MOSFETs are majority-carrier devices, so they have no significant minority-carrier storage. This enables faster turn-on and turn-off."
+  },
+  {
+    "id": 613,
+    "question": "What is conduction loss in a MOSFET?",
+    "answer": "For an approximate resistive model, conduction loss is P_cond = I_RMS^2*R_DS(on). It increases strongly with current and device temperature."
+  },
+  {
+    "id": 614,
+    "question": "Why does MOSFET R_DS(on) increase with temperature?",
+    "answer": "Carrier mobility decreases as semiconductor temperature rises. This increases channel resistance and therefore conduction loss."
+  },
+  {
+    "id": 615,
+    "question": "What is switching loss in a power semiconductor?",
+    "answer": "During transitions, voltage and current overlap for a finite time, producing energy loss. Repeating this at high frequency increases average switching power."
+  },
+  {
+    "id": 616,
+    "question": "Why is a gate driver needed for a power MOSFET?",
+    "answer": "The driver rapidly charges and discharges the MOSFET gate capacitances. Fast gate transitions reduce switching loss and ensure reliable switching."
+  },
+  {
+    "id": 617,
+    "question": "Why can a high-side MOSFET require a floating gate driver?",
+    "answer": "Its source voltage can move with the switching node and may no longer be referenced to circuit ground. The gate driver must therefore generate the correct gate-to-source voltage at the moving potential."
+  },
+  {
+    "id": 618,
+    "question": "Why is shoot-through dangerous in a half-bridge?",
+    "answer": "If both upper and lower switches conduct simultaneously, the DC bus is nearly short-circuited. This produces a very large current limited mainly by parasitic impedance."
+  },
+  {
+    "id": 619,
+    "question": "How does dead time prevent shoot-through?",
+    "answer": "The controller inserts a short interval during which both switches are OFF between complementary gate signals. This allows the outgoing device to stop conducting before the opposite device turns ON."
+  },
+  {
+    "id": 620,
+    "question": "What is soft switching in power electronics?",
+    "answer": "Soft switching arranges circuit conditions so switching occurs near zero voltage or zero current. This reduces switching loss, EMI, and semiconductor stress."
+  },
+  {
+    "id": 621,
+    "question": "What is zero-voltage switching?",
+    "answer": "In ZVS, a switch transitions when its voltage is approximately zero. This greatly reduces voltage-current overlap during turn-on."
+  },
+  {
+    "id": 622,
+    "question": "What is zero-current switching?",
+    "answer": "In ZCS, a switch transitions when its current is approximately zero. This reduces turn-off switching energy and current-related stress."
+  },
+  {
+    "id": 623,
+    "question": "Why are inductors used in switched-mode power supplies?",
+    "answer": "Inductors store energy and oppose rapid current changes. They enable controlled energy transfer and help produce continuous load current."
+  },
+  {
+    "id": 624,
+    "question": "Why are capacitors used close to power switches?",
+    "answer": "They provide a low-impedance local path for high-frequency switching current. This reduces voltage spikes and limits current-loop area."
+  },
+  {
+    "id": 625,
+    "question": "What is continuous conduction mode in a DC-DC converter?",
+    "answer": "The inductor current remains above zero throughout the switching cycle. Energy transfer is therefore continuous rather than occurring through separated current pulses."
+  },
+  {
+    "id": 626,
+    "question": "What is discontinuous conduction mode?",
+    "answer": "The inductor current reaches zero during part of each switching cycle. Converter behavior becomes load- and switching-frequency-dependent compared with continuous conduction."
+  },
+  {
+    "id": 627,
+    "question": "Why does a converter enter discontinuous conduction at light load?",
+    "answer": "The load requires less energy, so the inductor current can decay completely before the next switching cycle. The converter then operates with a zero-current interval."
+  },
+  {
+    "id": 628,
+    "question": "Why is current-mode control used in switching converters?",
+    "answer": "It directly senses inductor or switch current and uses it as a control variable. This improves transient response and provides inherent cycle-by-cycle current limiting."
+  },
+  {
+    "id": 629,
+    "question": "Why is voltage-mode control different from current-mode control?",
+    "answer": "Voltage-mode control regulates output voltage primarily through an outer voltage feedback loop. Current-mode control adds direct inductor or switch-current information to the control process."
+  },
+  {
+    "id": 630,
+    "question": "What is the purpose of feedback in a regulated power converter?",
+    "answer": "Feedback compares the output with a reference and adjusts switching duty cycle to reject input and load disturbances. This maintains the desired output voltage."
+  },
+  {
+    "id": 631,
+    "question": "Why is loop compensation required in a feedback converter?",
+    "answer": "Power-stage poles and zeros can make the control loop unstable or slow. Compensation shapes loop gain to provide adequate bandwidth, phase margin, and stability."
+  },
+  {
+    "id": 632,
+    "question": "What is phase margin in a control loop?",
+    "answer": "Phase margin indicates how far the loop is from the phase condition associated with oscillation at unity gain. Larger practical margin generally indicates better stability robustness."
+  },
+  {
+    "id": 633,
+    "question": "Why is current limiting important in a switching converter?",
+    "answer": "A short circuit or overload can cause excessive switch and inductor current. Current limiting prevents catastrophic semiconductor stress and thermal damage."
+  },
+  {
+    "id": 634,
+    "question": "What is a flyback converter?",
+    "answer": "A flyback stores energy in a magnetizing inductance during switch ON time and transfers that stored energy to the output during OFF time. It can provide isolation using a coupled transformer."
+  },
+  {
+    "id": 635,
+    "question": "Why is a flyback transformer different from a conventional power transformer?",
+    "answer": "A flyback transformer intentionally stores substantial energy in its magnetizing inductance. A conventional transformer primarily transfers energy continuously without intentionally storing large energy each cycle."
+  },
+  {
+    "id": 636,
+    "question": "What is galvanic isolation in a power converter?",
+    "answer": "It means there is no direct conductive path between input and output. Energy is transferred magnetically or optically, improving safety and allowing different ground references."
+  },
+  {
+    "id": 637,
+    "question": "Why is isolation important in medical and industrial power supplies?",
+    "answer": "It limits hazardous current paths and separates high-voltage domains from accessible or control circuitry. This improves electrical safety and system robustness."
+  },
+  {
+    "id": 638,
+    "question": "What is an H-bridge inverter?",
+    "answer": "It uses four switches arranged around a load so the load polarity can be reversed. It is widely used for DC motor control and single-phase inverter applications."
+  },
+  {
+    "id": 639,
+    "question": "How does an H-bridge reverse DC motor direction?",
+    "answer": "The controller turns on opposite diagonal switch pairs to reverse the voltage polarity across the motor. The resulting armature current reverses and torque changes direction."
+  },
+  {
+    "id": 640,
+    "question": "Why must complementary H-bridge switches be interlocked?",
+    "answer": "Preventing simultaneous conduction of switches in the same leg avoids DC-bus shoot-through. Dead time and hardware interlocks are commonly used."
+  },
+  {
+    "id": 641,
+    "question": "Why is regenerative braking possible in a four-quadrant motor drive?",
+    "answer": "The converter can reverse power flow from the motor back toward the DC source or grid. Mechanical energy is therefore recovered rather than dissipated entirely as heat."
+  },
+  {
+    "id": 642,
+    "question": "What is four-quadrant operation of a motor drive?",
+    "answer": "It permits both positive and negative torque and positive and negative speed. The drive can therefore provide forward/reverse motoring and regenerative braking."
+  },
+  {
+    "id": 643,
+    "question": "Why is an electromagnetic compatibility filter used at a converter input?",
+    "answer": "High-frequency switching creates conducted noise and common-mode or differential-mode disturbances. EMI filters attenuate these components before they propagate into the supply."
+  },
+  {
+    "id": 644,
+    "question": "Why does switching-node layout matter in a high-frequency converter?",
+    "answer": "Parasitic inductance interacting with rapid di/dt creates voltage spikes and EMI. Minimizing high-current loop area reduces these unwanted effects."
+  },
+  {
+    "id": 645,
+    "question": "Why are Kelvin connections used for current sensing in power electronics?",
+    "answer": "Separate sense paths prevent high-current conductor voltage drops from corrupting the measurement. This improves accuracy during fast switching and high-current operation."
+  },
+  {
+    "id": 646,
+    "question": "Why does a three-phase inverter require accurate dead-time management?",
+    "answer": "Insufficient dead time can cause shoot-through, while excessive dead time distorts the output voltage and introduces low-order harmonics. The value must therefore balance safety and waveform quality."
+  },
+  {
+    "id": 647,
+    "question": "Why does a power converter need an overtemperature shutdown?",
+    "answer": "Semiconductor junction temperature directly affects reliability and electrical characteristics. Shutdown prevents thermal overstress when cooling capacity is exceeded."
+  },
+  {
+    "id": 648,
+    "question": "Why is a snubber particularly useful when switching inductive loads?",
+    "answer": "Inductive current cannot change instantaneously, so switching can create high-voltage transients. A snubber provides a controlled transient path and reduces device voltage stress."
+  },
+  {
+    "id": 649,
+    "question": "Why is the freewheeling path important when a PWM switch turns OFF?",
+    "answer": "Inductor current must continue flowing because its value cannot change instantaneously. The freewheeling path prevents a dangerous voltage spike and maintains controlled current."
+  },
+  {
+    "id": 650,
+    "question": "Why does converter efficiency fall at very light load?",
+    "answer": "Fixed losses such as gate-drive, control, magnetic, and switching losses remain even when output power becomes small. They therefore represent a larger fraction of input power."
+  },
+  {
+    "id": 651,
+    "question": "Why does negative-sequence current cause rotor heating in synchronous machines?",
+    "answer": "It produces a magnetic field rotating opposite to the rotor. The resulting relative field frequency induces additional rotor currents and heating."
+  },
+  {
+    "id": 652,
+    "question": "Why is distance protection based on Z = V/I?",
+    "answer": "Transmission-line impedance is approximately proportional to physical distance. A fault therefore reduces the apparent impedance measured from the relay location."
+  },
+  {
+    "id": 653,
+    "question": "Why can CT saturation cause false differential current?",
+    "answer": "Saturation distorts one CT's secondary waveform, creating unequal currents even for an external fault. The resulting mismatch can appear as internal differential current."
+  },
+  {
+    "id": 654,
+    "question": "Why does transformer inrush contain significant second-harmonic content?",
+    "answer": "Core saturation during asymmetric flux buildup makes the magnetizing current strongly nonsinusoidal. This waveform commonly contains substantial second-harmonic content."
+  },
+  {
+    "id": 655,
+    "question": "Why does a synchronous generator's prime-mover input mainly control real power?",
+    "answer": "Changing mechanical torque changes the rotor power angle relative to the grid. This changes active-power transfer while grid frequency remains essentially fixed."
+  },
+  {
+    "id": 656,
+    "question": "Why does synchronous-generator excitation mainly control reactive power?",
+    "answer": "Excitation changes the internal generated EMF magnitude. This changes the reactive current component and therefore the machine's VAR exchange with the grid."
+  },
+  {
+    "id": 657,
+    "question": "Why does an induction motor need slip to produce torque?",
+    "answer": "Relative motion between the stator rotating field and rotor is required to induce rotor EMF and current. Without slip, rotor current and electromagnetic torque become zero."
+  },
+  {
+    "id": 658,
+    "question": "Why is constant V/f control used for induction motors?",
+    "answer": "Air-gap flux is approximately proportional to V/f. Keeping this ratio nearly constant maintains flux and preserves torque capability below base speed."
   }
 ]
