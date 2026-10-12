@@ -3593,5 +3593,295 @@
     "id": 719,
     "question": "Why is a continuous-time control system converted into a discrete-time system for digital implementation?",
     "answer": "Microcontrollers process sampled numerical values rather than continuous signals. Discrete-time algorithms allow digital controllers to regulate physical systems using periodic computations."
+  },
+  {
+    "id": 720,
+    "question": "Why is the sampling frequency important in digital control?",
+    "answer": "Sampling frequency determines how accurately the controller captures signal variations. Insufficient sampling can cause aliasing, inaccurate state estimation, and degraded control performance."
+  },
+  {
+    "id": 721,
+    "question": "What is the Nyquist sampling criterion?",
+    "answer": "For a band-limited signal with maximum frequency f_max, the sampling frequency must exceed 2f_max for ideal reconstruction. Practical systems generally sample faster to provide adequate filtering and control margin."
+  },
+  {
+    "id": 722,
+    "question": "Why does aliasing occur in sampled signals?",
+    "answer": "When sampling is too slow, different analog frequencies become indistinguishable in the sampled data. High-frequency components can therefore appear as incorrect lower-frequency signals."
+  },
+  {
+    "id": 723,
+    "question": "Why is an anti-aliasing filter placed before an ADC?",
+    "answer": "It attenuates frequency components above the usable Nyquist bandwidth before sampling. This prevents unwanted high-frequency signals from folding into the measured frequency range."
+  },
+  {
+    "id": 724,
+    "question": "How does the sampling period affect digital-controller performance?",
+    "answer": "A shorter sampling period improves temporal resolution but increases computational and communication demands. An excessively long period introduces delay and can reduce control stability."
+  },
+  {
+    "id": 725,
+    "question": "What is a zero-order hold in a digital control system?",
+    "answer": "A zero-order hold maintains each digital control output constant until the next update. It produces a piecewise-constant signal that can drive physical actuators."
+  },
+  {
+    "id": 726,
+    "question": "Why is quantization unavoidable in an ADC?",
+    "answer": "An ADC maps a continuous input voltage into one of a finite number of digital codes. Consequently, nearby analog values may produce the same digital output."
+  },
+  {
+    "id": 727,
+    "question": "How does ADC resolution affect measurement accuracy?",
+    "answer": "For an ideal N-bit ADC spanning a reference range V_FS, one LSB is approximately V_FS/(2^N). Higher resolution reduces quantization step size but does not eliminate noise or other measurement errors."
+  },
+  {
+    "id": 728,
+    "question": "What is quantization error?",
+    "answer": "It is the difference between the actual analog input and its represented quantized value. For an ideal round-to-nearest converter, the error is generally bounded by plus or minus half an LSB."
+  },
+  {
+    "id": 729,
+    "question": "Why is conversion latency important in embedded control?",
+    "answer": "The controller acts on measurements only after acquisition, conversion, computation, and output-update delays. Excessive latency reduces effective phase margin and can destabilize a fast control loop."
+  },
+  {
+    "id": 730,
+    "question": "What is timing jitter in a digital control loop?",
+    "answer": "Jitter is variation in the timing of sampling or controller execution. It makes the effective sampling interval unpredictable and can introduce control error or instability."
+  },
+  {
+    "id": 731,
+    "question": "Why is the Z-transform useful in digital control?",
+    "answer": "It converts discrete-time difference equations into algebraic expressions in the z-domain. This simplifies analysis of discrete-system dynamics, stability, and controller design."
+  },
+  {
+    "id": 732,
+    "question": "How is stability assessed from the poles of a discrete-time system?",
+    "answer": "For a discrete-time LTI system, asymptotic stability requires all closed-loop poles to lie strictly inside the unit circle in the z-plane. Poles outside the circle produce growing modes."
+  },
+  {
+    "id": 733,
+    "question": "Why is a continuous-time controller not always equivalent to its digital implementation?",
+    "answer": "Sampling, discretization, computational delay, and finite numerical precision alter the implemented dynamics. The digital controller must therefore be analyzed using its discrete-time model."
+  },
+  {
+    "id": 734,
+    "question": "What is a difference equation in embedded control?",
+    "answer": "It expresses the current output using current or previous inputs and previous outputs. Firmware implements this relationship using stored samples and numerical calculations."
+  },
+  {
+    "id": 735,
+    "question": "How does forward-Euler discretization approximate an integrator?",
+    "answer": "It approximates the integral using the current sampled value: x[k] = x[k-1] + T_su[k-1]. The method is simple but can introduce significant numerical error for large sampling periods."
+  },
+  {
+    "id": 736,
+    "question": "Why can backward-Euler discretization offer better stability properties than forward Euler?",
+    "answer": "Backward Euler evaluates the system dynamics at the new time step and maps the continuous-time stable region inside the discrete-time unit circle. Forward Euler does not guarantee stability for every stable continuous-time system and step size."
+  },
+  {
+    "id": 737,
+    "question": "What is the Tustin or bilinear transformation?",
+    "answer": "It approximates continuous-time dynamics using s = (2/T_s)(z-1)/(z+1). It maps the left half of the s-plane inside the unit circle, although it distorts frequency mapping."
+  },
+  {
+    "id": 738,
+    "question": "How is integral action implemented in a digital PID controller?",
+    "answer": "The integral term accumulates sampled error, commonly as I[k] = I[k-1] + K_iT_se[k]. The implementation must account for numerical limits and actuator saturation."
+  },
+  {
+    "id": 739,
+    "question": "Why is derivative action often filtered in a digital PID controller?",
+    "answer": "Differentiation amplifies high-frequency measurement noise and quantization fluctuations. A low-pass filter limits this amplification while retaining useful damping action."
+  },
+  {
+    "id": 740,
+    "question": "Why is anti-windup necessary in an embedded PID controller?",
+    "answer": "When an actuator reaches its limit, the integral accumulator can continue growing without producing additional actuator output. Anti-windup limits or corrects accumulation to improve recovery."
+  },
+  {
+    "id": 741,
+    "question": "Why might fixed-point arithmetic be preferred over floating-point arithmetic in an MCU?",
+    "answer": "Fixed-point arithmetic can be faster and more resource-efficient on processors without hardware floating-point support. However, scaling, precision, and overflow must be managed carefully."
+  },
+  {
+    "id": 742,
+    "question": "What is the main advantage of floating-point arithmetic in control firmware?",
+    "answer": "Floating-point representation provides a wide dynamic range without manually selecting a fixed scaling factor. It simplifies calculations but may cost additional execution time and memory on some MCUs."
+  },
+  {
+    "id": 743,
+    "question": "Why is integer overflow dangerous in embedded control calculations?",
+    "answer": "An overflowing signed integer operation can produce undefined behavior in C, while unsigned arithmetic wraps modulo its range. Either behavior can corrupt calculations, control outputs, or safety decisions."
+  },
+  {
+    "id": 744,
+    "question": "Why is numerical scaling important in fixed-point control algorithms?",
+    "answer": "Scaling maps physical quantities into representable integer ranges. Poor scaling can cause loss of precision, overflow, or insufficient resolution for small signals."
+  },
+  {
+    "id": 745,
+    "question": "Why does an ADC require a stable voltage reference?",
+    "answer": "The reference defines the relationship between input voltage and digital code. Reference noise or drift directly introduces conversion errors and can appear as measurement variation."
+  },
+  {
+    "id": 746,
+    "question": "What is the purpose of the sample-and-hold circuit inside an ADC?",
+    "answer": "It captures the input voltage and holds it sufficiently constant during conversion. This prevents input changes during the conversion interval from corrupting the result."
+  },
+  {
+    "id": 747,
+    "question": "Why must ADC acquisition time be configured correctly?",
+    "answer": "The internal sampling capacitor needs sufficient time to charge toward the input voltage. Insufficient acquisition time causes settling errors, especially with high source impedance."
+  },
+  {
+    "id": 748,
+    "question": "How does ADC conversion time affect multichannel sampling?",
+    "answer": "Each conversion consumes time, and channels may be sampled at different instants. Excessive conversion time can reduce per-channel sampling rate or introduce timing skew between measurements."
+  },
+  {
+    "id": 749,
+    "question": "Why is DMA useful for continuous ADC acquisition?",
+    "answer": "DMA transfers conversion results into memory without requiring the CPU to handle every sample. This reduces processor overhead and helps maintain predictable acquisition timing."
+  },
+  {
+    "id": 750,
+    "question": "Why is circular DMA useful for embedded signal processing?",
+    "answer": "Circular mode automatically wraps transfers around a configured buffer. Half-transfer and transfer-complete events allow firmware to process blocks while acquisition continues."
+  },
+  {
+    "id": 751,
+    "question": "When should an embedded application use interrupts instead of polling?",
+    "answer": "Interrupts are useful when events occur asynchronously or require prompt response without constant CPU checking. Polling can be simpler for frequent, predictable events when timing and CPU usage permit."
+  },
+  {
+    "id": 752,
+    "question": "Why should an interrupt service routine be kept short?",
+    "answer": "Long ISRs increase interrupt latency, delay other handlers, and interfere with time-critical tasks. An ISR should capture essential data, acknowledge the event, and defer lengthy processing."
+  },
+  {
+    "id": 753,
+    "question": "Why does interrupt priority matter in a real-time embedded system?",
+    "answer": "Priority determines which interrupt can preempt another when the processor's interrupt controller permits it. Incorrect priority assignments can delay critical control or fault-handling events."
+  },
+  {
+    "id": 754,
+    "question": "What is a race condition in embedded firmware?",
+    "answer": "It occurs when concurrent execution contexts access shared state and the result depends on their timing. Interrupts and foreground code can produce inconsistent data without appropriate synchronization."
+  },
+  {
+    "id": 755,
+    "question": "Why is the volatile keyword used for memory-mapped hardware registers in C?",
+    "answer": "Volatile tells the compiler that accesses are observable and must not be removed or cached solely as ordinary memory operations. It does not provide atomicity, mutual exclusion, or general inter-thread synchronization."
+  },
+  {
+    "id": 756,
+    "question": "Why are atomic operations important when sharing data between an ISR and main code?",
+    "answer": "A multi-instruction read or update may be interrupted halfway, exposing an inconsistent value. Atomic operations or suitable critical sections ensure the shared update is indivisible for the relevant execution contexts."
+  },
+  {
+    "id": 757,
+    "question": "Why are critical sections used in interrupt-driven firmware?",
+    "answer": "They temporarily prevent specified concurrent operations from interfering with a shared-state update. They must remain short because excessive interrupt masking increases response latency."
+  },
+  {
+    "id": 758,
+    "question": "Why is memory-mapped I/O used in microcontrollers?",
+    "answer": "Peripheral registers occupy defined addresses in the processor's address space. Firmware can configure and control hardware through register reads and writes using the architecture's access rules."
+  },
+  {
+    "id": 759,
+    "question": "Why are bit masks used when configuring peripheral registers?",
+    "answer": "Bit masks allow firmware to set, clear, or test selected fields without unintentionally changing unrelated bits. The exact access method must respect registers with write-one-to-clear or other special semantics."
+  },
+  {
+    "id": 760,
+    "question": "Why is a watchdog timer important in an embedded system?",
+    "answer": "It detects cases where firmware stops making expected progress and can trigger a reset or recovery action. The watchdog should be serviced only after meaningful health checks."
+  },
+  {
+    "id": 761,
+    "question": "Why does an RTOS use tasks instead of placing all application logic in one loop?",
+    "answer": "Tasks separate responsibilities and allow scheduling according to timing and priority requirements. This can improve modularity and responsiveness but introduces synchronization and resource-management overhead."
+  },
+  {
+    "id": 762,
+    "question": "What is priority inversion in an RTOS?",
+    "answer": "A high-priority task waits for a resource held by a low-priority task while medium-priority tasks delay the low-priority task. Priority inheritance or related protocols can reduce this delay."
+  },
+  {
+    "id": 763,
+    "question": "Why must a real-time task's worst-case execution time be measured or bounded?",
+    "answer": "The task must finish within its deadline under the specified worst-case conditions. Average execution time alone cannot demonstrate that timing requirements will always be met."
+  },
+  {
+    "id": 764,
+    "question": "Why does transformer copper loss increase with load?",
+    "answer": "Copper loss follows P_cu = I^2R. As winding current rises with load, the resistive heating increases approximately with the square of current."
+  },
+  {
+    "id": 765,
+    "question": "Why does a DC motor draw high current at startup?",
+    "answer": "At standstill, back EMF is zero, so armature current is approximately V/R_a. Since armature resistance is small, a starter or current-limiting strategy is needed."
+  },
+  {
+    "id": 766,
+    "question": "Why is a DC series motor unsafe to operate without load?",
+    "answer": "At light load, armature current and field flux can become very small. Because speed is approximately inversely proportional to flux, the motor may reach a dangerous overspeed."
+  },
+  {
+    "id": 767,
+    "question": "Why does an induction motor require nonzero slip to produce torque?",
+    "answer": "Slip creates relative motion between the rotating magnetic field and the rotor, inducing rotor EMF and current. At zero slip, rotor induction and electromagnetic torque vanish."
+  },
+  {
+    "id": 768,
+    "question": "Why does an alternator need excitation?",
+    "answer": "Rotor excitation establishes the magnetic field required to induce stator EMF. Adjusting excitation also controls the machine's reactive-power behavior when connected to a grid."
+  },
+  {
+    "id": 769,
+    "question": "Why must alternators be synchronized before parallel connection?",
+    "answer": "Their voltage magnitude, frequency, phase sequence, and phase angle must be compatible. Otherwise, large circulating currents and mechanical torque transients can occur."
+  },
+  {
+    "id": 770,
+    "question": "Why is a CT secondary dangerous when open-circuited under load?",
+    "answer": "Opening the secondary removes the opposing secondary ampere-turns. Core flux and induced secondary voltage can rise dangerously, creating insulation and personnel hazards."
+  },
+  {
+    "id": 771,
+    "question": "Why is distance protection suitable for transmission lines?",
+    "answer": "It estimates apparent impedance from measured voltage and current. Since line impedance is approximately proportional to distance, the relay can identify faults within configured reach zones."
+  },
+  {
+    "id": 772,
+    "question": "Why does a thyristor remain ON after its gate pulse is removed?",
+    "answer": "The internal regenerative action sustains conduction once anode current exceeds the latching requirement. Turn-off normally requires current to fall below the holding level and the device to recover its blocking capability."
+  },
+  {
+    "id": 773,
+    "question": "Why is dead time necessary in a half-bridge converter?",
+    "answer": "It prevents complementary switches from conducting simultaneously and shorting the DC bus. Excessive dead time, however, distorts the output waveform."
+  },
+  {
+    "id": 774,
+    "question": "Why does a boost converter produce an output voltage greater than its input?",
+    "answer": "The inductor stores energy during switch ON time and transfers it to the output during OFF time. Ideally, in continuous conduction, V_out = V_in/(1-D)."
+  },
+  {
+    "id": 775,
+    "question": "Why is integral control used in a PID controller?",
+    "answer": "It accumulates persistent error and adjusts control effort until steady-state error is reduced. Anti-windup is needed when the actuator reaches its output limits."
+  },
+  {
+    "id": 776,
+    "question": "Why can excessive sampling delay destabilize a digital controller?",
+    "answer": "Delay adds phase lag to the feedback loop, reducing phase margin. If the accumulated lag becomes excessive, oscillations or instability can occur."
+  },
+  {
+    "id": 777,
+    "question": "Why is a watchdog not a substitute for robust fault handling?",
+    "answer": "A watchdog can recover from certain failures by resetting the processor, but it does not identify or safely manage every fault. Critical systems also need diagnostics, safe-state behavior, and appropriate hardware protection."
   }
 ]
