@@ -3883,5 +3883,295 @@
     "id": 777,
     "question": "Why is a watchdog not a substitute for robust fault handling?",
     "answer": "A watchdog can recover from certain failures by resetting the processor, but it does not identify or safely manage every fault. Critical systems also need diagnostics, safe-state behavior, and appropriate hardware protection."
+  },
+  {
+    "id": 778,
+    "question": "Why does an RTOS scheduler need to distinguish between task states?",
+    "answer": "Tasks may be ready, running, blocked, or suspended depending on their execution and resource requirements. The scheduler selects eligible tasks while avoiding execution of tasks that cannot make progress."
+  },
+  {
+    "id": 779,
+    "question": "How does preemptive scheduling differ from cooperative scheduling?",
+    "answer": "Preemptive scheduling allows the kernel to interrupt a running task when a higher-priority task becomes ready. Cooperative scheduling relies on tasks voluntarily yielding or blocking before another task executes."
+  },
+  {
+    "id": 780,
+    "question": "Why is fixed-priority scheduling common in embedded RTOS applications?",
+    "answer": "It allows critical tasks to receive predictable preference over less urgent work. With suitable priority assignment and bounded execution times, designers can analyze whether deadlines are achievable."
+  },
+  {
+    "id": 781,
+    "question": "What is rate-monotonic scheduling?",
+    "answer": "It assigns higher priority to periodic tasks with shorter periods. Under its classical assumptions, a sufficient schedulability bound for n independent periodic tasks is n*(2^(1/n)-1)."
+  },
+  {
+    "id": 782,
+    "question": "How does earliest-deadline-first scheduling select a task?",
+    "answer": "EDF prioritizes the ready task with the nearest absolute deadline. For independent preemptible periodic tasks on an ideal single processor, utilization up to 100% can be schedulable under suitable assumptions."
+  },
+  {
+    "id": 783,
+    "question": "Why can a high-priority task still miss its deadline in a preemptive RTOS?",
+    "answer": "Interrupt latency, blocking, execution-time overruns, and higher-priority workloads can delay completion. Priority alone cannot guarantee deadlines without timing and resource analysis."
+  },
+  {
+    "id": 784,
+    "question": "What is response-time analysis in a real-time system?",
+    "answer": "It estimates the worst-case time from a task becoming ready until it completes. The estimate includes execution time, higher-priority interference, and relevant blocking delays."
+  },
+  {
+    "id": 785,
+    "question": "Why is worst-case execution time different from average execution time?",
+    "answer": "Average execution time describes typical behavior, while WCET bounds execution under specified worst-case conditions. Deadline guarantees must account for the worst case rather than relying on averages."
+  },
+  {
+    "id": 786,
+    "question": "What is a context switch in an RTOS?",
+    "answer": "The kernel saves the outgoing task's execution context and restores the incoming task's context. This allows tasks to resume from their previous execution states."
+  },
+  {
+    "id": 787,
+    "question": "Why does excessive context switching reduce embedded-system performance?",
+    "answer": "Context switching consumes CPU cycles without directly advancing application work. Excessive switching also increases cache disruption, scheduling overhead, and timing variability."
+  },
+  {
+    "id": 788,
+    "question": "Why does each RTOS task require its own stack?",
+    "answer": "Each task needs storage for its call frames, local variables, saved registers, and execution context. Separate stacks allow suspended tasks to resume without corrupting one another's state."
+  },
+  {
+    "id": 789,
+    "question": "How can stack overflow be detected in an embedded RTOS?",
+    "answer": "Stack guards, MPU regions, high-water-mark checks, and sentinel patterns can detect excessive stack usage. Detection must account for whether the chosen method can identify an overflow before memory corruption occurs."
+  },
+  {
+    "id": 790,
+    "question": "Why is dynamic memory allocation risky in hard real-time firmware?",
+    "answer": "Allocation time may vary, and fragmentation or allocation failure can occur unpredictably. Fixed-size memory pools often provide more deterministic behavior."
+  },
+  {
+    "id": 791,
+    "question": "What is memory fragmentation in an embedded system?",
+    "answer": "Repeated allocation and release can divide free memory into separated regions. Total free memory may be sufficient while no single contiguous block satisfies a large allocation."
+  },
+  {
+    "id": 792,
+    "question": "Why are RTOS message queues useful for communication between tasks?",
+    "answer": "Queues transfer data between independent execution contexts without requiring direct shared-state manipulation. Properly designed queues also provide defined buffering and synchronization behavior."
+  },
+  {
+    "id": 793,
+    "question": "What is the difference between a binary semaphore and a counting semaphore?",
+    "answer": "A binary semaphore represents an available/unavailable condition or event. A counting semaphore tracks multiple available resources or accumulated event occurrences, depending on its design."
+  },
+  {
+    "id": 794,
+    "question": "Why is a mutex generally preferable to a binary semaphore for protecting shared data?",
+    "answer": "A mutex normally has ownership semantics, so the task that locks it is responsible for unlocking it. Many RTOS mutexes also support priority inheritance to limit priority inversion."
+  },
+  {
+    "id": 795,
+    "question": "Why should an ISR generally not wait indefinitely for a mutex?",
+    "answer": "An ISR cannot safely block like an ordinary task because it must return control to the interrupted execution context. ISR code should use only synchronization operations explicitly supported for interrupt context."
+  },
+  {
+    "id": 796,
+    "question": "Why can a circular buffer improve UART data reception?",
+    "answer": "A circular buffer stores incoming bytes in a reusable memory region while the consumer processes them independently. It reduces per-byte processing overhead but still requires correct producer-consumer synchronization."
+  },
+  {
+    "id": 797,
+    "question": "How can firmware detect UART receive-buffer overflow?",
+    "answer": "Track buffer occupancy or producer-consumer distance and detect when new data would overwrite unread bytes. The firmware should record the error and apply an explicit recovery or data-loss policy."
+  },
+  {
+    "id": 798,
+    "question": "Why is a ring buffer often implemented with head and tail indices?",
+    "answer": "The head identifies where the producer writes, while the tail identifies where the consumer reads. Wrapping the indices allows efficient reuse of a fixed-size buffer without shifting stored data."
+  },
+  {
+    "id": 799,
+    "question": "Why must producer-consumer synchronization consider memory ordering?",
+    "answer": "A consumer must not observe an updated index before the associated data becomes visible. Suitable atomic operations, barriers, or synchronization primitives establish the required ordering."
+  },
+  {
+    "id": 800,
+    "question": "Why is a hardware timer preferable to a software delay loop for precise periodic events?",
+    "answer": "A hardware timer counts independently of ordinary instruction execution. Software delay loops vary with clock settings, compiler optimization, and interrupt activity."
+  },
+  {
+    "id": 801,
+    "question": "Why can blocking delays cause missed events in embedded firmware?",
+    "answer": "During a blocking delay, the main execution flow cannot perform other work unless interrupts or concurrent tasks handle it. Incoming data and deadlines can be missed when their handling capacity is insufficient."
+  },
+  {
+    "id": 802,
+    "question": "Why is a finite-state machine useful for embedded firmware design?",
+    "answer": "It represents behavior as explicit states and transitions triggered by events or conditions. This makes complex sequences easier to test, debug, and maintain than deeply nested conditional logic."
+  },
+  {
+    "id": 803,
+    "question": "Why should embedded state-machine transitions be designed to be deterministic?",
+    "answer": "Deterministic transitions produce predictable behavior for a given state and event. This improves reproducibility, fault diagnosis, and verification of safety-critical sequences."
+  },
+  {
+    "id": 804,
+    "question": "What is a bootloader in a microcontroller system?",
+    "answer": "A bootloader initializes the minimum required hardware and can load, verify, or update application firmware. It transfers execution to the application only when the image and platform state are acceptable."
+  },
+  {
+    "id": 805,
+    "question": "Why must a bootloader validate an application image before execution?",
+    "answer": "Validation can detect corrupted or incomplete firmware using integrity checks such as CRC. Authenticity-sensitive systems additionally require cryptographic signature verification."
+  },
+  {
+    "id": 806,
+    "question": "Why is a CRC insufficient to authenticate firmware?",
+    "answer": "A CRC detects many accidental data errors but is not designed to resist deliberate modification. A cryptographic signature verifies that firmware was authorized by a trusted signing key."
+  },
+  {
+    "id": 807,
+    "question": "Why is a firmware update vulnerable to power failure during programming?",
+    "answer": "Power loss can leave the image partially written or invalidate metadata needed for boot. A/B images, transactional metadata, and recovery-capable bootloaders help maintain a recoverable system."
+  },
+  {
+    "id": 808,
+    "question": "Why is a linker script important in bare-metal firmware?",
+    "answer": "It defines where code, constants, initialized data, uninitialized data, and stacks are placed in the target memory map. Incorrect placement can cause startup failures or memory corruption."
+  },
+  {
+    "id": 809,
+    "question": "Why must initialized global variables be copied from flash to RAM during startup on many MCUs?",
+    "answer": "Their initial values are commonly stored in a flash image, while the program expects writable copies in RAM. Startup code copies the initial data before entering main()."
+  },
+  {
+    "id": 810,
+    "question": "Why is the .bss section initialized to zero during startup?",
+    "answer": "C requires static-storage-duration objects without explicit initializers to begin with zero values. Startup code therefore clears the memory region reserved for .bss."
+  },
+  {
+    "id": 811,
+    "question": "Why is a vector table required on a Cortex-M microcontroller?",
+    "answer": "It provides the initial stack pointer and exception or interrupt handler addresses. The processor uses these entries to establish startup state and dispatch exceptions."
+  },
+  {
+    "id": 812,
+    "question": "Why must an interrupt handler preserve the processor context correctly?",
+    "answer": "The interrupted code must resume with its required registers and execution state intact. Cortex-M hardware automatically stacks part of the exception frame, while compiler-generated handler code and architecture rules govern the remaining context."
+  },
+  {
+    "id": 813,
+    "question": "Why is the memory protection unit useful in an embedded RTOS?",
+    "answer": "An MPU can restrict memory access by region and privilege level. Properly configured protection can prevent a faulty task from corrupting critical kernel or peripheral memory."
+  },
+  {
+    "id": 814,
+    "question": "Why is cache coherency important when DMA and the CPU share memory?",
+    "answer": "The CPU may hold cached data that differs from physical RAM used by DMA. Cache maintenance or coherent memory arrangements are needed so both observe the correct data."
+  },
+  {
+    "id": 815,
+    "question": "Why must DMA buffers sometimes be aligned to cache-line boundaries?",
+    "answer": "Cache maintenance operates on cache lines rather than arbitrary byte ranges on many processors. Correct alignment and ownership rules prevent unrelated data from being accidentally invalidated or overwritten."
+  },
+  {
+    "id": 816,
+    "question": "Why is low-power mode selection an architectural decision in embedded design?",
+    "answer": "Different sleep modes preserve different clocks, peripherals, and wake-up sources. The selected mode must balance energy savings against wake-up latency and retained functionality."
+  },
+  {
+    "id": 817,
+    "question": "Why can clock gating reduce MCU power consumption?",
+    "answer": "Disabling an unused peripheral clock reduces switching activity in its clocked circuitry. Static leakage remains, and the peripheral may need reinitialization or synchronization when its clock is restored."
+  },
+  {
+    "id": 818,
+    "question": "Why is brownout detection important for embedded controllers?",
+    "answer": "Low supply voltage can make CPU execution, flash operations, and peripheral behavior unreliable. Brownout circuitry can force a safe reset before corrupted execution or data occurs."
+  },
+  {
+    "id": 819,
+    "question": "Why should safety-critical firmware enter a defined safe state after detecting a serious fault?",
+    "answer": "Continuing normal operation with invalid measurements or corrupted state can create hazardous actuator behavior. A defined safe state limits risk while allowing diagnostics or controlled recovery."
+  },
+  {
+    "id": 820,
+    "question": "Why is hardware-in-the-loop testing useful for embedded control firmware?",
+    "answer": "HIL testing connects the real controller to a simulated plant and its dynamic responses. It enables repeatable testing of timing, fault handling, and operating conditions without requiring the complete physical system."
+  },
+  {
+    "id": 821,
+    "question": "Why should embedded firmware be tested under interrupt load and communication stress?",
+    "answer": "Heavy asynchronous activity exposes timing overruns, buffer overflow, race conditions, and priority-related failures. Stress testing helps verify that deadlines and data-integrity requirements hold under realistic worst-case conditions."
+  },
+  {
+    "id": 822,
+    "question": "Why is fault injection valuable during embedded-system validation?",
+    "answer": "It deliberately introduces failures such as sensor errors, communication loss, or corrupted data. Engineers can verify that diagnostics, recovery logic, and safe-state behavior operate as intended."
+  },
+  {
+    "id": 823,
+    "question": "Why does ADC acquisition time matter when measuring a high-impedance sensor?",
+    "answer": "The sensor must charge the ADC's internal sampling capacitor through its source impedance. Insufficient acquisition time causes the sampled voltage to settle inaccurately."
+  },
+  {
+    "id": 824,
+    "question": "Why is volatile insufficient to make a shared variable thread-safe?",
+    "answer": "Volatile does not guarantee atomic access, mutual exclusion, or inter-thread memory ordering. Shared state requires suitable atomics, locks, or critical sections."
+  },
+  {
+    "id": 825,
+    "question": "Why should an ISR avoid lengthy calculations?",
+    "answer": "Long interrupt handlers increase latency for other interrupts and delay foreground or RTOS work. Time-consuming processing should generally be deferred to a task or main loop."
+  },
+  {
+    "id": 826,
+    "question": "Why can a watchdog reset fail to recover a system with corrupted persistent data?",
+    "answer": "A reset restores execution but does not automatically repair invalid flash contents or inconsistent stored metadata. Persistent data requires validation, transactional updates, and recovery procedures."
+  },
+  {
+    "id": 827,
+    "question": "Why does a MOSFET gate driver need to handle transient current even though the gate draws little steady-state current?",
+    "answer": "The gate has capacitance that must be charged and discharged during switching. Sufficient transient current reduces transition time and switching loss."
+  },
+  {
+    "id": 828,
+    "question": "Why can a flyback converter provide electrical isolation?",
+    "answer": "Its primary and secondary windings transfer energy through magnetic coupling without a direct conductive connection. Suitable transformer insulation maintains the required isolation barrier."
+  },
+  {
+    "id": 829,
+    "question": "Why does a synchronous motor lose synchronism when its required torque exceeds the available limit?",
+    "answer": "The rotor angle increases beyond the stable operating range when electromagnetic torque cannot meet the load demand. The rotor then falls out of step with the stator's rotating field."
+  },
+  {
+    "id": 830,
+    "question": "Why does a three-phase induction motor draw increased current when overloaded?",
+    "answer": "The rotor slows and slip increases, producing greater rotor EMF and current. The stator consequently draws more current to develop additional torque."
+  },
+  {
+    "id": 831,
+    "question": "Why does a transformer draw magnetizing current even at no load?",
+    "answer": "The primary must establish alternating core flux despite the secondary being unloaded. A smaller active component also supplies core losses."
+  },
+  {
+    "id": 832,
+    "question": "Why is differential protection affected by CT ratio mismatch?",
+    "answer": "Unequal secondary current scaling creates an apparent current imbalance even without an internal fault. Ratio compensation and suitable restraint help maintain protection stability."
+  },
+  {
+    "id": 833,
+    "question": "Why does a buck converter's ideal output voltage remain below its input voltage?",
+    "answer": "In continuous conduction, its ideal relationship is V_out = D*V_in with 0 < D < 1. The output is therefore lower than the input under normal buck operation."
+  },
+  {
+    "id": 834,
+    "question": "Why can excessive integral gain destabilize a closed-loop controller?",
+    "answer": "Strong integral action adds phase lag and can accumulate excessive control effort during transients. This can increase overshoot, oscillation, and instability."
+  },
+  {
+    "id": 835,
+    "question": "Why must a digital control task be analyzed for worst-case response time rather than average execution time?",
+    "answer": "Interrupt interference, scheduling delays, and variable execution paths can make individual runs much slower than average. Worst-case response-time analysis determines whether the task can reliably meet its deadline."
   }
 ]
