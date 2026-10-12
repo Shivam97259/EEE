@@ -4473,5 +4473,300 @@
     "id": 895,
     "question": "Why is a defined safe state necessary when embedded firmware detects a critical fault?",
     "answer": "Continuing normal operation with invalid data or faulty hardware can produce hazardous actuator behavior. A defined safe state limits risk while allowing diagnosis or controlled recovery."
+  },
+  {
+    "id": 896,
+    "question": "Why is AUTOSAR used in automotive embedded software?",
+    "answer": "AUTOSAR standardizes software architecture and interfaces so applications can be developed with reduced dependence on specific hardware. It improves software reuse, integration, and maintainability across automotive ECUs."
+  },
+  {
+    "id": 897,
+    "question": "What is the difference between AUTOSAR Classic and Adaptive platforms?",
+    "answer": "AUTOSAR Classic targets deeply embedded, resource-constrained ECUs with predictable real-time behavior. AUTOSAR Adaptive targets high-performance computing platforms requiring dynamic applications, service-oriented communication, and more flexible resource management."
+  },
+  {
+    "id": 898,
+    "question": "Why is the AUTOSAR Runtime Environment (RTE) important?",
+    "answer": "The RTE provides communication between application software components and the underlying basic software. It decouples application logic from implementation-specific communication and hardware services."
+  },
+  {
+    "id": 899,
+    "question": "What is a software component in AUTOSAR?",
+    "answer": "A software component encapsulates application functionality and communicates through defined ports and interfaces. This modular structure enables components to be reused and integrated across compatible ECUs."
+  },
+  {
+    "id": 900,
+    "question": "Why is the AUTOSAR Basic Software layer separated from application software?",
+    "answer": "Basic Software provides standardized services, communication stacks, operating-system functionality, and hardware abstraction. This separation reduces hardware dependence and simplifies application development."
+  },
+  {
+    "id": 901,
+    "question": "What is the purpose of a microcontroller abstraction layer in automotive firmware?",
+    "answer": "The MCAL provides standardized access to MCU peripherals such as GPIO, timers, ADCs, and communication controllers. It isolates higher software layers from many hardware-specific register details."
+  },
+  {
+    "id": 902,
+    "question": "Why is hardware abstraction useful when migrating firmware between microcontrollers?",
+    "answer": "Hardware-dependent operations are isolated behind stable interfaces, reducing changes to application logic. Peripheral differences still require suitable drivers and configuration for the new target."
+  },
+  {
+    "id": 903,
+    "question": "What is the difference between a device driver and a hardware abstraction layer?",
+    "answer": "A device driver implements operations for a particular peripheral or device, while an abstraction layer presents a more uniform interface to higher software. The exact distinction depends on the software architecture."
+  },
+  {
+    "id": 904,
+    "question": "Why are watchdog managers used in automotive software?",
+    "answer": "A watchdog manager monitors defined execution checkpoints and helps detect tasks or software components that fail to make expected progress. It can trigger recovery actions through an independent watchdog mechanism."
+  },
+  {
+    "id": 905,
+    "question": "Why should a watchdog be serviced only after meaningful health checks?",
+    "answer": "Blindly refreshing the watchdog can keep a malfunctioning system running indefinitely. Servicing it only after critical tasks demonstrate progress makes it a more effective fault-detection mechanism."
+  },
+  {
+    "id": 906,
+    "question": "What is automotive diagnostics over UDS?",
+    "answer": "Unified Diagnostic Services, standardized in ISO 14229, defines diagnostic requests and responses between test equipment and electronic control units. It supports functions such as reading faults, accessing data, and initiating diagnostic routines."
+  },
+  {
+    "id": 907,
+    "question": "Why is UDS commonly transported over CAN?",
+    "answer": "CAN provides robust communication between diagnostic tools and vehicle ECUs. ISO-TP can segment diagnostic messages that exceed a single CAN frame's payload capacity."
+  },
+  {
+    "id": 908,
+    "question": "What is ISO-TP and why is it needed?",
+    "answer": "ISO 15765-2 defines transport-layer mechanisms for carrying larger diagnostic messages over CAN. It uses segmentation, flow control, and reassembly to transfer messages across multiple frames."
+  },
+  {
+    "id": 909,
+    "question": "Why does ISO-TP use flow-control frames?",
+    "answer": "The receiver indicates how the sender should pace consecutive frames and how many frames may be sent before another flow-control decision. This helps prevent receiver-buffer overflow and manages transfer timing."
+  },
+  {
+    "id": 910,
+    "question": "What is a Diagnostic Trouble Code (DTC)?",
+    "answer": "A DTC is a standardized or manufacturer-defined identifier representing a detected fault condition. Diagnostic software uses it alongside status information and supporting data to help identify failures."
+  },
+  {
+    "id": 911,
+    "question": "Why does an ECU store freeze-frame data with certain diagnostic faults?",
+    "answer": "Freeze-frame data records selected operating conditions when a fault is detected or confirmed. It helps engineers reproduce and diagnose faults that may not remain continuously present."
+  },
+  {
+    "id": 912,
+    "question": "What is the difference between a current fault and a historical fault?",
+    "answer": "A current fault satisfies the ECU's present detection criteria, while a historical fault was detected previously but may no longer be active. Exact status transitions depend on diagnostic rules and fault-monitoring logic."
+  },
+  {
+    "id": 913,
+    "question": "Why is debounce or fault qualification used in automotive diagnostics?",
+    "answer": "A transient sensor disturbance should not automatically become a confirmed fault. Qualification criteria, such as repeated failures or time thresholds, reduce false diagnostic reports."
+  },
+  {
+    "id": 914,
+    "question": "What is the purpose of OBD-II?",
+    "answer": "On-board diagnostics provide standardized access to emissions-related diagnostic information and fault codes in applicable vehicles. They help identify malfunctions that may increase emissions."
+  },
+  {
+    "id": 915,
+    "question": "How does an ECU detect an open-circuit sensor fault?",
+    "answer": "It checks whether the measured voltage, current, or digital status lies outside the sensor's electrically plausible operating range. Pull-up or pull-down circuitry can make disconnected inputs detectable."
+  },
+  {
+    "id": 916,
+    "question": "Why should sensor diagnostics check both electrical range and physical plausibility?",
+    "answer": "A signal can be electrically valid yet physically impossible or inconsistent with other measurements. Range checks detect electrical faults, while plausibility checks detect incorrect but apparently valid data."
+  },
+  {
+    "id": 917,
+    "question": "What is sensor redundancy in a safety-related control system?",
+    "answer": "Redundancy uses multiple measurements or sensing channels to improve fault detection or maintain operation after a failure. Its effectiveness depends on independence, diagnostics, and handling of common-cause faults."
+  },
+  {
+    "id": 918,
+    "question": "Why can two redundant sensors fail to provide independent protection?",
+    "answer": "They may share power supplies, wiring routes, environmental exposure, or design defects. A common-cause failure can therefore disable both channels simultaneously."
+  },
+  {
+    "id": 919,
+    "question": "What is plausibility checking between redundant sensors?",
+    "answer": "The controller compares measurements using expected relationships and allowable tolerances. A significant disagreement indicates a possible sensor, wiring, or processing fault."
+  },
+  {
+    "id": 920,
+    "question": "Why is a fail-safe output state important in actuator control?",
+    "answer": "A defined output state reduces risk when the controller detects a critical fault. The appropriate response may be de-energization, controlled shutdown, or another application-specific safe action."
+  },
+  {
+    "id": 921,
+    "question": "What is the difference between fail-safe and fail-operational design?",
+    "answer": "Fail-safe design prioritizes reaching or maintaining a safe condition after a fault. Fail-operational design attempts to preserve required functionality despite specified failures, often using redundancy."
+  },
+  {
+    "id": 922,
+    "question": "Why is functional safety important in automotive embedded systems?",
+    "answer": "Electronic failures can cause hazardous vehicle behavior, including unintended braking or loss of steering assistance. Functional safety processes identify risks and define measures to reduce the probability or impact of dangerous failures."
+  },
+  {
+    "id": 923,
+    "question": "What is ISO 26262?",
+    "answer": "ISO 26262 is the automotive functional-safety standard for electrical and electronic systems in road vehicles. It addresses hazards caused by malfunctioning behavior throughout the safety lifecycle."
+  },
+  {
+    "id": 924,
+    "question": "What is an Automotive Safety Integrity Level (ASIL)?",
+    "answer": "ASIL classifies automotive safety requirements according to risk factors such as severity, exposure, and controllability. Levels range from ASIL A to ASIL D, with QM indicating quality-management requirements outside ASIL classification."
+  },
+  {
+    "id": 925,
+    "question": "Why is hazard analysis performed before designing safety-critical firmware?",
+    "answer": "Hazard analysis identifies hazardous system behavior and evaluates associated risks. Its results guide safety goals, architectural decisions, and the verification measures required to reduce risk."
+  },
+  {
+    "id": 926,
+    "question": "What is Failure Mode and Effects Analysis (FMEA)?",
+    "answer": "FMEA systematically identifies possible failure modes, their effects, and potential causes. It helps prioritize corrective actions and identify suitable diagnostic or design controls."
+  },
+  {
+    "id": 927,
+    "question": "What is Fault Tree Analysis (FTA)?",
+    "answer": "FTA starts with an undesired top-level event and decomposes it into combinations of contributing failures. Logical relationships help engineers analyze how component faults can produce a hazardous system outcome."
+  },
+  {
+    "id": 928,
+    "question": "Why is diagnostic coverage important in functional safety?",
+    "answer": "Diagnostic coverage estimates the fraction of relevant dangerous hardware failures detected by safety mechanisms. Higher coverage can reduce residual risk, but it does not eliminate all undetected or common-cause failures."
+  },
+  {
+    "id": 929,
+    "question": "Why is independence important between redundant safety channels?",
+    "answer": "Independence reduces the chance that one fault disables multiple channels simultaneously. Separate power, routing, implementation, and fault-containment measures can reduce common-cause failures."
+  },
+  {
+    "id": 930,
+    "question": "Why is memory protection useful in safety-critical firmware?",
+    "answer": "Memory protection can prevent one software component from corrupting critical data belonging to another component. This improves fault containment and reduces the impact of unintended memory accesses."
+  },
+  {
+    "id": 931,
+    "question": "Why are end-to-end communication protections used between safety-related software components?",
+    "answer": "Transport links and intermediate software may corrupt, lose, repeat, or reorder data. End-to-end mechanisms such as counters, checksums, and data identifiers help detect these communication failures."
+  },
+  {
+    "id": 932,
+    "question": "Why is a sequence counter useful for detecting stale or repeated control messages?",
+    "answer": "A receiver checks whether each counter value follows the expected progression. Unexpected values can indicate loss, duplication, reordering, or replay, subject to the protocol's wraparound rules."
+  },
+  {
+    "id": 933,
+    "question": "Why is a safety mechanism not sufficient merely because it detects a fault?",
+    "answer": "Detection must lead to a timely and appropriate reaction that prevents or limits hazardous behavior. The complete detection-to-reaction path must satisfy its timing and reliability requirements."
+  },
+  {
+    "id": 934,
+    "question": "Why are requirements traceability and verification important in automotive software development?",
+    "answer": "Traceability links system and safety requirements to implementation and test evidence. It helps demonstrate coverage, detect missing requirements, and assess the impact of changes."
+  },
+  {
+    "id": 935,
+    "question": "Why is static analysis used before testing embedded firmware on hardware?",
+    "answer": "Static analysis identifies certain defects without executing the program, including suspicious data flow, unsafe constructs, and some memory errors. It complements rather than replaces dynamic testing and hardware validation."
+  },
+  {
+    "id": 936,
+    "question": "Why can a lower numerical CAN identifier win arbitration?",
+    "answer": "CAN transmits identifier bits from the most significant position, with dominant zero overriding recessive one. The identifier that presents the first dominant bit at a differing position wins."
+  },
+  {
+    "id": 937,
+    "question": "Why are two 120-ohm terminators used on a high-speed CAN bus?",
+    "answer": "Each terminator approximately matches the cable's characteristic impedance and reduces reflections at a bus end. With power removed, two parallel 120-ohm resistors normally measure about 60 ohms across CAN_H and CAN_L."
+  },
+  {
+    "id": 938,
+    "question": "Why is a mutex generally preferred to a binary semaphore for exclusive resource ownership?",
+    "answer": "A mutex normally has ownership semantics and may support priority inheritance. A binary semaphore can signal events or synchronization without necessarily tracking the owning task."
+  },
+  {
+    "id": 939,
+    "question": "Why is watchdog servicing based on task health better than unconditional refreshing?",
+    "answer": "Unconditional refreshing may conceal deadlocked or malfunctioning application tasks. Health-based servicing allows the watchdog to expose failures when required execution checkpoints are not completed."
+  },
+  {
+    "id": 940,
+    "question": "Why must firmware validate a packet length before reading its payload?",
+    "answer": "An invalid length can cause out-of-bounds memory access, corrupted state, or a buffer overflow. Every field and payload range must be checked against the actual received-buffer size."
+  },
+  {
+    "id": 941,
+    "question": "Why is a high transmission voltage used in power systems?",
+    "answer": "For the same transmitted power, higher voltage reduces current. This reduces conductor losses proportional to I^2R and can improve transmission economics."
+  },
+  {
+    "id": 942,
+    "question": "Why is transformer copper loss proportional to current squared?",
+    "answer": "Winding resistance dissipates power according to P_cu = I^2R. If resistance remains approximately constant, doubling current increases copper loss by a factor of four."
+  },
+  {
+    "id": 943,
+    "question": "Why does an alternator need DC excitation?",
+    "answer": "Rotor excitation establishes the magnetic field that induces AC EMF in the stator windings. Adjusting excitation also influences reactive-power exchange when connected to a grid."
+  },
+  {
+    "id": 944,
+    "question": "Why must a CT secondary never be open-circuited while its primary carries current?",
+    "answer": "Opening the secondary removes the opposing secondary ampere-turns, potentially producing excessive core flux and dangerous secondary voltage. This can damage insulation and endanger personnel."
+  },
+  {
+    "id": 945,
+    "question": "Why does distance protection use apparent impedance to identify transmission-line faults?",
+    "answer": "The relay estimates Z = V/I, and transmission-line impedance is approximately proportional to distance. A reduced measured impedance can indicate a fault within the configured protection zone."
+  },
+  {
+    "id": 946,
+    "question": "Why is negative-sequence current harmful to synchronous generators?",
+    "answer": "It produces a reverse-rotating magnetic field that induces additional rotor currents. The resulting heating can damage rotor components if unbalanced operation persists."
+  },
+  {
+    "id": 947,
+    "question": "Why does an anti-aliasing filter precede ADC sampling?",
+    "answer": "It attenuates frequency components above the usable Nyquist bandwidth. This prevents unwanted high-frequency signals from appearing as false lower-frequency components."
+  },
+  {
+    "id": 948,
+    "question": "Why is volatile insufficient for protecting shared data accessed by an ISR and main code?",
+    "answer": "Volatile does not guarantee atomicity or prevent concurrent code from observing a partially completed update. Appropriate atomic operations or critical sections are needed for shared-state protection."
+  },
+  {
+    "id": 949,
+    "question": "Why is DMA useful for continuous ADC sampling?",
+    "answer": "DMA transfers conversion results into memory without requiring CPU intervention for every sample. This reduces overhead and helps sustain predictable acquisition timing."
+  },
+  {
+    "id": 950,
+    "question": "Why is worst-case execution time essential for hard real-time tasks?",
+    "answer": "A hard real-time task must meet its deadline under all specified operating conditions. Average execution time cannot guarantee that the slowest valid execution will finish on time."
+  },
+  {
+    "id": 951,
+    "question": "Why can priority inversion delay a high-priority task?",
+    "answer": "A low-priority task may hold a resource required by a high-priority task while medium-priority tasks prevent it from running. Priority inheritance can reduce this blocking delay."
+  },
+  {
+    "id": 952,
+    "question": "Why is a firmware CRC not sufficient for secure boot?",
+    "answer": "A CRC detects accidental corruption but does not establish that the image was authorized. Secure boot requires cryptographic authentication, typically through a verified digital signature or an appropriate authenticated-image mechanism."
+  },
+  {
+    "id": 953,
+    "question": "Why does a boost converter require a controlled current path when its switch turns OFF?",
+    "answer": "Inductor current cannot change instantaneously, so stored energy must flow through the output path. A diode or synchronous switch transfers this energy and prevents uncontrolled voltage spikes."
+  },
+  {
+    "id": 954,
+    "question": "Why must a safety-critical embedded system define its reaction to detected faults?",
+    "answer": "Fault detection alone does not prevent hazardous behavior. The system must execute a validated response, such as entering a safe state or switching to a redundant channel, within the required time."
   }
 ]
