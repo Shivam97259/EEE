@@ -3588,5 +3588,10 @@
     "id": 718,
     "question": "Why does increasing prime-mover torque increase real power output of a synchronized generator?",
     "answer": "The additional mechanical input increases the rotor power angle relative to the grid. The generator consequently transfers more active power while remaining locked to grid frequency."
+  },
+  {
+    "id": 719,
+    "question": "Why is a continuous-time control system converted into a discrete-time system for digital implementation?",
+    "answer": "Microcontrollers process sampled numerical values rather than continuous signals. Discrete-time algorithms allow digital controllers to regulate physical systems using periodic computations."
   }
 ]
