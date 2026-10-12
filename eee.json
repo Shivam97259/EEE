@@ -4173,5 +4173,305 @@
     "id": 835,
     "question": "Why must a digital control task be analyzed for worst-case response time rather than average execution time?",
     "answer": "Interrupt interference, scheduling delays, and variable execution paths can make individual runs much slower than average. Worst-case response-time analysis determines whether the task can reliably meet its deadline."
+  },
+  {
+    "id": 836,
+    "question": "Why was CAN bus developed for automotive embedded systems?",
+    "answer": "CAN enables multiple electronic control units to communicate over a shared, robust serial bus. Message prioritization, error detection, and fault confinement improve reliability in electrically noisy environments."
+  },
+  {
+    "id": 837,
+    "question": "How does arbitration work in a CAN bus?",
+    "answer": "Nodes transmit identifier bits while monitoring the bus; a dominant bit overrides a recessive bit. A node transmitting recessive but reading dominant loses arbitration and retries without corrupting the winning message."
+  },
+  {
+    "id": 838,
+    "question": "Why does a lower numerical CAN identifier normally have higher priority?",
+    "answer": "Standard CAN arbitration transmits the most significant identifier bit first, with dominant representing zero. An identifier containing an earlier dominant bit wins against one containing a recessive bit at that position."
+  },
+  {
+    "id": 839,
+    "question": "Why does CAN use differential signaling?",
+    "answer": "The receiver interprets the voltage difference between CAN_H and CAN_L rather than either wire's voltage relative to ground. Common-mode noise affecting both wires similarly is therefore largely rejected."
+  },
+  {
+    "id": 840,
+    "question": "Why are CAN bus termination resistors required?",
+    "answer": "Termination reduces signal reflections caused by impedance mismatches on the transmission line. High-speed CAN commonly uses approximately 120-ohm termination at each physical end of the bus."
+  },
+  {
+    "id": 841,
+    "question": "Why should a high-speed CAN bus normally have two 120-ohm terminators?",
+    "answer": "The two parallel terminators produce approximately 60 ohms when measured across CAN_H and CAN_L with power removed. This matches the cable's nominal characteristic impedance and reduces reflections."
+  },
+  {
+    "id": 842,
+    "question": "What is the difference between CAN bit rate and CAN message frequency?",
+    "answer": "Bit rate measures transmitted bits per second, while message frequency measures how often a particular message is sent. Actual bus utilization also depends on frame length, arbitration, and retransmissions."
+  },
+  {
+    "id": 843,
+    "question": "How does CAN detect transmission errors?",
+    "answer": "CAN uses mechanisms including bit monitoring, bit stuffing checks, frame-format checks, and CRC checks. Receivers and transmitters can signal detected errors using error frames."
+  },
+  {
+    "id": 844,
+    "question": "Why does CAN use bit stuffing?",
+    "answer": "After five consecutive bits of the same polarity, the transmitter inserts a complementary bit in applicable frame fields. This helps receivers maintain synchronization and detect certain transmission errors."
+  },
+  {
+    "id": 845,
+    "question": "What is the difference between a CAN error-active and error-passive node?",
+    "answer": "An error-active node can signal faults using active error flags, whereas an error-passive node uses less disruptive passive error flags. The controller changes state according to its transmit and receive error counters."
+  },
+  {
+    "id": 846,
+    "question": "Why does CAN provide a bus-off state?",
+    "answer": "A node with excessive transmission errors is disconnected logically from normal bus participation to protect communication. Recovery requires the controller to satisfy the applicable protocol and implementation recovery conditions."
+  },
+  {
+    "id": 847,
+    "question": "What is the difference between CAN standard and extended identifiers?",
+    "answer": "Classical CAN standard frames use 11-bit identifiers, while extended frames use 29-bit identifiers. Extended identifiers support more message identifiers but add arbitration and frame overhead."
+  },
+  {
+    "id": 848,
+    "question": "Why is CAN FD useful compared with Classical CAN?",
+    "answer": "CAN FD supports payloads of up to 64 bytes and can use a faster data-phase bit rate when supported by all relevant nodes. This increases throughput while retaining CAN-style arbitration."
+  },
+  {
+    "id": 849,
+    "question": "Why must CAN FD compatibility be checked before connecting devices?",
+    "answer": "Classical CAN controllers generally cannot correctly interpret CAN FD frames. Mixing incompatible nodes can cause communication failures or error frames unless the network architecture explicitly accommodates them."
+  },
+  {
+    "id": 850,
+    "question": "What is the difference between CAN and LIN?",
+    "answer": "CAN provides multi-master arbitration and is suited to higher-performance distributed control. LIN uses a comparatively inexpensive single-master, scheduled communication model for simpler automotive subsystems."
+  },
+  {
+    "id": 851,
+    "question": "Why does LIN use a master-controlled schedule?",
+    "answer": "The master determines when frames are initiated, reducing contention and making communication timing predictable. This is appropriate for lower-cost applications such as seats, mirrors, and simple actuators."
+  },
+  {
+    "id": 852,
+    "question": "Why is RS-485 commonly used in industrial communication?",
+    "answer": "Its differential electrical signaling provides good noise immunity over relatively long cables. Suitable transceivers support multidrop networks and can operate in electrically noisy industrial environments."
+  },
+  {
+    "id": 853,
+    "question": "Why must half-duplex RS-485 transmitters coordinate bus access?",
+    "answer": "Only one transmitter should actively drive the shared differential bus at a time. Simultaneous opposing transmissions can cause data corruption and excessive electrical contention."
+  },
+  {
+    "id": 854,
+    "question": "What is the purpose of Modbus RTU?",
+    "answer": "Modbus RTU defines a compact serial application protocol using function codes, device addresses, data fields, and CRC checking. It is widely used to exchange register-oriented data with industrial equipment."
+  },
+  {
+    "id": 855,
+    "question": "Why does Modbus RTU require correct inter-frame timing?",
+    "answer": "Frame boundaries are identified partly through silent intervals on the serial line. Incorrect timing can cause receivers to merge frames or interpret a valid message as malformed."
+  },
+  {
+    "id": 856,
+    "question": "What is the difference between Modbus RTU and Modbus TCP?",
+    "answer": "Modbus RTU commonly operates over serial links and uses a CRC, whereas Modbus TCP encapsulates Modbus messages within TCP/IP and uses a different framing structure. TCP provides transport reliability, but application-level correctness still requires validation."
+  },
+  {
+    "id": 857,
+    "question": "Why is Ethernet used in industrial embedded systems?",
+    "answer": "Ethernet provides high data rates, standardized physical interfaces, and compatibility with established networking infrastructure. Real-time performance depends on the selected protocol, network architecture, and scheduling mechanisms."
+  },
+  {
+    "id": 858,
+    "question": "What is the difference between TCP and UDP?",
+    "answer": "TCP provides an ordered, reliable byte stream with retransmission and flow control. UDP sends independent datagrams without guaranteeing delivery, ordering, or duplicate suppression."
+  },
+  {
+    "id": 859,
+    "question": "Why might an embedded controller use UDP instead of TCP?",
+    "answer": "UDP has lower protocol overhead and avoids transport-level retransmission delays. It can suit time-sensitive telemetry when the application can tolerate loss or implement its own reliability mechanisms."
+  },
+  {
+    "id": 860,
+    "question": "Why can TCP retransmission be problematic for time-critical control messages?",
+    "answer": "Lost packets can delay later data while TCP restores ordered delivery. A real-time application may prefer bounded-latency communication or explicitly discard stale measurements rather than process delayed data."
+  },
+  {
+    "id": 861,
+    "question": "What is MQTT and why is it used in IoT systems?",
+    "answer": "MQTT is a lightweight publish-subscribe messaging protocol commonly used between devices and a broker. It decouples publishers from subscribers and supports configurable delivery quality."
+  },
+  {
+    "id": 862,
+    "question": "What is the difference between MQTT QoS 0, QoS 1, and QoS 2?",
+    "answer": "QoS 0 provides at-most-once delivery, QoS 1 provides at-least-once delivery, and QoS 2 provides exactly-once protocol delivery. Higher assurance generally requires additional exchanges and processing."
+  },
+  {
+    "id": 863,
+    "question": "Why should an embedded device use a message sequence number?",
+    "answer": "Sequence numbers help identify missing, duplicated, or out-of-order messages. They are particularly useful when communication links can lose packets or retransmit data."
+  },
+  {
+    "id": 864,
+    "question": "Why is a checksum not equivalent to a cryptographic message authentication code?",
+    "answer": "A checksum mainly detects accidental corruption and can often be recomputed by an attacker. A properly implemented MAC uses a secret key to authenticate message integrity and origin."
+  },
+  {
+    "id": 865,
+    "question": "Why is TLS useful for network-connected embedded devices?",
+    "answer": "TLS can provide confidentiality, integrity, and peer authentication when correctly configured. Certificate validation, secure key storage, and appropriate protocol settings are essential to realizing these protections."
+  },
+  {
+    "id": 866,
+    "question": "Why should embedded firmware avoid storing cryptographic secrets directly in source code?",
+    "answer": "Secrets embedded in source code or distributed binaries can often be extracted through reverse engineering or repository access. Provisioned credentials, hardware-backed storage, and controlled key rotation reduce exposure."
+  },
+  {
+    "id": 867,
+    "question": "Why is secure boot important in connected embedded devices?",
+    "answer": "Secure boot verifies that executable firmware is authorized before running it. It helps prevent unauthorized code from taking control of hardware or accessing sensitive information."
+  },
+  {
+    "id": 868,
+    "question": "Why should an embedded communication parser validate packet lengths before accessing fields?",
+    "answer": "An untrusted or corrupted length can cause out-of-bounds memory access and buffer overflow. Validation must establish that every field lies within the received buffer before processing it."
+  },
+  {
+    "id": 869,
+    "question": "Why should communication timeouts be handled explicitly in firmware?",
+    "answer": "A disconnected device or missing response can otherwise leave a task waiting indefinitely. Bounded timeouts allow recovery, fault reporting, and transition to a defined safe operating state."
+  },
+  {
+    "id": 870,
+    "question": "Why is protocol versioning important in embedded product updates?",
+    "answer": "Firmware versions may change message layouts, field meanings, or supported features. Explicit versioning enables compatibility checks and controlled handling of older or newer devices."
+  },
+  {
+    "id": 871,
+    "question": "Why is negative-sequence current dangerous for rotating electrical machines?",
+    "answer": "It creates a magnetic field rotating opposite to the normal field and induces additional rotor currents. These currents can cause substantial rotor heating and require dedicated protection."
+  },
+  {
+    "id": 872,
+    "question": "Why does reducing induction-motor supply voltage reduce torque?",
+    "answer": "For a fixed frequency and comparable operating conditions, electromagnetic torque is approximately proportional to V^2. Reduced voltage can therefore cause severe torque loss and possible stalling."
+  },
+  {
+    "id": 873,
+    "question": "Why does an alternator require synchronization before parallel connection?",
+    "answer": "The incoming generator must have compatible voltage magnitude, frequency, phase sequence, and phase angle. Mismatches can produce large circulating currents and mechanical transients."
+  },
+  {
+    "id": 874,
+    "question": "Why does increasing prime-mover input increase real power from a synchronized generator?",
+    "answer": "Additional mechanical torque increases the rotor power angle relative to the grid. This raises active-power transfer while grid frequency remains essentially fixed."
+  },
+  {
+    "id": 875,
+    "question": "Why is differential protection sensitive to current-transformer errors?",
+    "answer": "Unequal CT ratios, phase errors, or saturation can create apparent differential current during external faults. Ratio compensation, restraint, and suitable CT selection improve stability."
+  },
+  {
+    "id": 876,
+    "question": "Why is an anti-aliasing filter required before sampling a sensor signal?",
+    "answer": "It attenuates frequency components above the intended sampling bandwidth. Without sufficient attenuation, those components can fold into the measured spectrum and produce misleading data."
+  },
+  {
+    "id": 877,
+    "question": "Why should a digital controller account for sampling and computation delay?",
+    "answer": "The controller applies corrections only after measurements are acquired and processed. This delay adds phase lag and can reduce stability margin."
+  },
+  {
+    "id": 878,
+    "question": "Why is volatile insufficient for synchronizing shared data between an ISR and main code?",
+    "answer": "Volatile does not guarantee atomic operations or protect multi-step updates from interruption. Atomic access or a suitable critical section is needed when concurrent access could corrupt data."
+  },
+  {
+    "id": 879,
+    "question": "Why does a bootloader verify firmware authenticity rather than relying only on a CRC?",
+    "answer": "A CRC detects many accidental errors but does not prevent deliberate firmware modification. Digital-signature verification can establish that an image was authorized by a trusted signing key."
+  },
+  {
+    "id": 880,
+    "question": "Why should an embedded system use both a watchdog and explicit fault diagnostics?",
+    "answer": "A watchdog can recover from certain execution failures, but it cannot identify or correct every hardware, sensor, or data-integrity fault. Diagnostics and safe-state logic provide fault-specific responses."
+  },
+  {
+    "id": 881,
+    "question": "Why does a high-priority RTOS task sometimes miss its deadline?",
+    "answer": "Interrupt latency, blocking, higher-priority interference, or excessive execution time can delay completion. Priority alone does not guarantee deadlines without schedulability analysis."
+  },
+  {
+    "id": 882,
+    "question": "Why is worst-case execution time more important than average execution time in a hard real-time task?",
+    "answer": "A deadline must be met even under the slowest permitted execution conditions. Average timing cannot establish that the task will always finish on time."
+  },
+  {
+    "id": 883,
+    "question": "Why is priority inheritance useful in an RTOS?",
+    "answer": "A low-priority task holding a mutex temporarily inherits the priority of a blocked higher-priority task. This reduces interference that could otherwise prolong priority inversion."
+  },
+  {
+    "id": 884,
+    "question": "Why is DMA useful for high-rate ADC acquisition?",
+    "answer": "DMA transfers conversion results to memory without requiring CPU intervention for every sample. This reduces overhead and helps sustain deterministic sampling rates."
+  },
+  {
+    "id": 885,
+    "question": "Why must cache maintenance sometimes be performed before a DMA transfer?",
+    "answer": "Dirty CPU cache lines may contain newer data than physical RAM, which DMA accesses. Cleaning the relevant cache lines before a memory-to-device transfer ensures the device receives the intended data."
+  },
+  {
+    "id": 886,
+    "question": "Why is a mutex generally more appropriate than a semaphore for exclusive shared-resource ownership?",
+    "answer": "A mutex normally requires the owning task to release it and may support priority inheritance. A semaphore can signal events or count resources without the same ownership semantics."
+  },
+  {
+    "id": 887,
+    "question": "Why should interrupt service routines avoid blocking operations?",
+    "answer": "An ISR cannot ordinarily suspend and wait like a scheduled task. Blocking can prevent the interrupted context from resuming and violate the execution rules of the RTOS."
+  },
+  {
+    "id": 888,
+    "question": "Why is a linker script essential in bare-metal firmware?",
+    "answer": "It maps program sections, initialized data, stacks, and other objects to the target memory layout. Incorrect placement can cause startup failures or memory corruption."
+  },
+  {
+    "id": 889,
+    "question": "Why does startup code clear the .bss section?",
+    "answer": "C requires static-storage objects without explicit initializers to begin with zero values. Startup code establishes this state before normal application execution."
+  },
+  {
+    "id": 890,
+    "question": "Why can a watchdog reset fail to repair corrupted persistent data?",
+    "answer": "Resetting the CPU does not restore invalid flash contents or inconsistent stored metadata. Firmware needs validation, transactional updates, and a recovery strategy for persistent data."
+  },
+  {
+    "id": 891,
+    "question": "Why does a MOSFET require a gate driver despite drawing little steady-state gate current?",
+    "answer": "The gate capacitance must be charged and discharged during transitions. A suitable driver supplies the required transient current to reduce switching time and losses."
+  },
+  {
+    "id": 892,
+    "question": "Why is dead time required between complementary inverter gate signals?",
+    "answer": "It prevents the upper and lower switches in one leg from conducting simultaneously. Excessive dead time can distort the output waveform and introduce harmonics."
+  },
+  {
+    "id": 893,
+    "question": "Why does a boost converter produce an output voltage above its input?",
+    "answer": "The inductor stores energy while the switch conducts and transfers energy to the output when the switch turns off. Ideally, in continuous conduction, V_out = V_in/(1-D)."
+  },
+  {
+    "id": 894,
+    "question": "Why can excessive integral gain destabilize a PID-controlled plant?",
+    "answer": "Strong integral action adds phase lag and can accumulate excessive control effort. This increases overshoot and oscillation and may cause closed-loop instability."
+  },
+  {
+    "id": 895,
+    "question": "Why is a defined safe state necessary when embedded firmware detects a critical fault?",
+    "answer": "Continuing normal operation with invalid data or faulty hardware can produce hazardous actuator behavior. A defined safe state limits risk while allowing diagnosis or controlled recovery."
   }
 ]
