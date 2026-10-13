@@ -4768,5 +4768,305 @@
     "id": 954,
     "question": "Why must a safety-critical embedded system define its reaction to detected faults?",
     "answer": "Fault detection alone does not prevent hazardous behavior. The system must execute a validated response, such as entering a safe state or switching to a redundant channel, within the required time."
+  },
+  {
+    "id": 955,
+    "question": "What is the difference between Ethernet MAC and PHY in an automotive ECU?",
+    "answer": "The MAC handles frame formation, addressing, and media-access functions, while the PHY converts digital data into electrical signals and back. Both are required for physical Ethernet communication."
+  },
+  {
+    "id": 956,
+    "question": "Why is 100BASE-T1 used in automotive Ethernet?",
+    "answer": "It provides 100 Mbps Ethernet over a single twisted pair, reducing cable weight and harness complexity. Its physical layer is designed for automotive electromagnetic and environmental requirements."
+  },
+  {
+    "id": 957,
+    "question": "Why does automotive Ethernet use a single twisted pair in some applications?",
+    "answer": "A single pair reduces wiring mass, connector size, and installation complexity. Differential signaling helps reject common-mode noise when the channel and receiver are properly designed."
+  },
+  {
+    "id": 958,
+    "question": "Why must automotive Ethernet PHYs establish a valid link before exchanging frames?",
+    "answer": "The PHY must establish the required signaling, timing recovery, and link parameters. Without a valid physical link, higher-layer protocols cannot reliably exchange Ethernet frames."
+  },
+  {
+    "id": 959,
+    "question": "What is Time-Sensitive Networking (TSN), and why is it useful in vehicles?",
+    "answer": "TSN extends Ethernet with mechanisms for scheduled traffic, synchronization, and controlled latency. It helps coordinate time-critical traffic such as sensor data and control messages."
+  },
+  {
+    "id": 960,
+    "question": "Why is clock synchronization important in distributed automotive ECUs?",
+    "answer": "A shared time reference allows ECUs to correlate measurements and execute scheduled communication consistently. Clock errors can create timestamp mismatches and timing violations."
+  },
+  {
+    "id": 961,
+    "question": "How does time-aware traffic scheduling reduce latency in TSN?",
+    "answer": "Scheduled transmission windows reserve network access for selected traffic classes. This reduces interference from competing frames and makes communication latency more predictable."
+  },
+  {
+    "id": 962,
+    "question": "What is SOME/IP in automotive communication?",
+    "answer": "SOME/IP is an automotive middleware protocol supporting service-oriented communication over IP networks. It enables ECUs to exchange method calls, responses, events, and notifications."
+  },
+  {
+    "id": 963,
+    "question": "Why is SOME/IP Service Discovery necessary?",
+    "answer": "Service Discovery allows clients to locate available services and determine how to communicate with providers. It also supports service availability announcements and subscription management."
+  },
+  {
+    "id": 964,
+    "question": "How does service-oriented communication differ from signal-oriented communication?",
+    "answer": "Service-oriented communication exposes functions, methods, or events through defined service interfaces. Signal-oriented communication primarily exchanges predefined data signals or cyclic messages."
+  },
+  {
+    "id": 965,
+    "question": "What is Diagnostics over IP (DoIP)?",
+    "answer": "DoIP transports automotive diagnostic messages over IP networks, commonly Ethernet. It supports communication between diagnostic testers and vehicle ECUs through suitable routing and transport mechanisms."
+  },
+  {
+    "id": 966,
+    "question": "Why is routing activation used in DoIP?",
+    "answer": "Routing activation establishes permission for diagnostic communication through a DoIP entity. It helps control which diagnostic connections can access the relevant vehicle communication paths."
+  },
+  {
+    "id": 967,
+    "question": "What is XCP, and why is it used during ECU development?",
+    "answer": "XCP is a measurement and calibration protocol used to access internal ECU variables and calibration parameters. It helps engineers observe software behavior and tune control algorithms during development."
+  },
+  {
+    "id": 968,
+    "question": "Why is ECU calibration separated from application code?",
+    "answer": "Separating calibration parameters allows engineers to tune control behavior without rebuilding the entire application for every parameter change. This improves development efficiency and supports controlled calibration management."
+  },
+  {
+    "id": 969,
+    "question": "What is an A2L file in automotive calibration?",
+    "answer": "An A2L file describes ECU measurement variables, calibration parameters, memory addresses, and relevant conversion information. Calibration tools use it to interpret internal data correctly."
+  },
+  {
+    "id": 970,
+    "question": "Why must ECU measurement tools understand data types and scaling?",
+    "answer": "Raw memory values may represent fixed-point quantities, encoded states, or physical measurements. Correct data types and conversion formulas are necessary to display meaningful engineering values."
+  },
+  {
+    "id": 971,
+    "question": "Why are over-the-air firmware updates used in connected vehicles?",
+    "answer": "OTA updates allow authorized software changes without requiring a physical workshop connection for every update. They reduce maintenance effort but require robust authentication, integrity checks, and recovery mechanisms."
+  },
+  {
+    "id": 972,
+    "question": "Why is an A/B firmware partition scheme useful for OTA updates?",
+    "answer": "The currently working image remains available while a new image is written to the inactive partition. If validation or startup fails, the bootloader can return to the known-good image."
+  },
+  {
+    "id": 973,
+    "question": "What is a delta firmware update, and what is its main advantage?",
+    "answer": "A delta update transmits differences between firmware versions instead of the entire image. It reduces bandwidth and download time but requires correct base-version identification and reliable patch application."
+  },
+  {
+    "id": 974,
+    "question": "Why must an OTA update support rollback or recovery?",
+    "answer": "Power loss, corrupted downloads, or failed startup can leave the new firmware unusable. Recovery mechanisms preserve a valid boot path and prevent an incomplete update from permanently disabling the ECU."
+  },
+  {
+    "id": 975,
+    "question": "What is anti-rollback protection in secure firmware updates?",
+    "answer": "It prevents installation of firmware versions below an enforced security version or minimum acceptable release. This reduces the risk of reinstalling vulnerable firmware, provided the version state is protected against tampering."
+  },
+  {
+    "id": 976,
+    "question": "What is a Hardware Security Module (HSM) in an automotive ECU?",
+    "answer": "An HSM provides isolated hardware support for cryptographic operations and protected key storage. Depending on the implementation, it can help protect secrets and accelerate authentication or secure-boot operations."
+  },
+  {
+    "id": 977,
+    "question": "Why must cryptographic keys be provisioned securely during manufacturing?",
+    "answer": "Compromised keys can allow unauthorized firmware signing, message authentication, or device impersonation. Secure provisioning establishes device identity while limiting exposure of secret material."
+  },
+  {
+    "id": 978,
+    "question": "Why is authentication required for sensitive automotive diagnostic operations?",
+    "answer": "Operations such as programming or protected calibration changes can affect vehicle safety and security. Authentication restricts access to authorized tools or users, while authorization separately determines permitted operations."
+  },
+  {
+    "id": 979,
+    "question": "What is threat modeling in automotive cybersecurity?",
+    "answer": "Threat modeling identifies assets, entry points, attackers, and plausible attack paths. It guides security requirements and countermeasures before vulnerabilities become expensive to fix."
+  },
+  {
+    "id": 980,
+    "question": "Why is attack-surface reduction important in an automotive ECU?",
+    "answer": "Every exposed interface, service, or debug feature can introduce another potential entry point. Disabling unnecessary functionality and restricting access reduces opportunities for exploitation."
+  },
+  {
+    "id": 981,
+    "question": "How can an automotive gateway help detect suspicious CAN traffic?",
+    "answer": "A gateway can monitor message identifiers, transmission rates, source interfaces, and expected communication patterns. Deviations can trigger logging or filtering, although valid-looking malicious messages may require stronger detection methods."
+  },
+  {
+    "id": 982,
+    "question": "Why is message freshness important in secure vehicle communication?",
+    "answer": "Freshness mechanisms help distinguish current messages from delayed or previously captured messages. Counters, timestamps, and protocol-specific freshness values can reduce replay risks."
+  },
+  {
+    "id": 983,
+    "question": "How does replay protection prevent reuse of captured messages?",
+    "answer": "The receiver checks freshness information, such as a counter or authenticated timestamp, before accepting a message. Replayed or stale messages are rejected when they violate the defined freshness rules."
+  },
+  {
+    "id": 984,
+    "question": "Why should production ECUs restrict hardware debug access?",
+    "answer": "Unrestricted debug access can expose memory, firmware, cryptographic material, or privileged execution controls. Debug authentication and lifecycle-based access restrictions reduce these risks."
+  },
+  {
+    "id": 985,
+    "question": "Why is secure debug access preferable to permanently enabling unrestricted debugging?",
+    "answer": "Authenticated debug preserves authorized maintenance while restricting unauthorized access. The implementation should enforce access policy without creating an easy bypass around the security architecture."
+  },
+  {
+    "id": 986,
+    "question": "What is the difference between functional safety and cybersecurity?",
+    "answer": "Functional safety addresses hazards caused by malfunctioning behavior, while cybersecurity addresses malicious or unauthorized actions against a system. Both can interact because a cyberattack may create a safety hazard."
+  },
+  {
+    "id": 987,
+    "question": "What is ISO/SAE 21434?",
+    "answer": "ISO/SAE 21434 defines cybersecurity engineering practices for road-vehicle electrical and electronic systems throughout their lifecycle. It addresses risk management from concept and development through production, operation, maintenance, and decommissioning."
+  },
+  {
+    "id": 988,
+    "question": "What is Threat Analysis and Risk Assessment (TARA) in automotive cybersecurity?",
+    "answer": "TARA identifies assets, threat scenarios, attack paths, and associated risks. Its results help prioritize cybersecurity goals and appropriate countermeasures."
+  },
+  {
+    "id": 989,
+    "question": "Why is fuzz testing useful for automotive communication stacks?",
+    "answer": "Fuzzing supplies malformed, unexpected, or boundary-case inputs to expose parser defects and robustness failures. It can reveal crashes, memory corruption, and incorrect protocol handling."
+  },
+  {
+    "id": 990,
+    "question": "Why is property-based testing useful for embedded communication software?",
+    "answer": "It generates many inputs and checks general properties rather than testing only a few predefined examples. Properties can include bounds safety, parser consistency, and correct handling of malformed messages."
+  },
+  {
+    "id": 991,
+    "question": "Why must ECU startup be deterministic in a safety-related application?",
+    "answer": "Predictable initialization ensures clocks, memory, peripherals, and safety mechanisms reach defined states before control begins. Uncontrolled startup ordering can produce timing failures or hazardous outputs."
+  },
+  {
+    "id": 992,
+    "question": "Why should an ECU initialize safety-critical outputs before enabling normal application control?",
+    "answer": "Outputs may otherwise assume unintended states while software or peripherals are being configured. Establishing safe output conditions first reduces the risk of uncontrolled actuator behavior during startup."
+  },
+  {
+    "id": 993,
+    "question": "Why must nonvolatile-memory updates account for power loss?",
+    "answer": "A power interruption during programming can leave data partially written or internally inconsistent. Redundant records, validity markers, and transactional update schemes help preserve recoverable state."
+  },
+  {
+    "id": 994,
+    "question": "Why is wear leveling used in embedded flash storage?",
+    "answer": "Flash memory has a finite number of erase cycles. Wear leveling distributes writes across available storage locations, reducing premature failure of frequently updated regions."
+  },
+  {
+    "id": 995,
+    "question": "Why is EEPROM emulation sometimes implemented using flash memory?",
+    "answer": "Some microcontrollers provide flash but no dedicated EEPROM peripheral. Firmware can emulate byte- or record-oriented storage using flash pages, metadata, and wear-management techniques."
+  },
+  {
+    "id": 996,
+    "question": "Why is a circular event log useful for automotive diagnostics?",
+    "answer": "It continuously records recent events using a bounded memory region that reuses older storage. Sequence information and robust record validation help preserve useful diagnostic history without unbounded memory growth."
+  },
+  {
+    "id": 997,
+    "question": "Why is time synchronization necessary when correlating logs from multiple ECUs?",
+    "answer": "Different local clocks can assign inconsistent timestamps to the same physical event. A shared time base enables accurate event ordering and cross-ECU fault analysis."
+  },
+  {
+    "id": 998,
+    "question": "Why does clock drift affect distributed embedded systems?",
+    "answer": "Oscillator tolerances and temperature changes cause local clocks to run at slightly different rates. Without synchronization, timestamp errors accumulate and scheduled communication can lose alignment."
+  },
+  {
+    "id": 999,
+    "question": "Why must an automotive gateway validate routing rules instead of forwarding every received message?",
+    "answer": "Unrestricted forwarding can expose internal networks, propagate malformed traffic, or overload downstream ECUs. Explicit routing policies constrain communication to permitted destinations and message classes."
+  },
+  {
+    "id": 1000,
+    "question": "Why does CAN arbitration allow a higher-priority frame to continue without being corrupted by a lower-priority frame?",
+    "answer": "A transmitting node that sends a recessive bit but reads a dominant bit recognizes arbitration loss and stops transmitting. The winning frame continues without requiring retransmission because of the arbitration event."
+  },
+  {
+    "id": 1001,
+    "question": "Why are CAN termination resistors placed at the physical ends of a high-speed bus?",
+    "answer": "They match the cable's characteristic impedance and reduce signal reflections. Incorrect placement or missing termination can cause communication errors, especially at higher bit rates."
+  },
+  {
+    "id": 1002,
+    "question": "Why does CAN use CRC checking?",
+    "answer": "The CRC helps receivers detect corruption in transmitted frame data. A detected mismatch causes the frame to be treated as erroneous rather than accepted as valid data."
+  },
+  {
+    "id": 1003,
+    "question": "Why is service discovery useful in SOME/IP communication?",
+    "answer": "It allows clients to locate available service providers and learn how to communicate with them. Providers can announce availability, and clients can subscribe to supported events."
+  },
+  {
+    "id": 1004,
+    "question": "Why does ISO-TP segment large diagnostic messages?",
+    "answer": "A diagnostic payload may exceed the maximum data capacity of a single CAN frame. ISO-TP divides it into multiple frames and reassembles the payload at the receiver."
+  },
+  {
+    "id": 1005,
+    "question": "Why is firmware authenticity more important than a simple checksum for secure updates?",
+    "answer": "A checksum detects many accidental changes but does not prove who produced the firmware. Cryptographic signature verification helps ensure the image was authorized by a trusted signing entity."
+  },
+  {
+    "id": 1006,
+    "question": "Why does an A/B firmware update scheme improve recoverability?",
+    "answer": "The existing working image can remain intact while the replacement image is installed and validated. If the new image fails, the bootloader can select the known-good image."
+  },
+  {
+    "id": 1007,
+    "question": "Why must a safety mechanism meet a defined fault-reaction time?",
+    "answer": "Detecting a fault too late may allow hazardous behavior to continue. The detection, decision, and reaction path must complete within the safety timing requirement."
+  },
+  {
+    "id": 1008,
+    "question": "Why is independence important in redundant safety channels?",
+    "answer": "Shared power, wiring, or software defects can cause multiple channels to fail together. Independence measures reduce common-cause failure risk and improve the effectiveness of redundancy."
+  },
+  {
+    "id": 1009,
+    "question": "Why is a diagnostic trouble code not always sufficient to identify the root cause of a fault?",
+    "answer": "A DTC describes a detected condition, not necessarily the underlying failed component. Freeze-frame data, fault status, measurements, and system-level diagnosis are often needed to determine the root cause."
+  },
+  {
+    "id": 1010,
+    "question": "Why is an anti-aliasing filter required before an ADC?",
+    "answer": "It attenuates unwanted frequency components above the intended sampling bandwidth. This prevents high-frequency signals from folding into the measured spectrum."
+  },
+  {
+    "id": 1011,
+    "question": "Why should an ISR avoid blocking operations?",
+    "answer": "An interrupt handler must return promptly so the interrupted execution context and other time-critical events can proceed. Blocking operations can violate interrupt-context rules and create severe latency problems."
+  },
+  {
+    "id": 1012,
+    "question": "Why is priority inheritance used in an RTOS?",
+    "answer": "A low-priority task holding a mutex temporarily inherits the priority of a blocked higher-priority task. This reduces interference that could otherwise prolong priority inversion."
+  },
+  {
+    "id": 1013,
+    "question": "Why is negative-sequence current dangerous for a synchronous generator?",
+    "answer": "It produces a reverse-rotating magnetic field that induces additional rotor currents. The resulting heating can damage rotor components if unbalanced operation persists."
+  },
+  {
+    "id": 1014,
+    "question": "Why must an embedded controller enter a defined safe state after a critical fault?",
+    "answer": "Continuing normal operation with invalid data or faulty hardware can create hazardous actuator behavior. A validated safe-state response limits risk while allowing diagnosis or controlled recovery."
   }
 ]
